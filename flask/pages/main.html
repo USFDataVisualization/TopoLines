@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="static/style.css">
+
+    <script src="https://d3js.org/d3.v4.js" crossorigin="anonymous"></script>
+
+    <link rel="apple-touch-icon" sizes="57x57" href="static/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="static/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="static/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="static/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="static/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="static/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="static/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="static/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="static/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="static/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="static/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/favicon/favicon-16x16.png">
+    <link rel="manifest" href="static/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="static/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <title>TopoLines</title>
+
+</head>
+<body>
+<div>
+    <h1>TopoLines</h1>
+</div>
+
+
+<div class="page">
+
+    <div class="sidebar">
+        <form id="parameterForm">
+            <div class="form-group">
+                <label for="filter">Filter Type</label>
+                <select class="form-control form-control-sm" id="filter" name="filter" onchange="reloadData()">
+                    <option value="lowpass">Low Pass</option>
+                    <option value="gaussian">Gaussian</option>
+                    <option value="median">Median</option>
+                    <option value="rdp">RDP</option>
+                    <option value="mean">Mean</option>
+                    <option value="tda">TDA</option>
+                    <option value="subsample">Subsampling</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="level">Filter Level</label>
+                <input type="range" class="custom-range" min="0" max="30" step="0.1" value="0" id="level" name="level"
+                       onchange="reloadData()">
+            </div>
+
+        </form>
+        <code><pre id="object_details" name="object_details" style=" width: 300px; ">
+			</pre>
+        </code>
+    </div>
+
+
+    <div class="page-content" id="visualization">
+        <svg width="1000" height="250" style="border: none;" id="linechart"></svg>
+    </div>
+</div>
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+
+<script>
+
+		var lc_svg = d3.select("#linechart");
+		var lc_svg_width  = +lc_svg.attr("width");
+		var lc_svg_height = +lc_svg.attr("height");
+
+		var lc_margin = {left: 10, right: 15, top: 10, bottom: 15},
+			lc_width  = lc_svg_width  - lc_margin.left - lc_margin.right,
+			lc_height = lc_svg_height - lc_margin.top  - lc_margin.bottom;
+
+
+		function reloadData(){
+			
+			$("#linechart").empty();
+			
+			d3.json( "data?" + $('#parameterForm').serialize(), function( dinput ) {
+
+				orig_data = dinput['original'].map( function(d){
+					return {'x':d[0],'y':d[1]};
+				});
+
+				filt_data = dinput['filtered'].map( function(d){
+					return {'x':d[0],'y':d[1]};
+				});
+
+				document.getElementById("object_details").innerHTML = JSON.stringify(dinput['metrics'], undefined, 2);
+
+				xExt = [0,orig_data.length-1];
+                yExt = d3.extent( orig_data, function(d){ return d['y']; });
+				
+                var xAxis = d3.scaleLinear().domain( xExt ).range([ 0, lc_width ]);
+                var yAxis = d3.scaleLinear().domain( yExt ).range([ lc_height, 0]);
+				
+				lc_svg.append("path")
+                    .attr("transform", "translate(" + lc_margin.left + "," + lc_margin.top + ")")
+					  .datum( orig_data )
+					  .attr("fill", "none")
+					  .attr("stroke", "lightgray")
+					  .attr("stroke-width", 2)
+					  .attr("d", d3.line()
+						.x(function(d) { console.log(d['x']); return xAxis(d['x']); })
+						.y(function(d) { console.log(d['y']); return yAxis(d['y']); })
+						);
+
+				lc_svg.append("path")
+                    .attr("transform", "translate(" + lc_margin.left + "," + lc_margin.top + ")")
+					  .datum( filt_data )
+					  .attr("fill", "none")
+					  .attr("stroke", "steelblue")
+					  .attr("stroke-width", 2)
+					  .attr("d", d3.line()
+						.x(function(d) { console.log(d['x']); return xAxis(d['x']); })
+						.y(function(d) { console.log(d['y']); return yAxis(d['y']); })
+						);
+
+				
+			});
+			
+			
+			
+		}
+		
+		
+		reloadData();
+		
+			
+
+</script>
+
+
+</body>
+</html>
+
