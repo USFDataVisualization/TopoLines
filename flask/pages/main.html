@@ -59,7 +59,7 @@
             </div>
             <div class="form-group">
                 <label for="level">Filter Level</label>
-                <input type="range" class="custom-range" min="0" max="30" step="0.1" value="0" id="level" name="level"
+                <input type="range" class="custom-range" min="0" max="1" step="0.01" value="0" id="level" name="level"
                        onchange="reloadData()">
             </div>
 
@@ -103,8 +103,11 @@
 		function reloadData(){
 			
 			$("#linechart").empty();
-			
+
+			console.log( "data?" + $('#parameterForm').serialize());
 			d3.json( "data?" + $('#parameterForm').serialize(), function( dinput ) {
+
+			    console.log( dinput );
 
 				orig_data = dinput['original'].map( function(d){
 					return {'x':d[0],'y':d[1]};
@@ -114,7 +117,7 @@
 					return {'x':d[0],'y':d[1]};
 				});
 
-				document.getElementById("object_details").innerHTML = JSON.stringify(dinput['metrics'], undefined, 2);
+				document.getElementById("object_details").innerHTML = JSON.stringify({stats:dinput['statistics'],metrics:dinput['metrics']}, undefined, 2);
 
 				xExt = [0,orig_data.length-1];
                 yExt = d3.extent( orig_data, function(d){ return d['y']; });
@@ -129,8 +132,8 @@
 					  .attr("stroke", "lightgray")
 					  .attr("stroke-width", 2)
 					  .attr("d", d3.line()
-						.x(function(d) { console.log(d['x']); return xAxis(d['x']); })
-						.y(function(d) { console.log(d['y']); return yAxis(d['y']); })
+						.x(function(d) { return xAxis(d['x']); })
+						.y(function(d) { return yAxis(d['y']); })
 						);
 
 				lc_svg.append("path")
@@ -140,8 +143,8 @@
 					  .attr("stroke", "steelblue")
 					  .attr("stroke-width", 2)
 					  .attr("d", d3.line()
-						.x(function(d) { console.log(d['x']); return xAxis(d['x']); })
-						.y(function(d) { console.log(d['y']); return yAxis(d['y']); })
+						.x(function(d) { return xAxis(d['x']); })
+						.y(function(d) { return yAxis(d['y']); })
 						);
 
 				

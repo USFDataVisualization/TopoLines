@@ -45,11 +45,11 @@ def mean(data: list, width: int) -> list:
     pad_pre = int(width/2)
     pad_post = width-1-pad_pre
     tmp = np.pad( data, [( pad_pre,pad_post)], mode='edge' )
-    print( tmp )
+    #print( tmp )
     #res = np.convolve(data, np.ones((width,)) / width, mode='valid')
     res = np.convolve(tmp, np.ones((width,)) / width, mode='valid')
-    print( len(data) )
-    print(len(res))
+    #print( len(data) )
+    #print(len(res))
     return list(enumerate(res))
 
 
@@ -76,6 +76,6 @@ def subsample(data, num_out_points):
         keys.append([idx, __linear_map(idx, i0, i1, data[i0], data[i1])])
     keys.append([len(data) - 1, data[-1]])
 
-    print( keys )
+    #print( keys )
 
     return __linear_map_points(data, keys)

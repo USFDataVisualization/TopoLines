@@ -95,7 +95,11 @@ def frequency_preservation(d0, d1):
 
 def signal_to_noise(original,filtered):
     noise = np.subtract(original, filtered)
-    return variance_sample(filtered) / variance_sample(noise)
+    n_var = variance_sample(noise)
+    if n_var <= 1e-8:
+        return 1e10
+    else:
+        return variance_sample(filtered) / n_var
 
 
 

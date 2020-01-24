@@ -38,24 +38,19 @@ def page_not_found(error):
 
 @app.route('/data', methods=['GET', 'POST'])
 def get_data():
-    # print( request.args )
-
-    # dir = ""
-
-    # splits = int(request.args.get('splits'))
-
-    # dataset = []
 
     with open('../data/climate/avgTemp.json') as json_file:
         dataset = json.load(json_file)
 
-    outdata = []
+    input_signal = []
     dataset['data'].sort(reverse=False, key=itemgetter('timestamp'))
 
-    for i, d in enumerate(dataset['data']):
-        # outdata.append( { "id": i, "value": d["value"] } )
-        outdata.append(d["value"])
-        # print( d )
+    for X in dataset['data']:
+        input_signal.append(X["value"])
+
+    input_min = min(input_signal)
+    input_max = max(input_signal)
+    input_range = input_max - input_min
 
     filter_level = 0
     if not request.args.get("level") is None:
@@ -63,67 +58,59 @@ def get_data():
 
     filter_data = []
     if request.args.get("filter") == 'lowpass':
-        filter_data = filter.lowpass(outdata, len(outdata) - int(filter_level) - 1)
-    elif request.args.get("filter") == 'gaussian':
-        filter_data = filter.gaussian(outdata, filter_level)
-    elif request.args.get("filter") == 'median':
-        filter_data = filter.median(outdata, int(filter_level))
-    elif request.args.get("filter") == 'rdp':
-        filter_data = filter.rdp(outdata, filter_level)
-    elif request.args.get("filter") == 'mean':
-        filter_data = filter.mean(outdata, int(filter_level))
-    elif request.args.get("filter") == 'tda':
-        filter_data = filter.tda(outdata, filter_level)
+        level = filter.__linear_map(filter_level, 0, 1, len(input_signal), 1)
+        filter_data = filter.lowpass(input_signal, int(level))
     elif request.args.get("filter") == 'subsample':
-        filter_data = filter.subsample(outdata, int(filter_level))
+        level = filter.__linear_map(filter_level, 0, 1, len(input_signal), 2)
+        filter_data = filter.subsample(input_signal, int(level))
+    elif request.args.get("filter") == 'tda':
+        level = filter.__linear_map(filter_level, 0, 1, 0, input_range)
+        filter_data = filter.tda(input_signal, level)
+    elif request.args.get("filter") == 'rdp':
+        level = filter.__linear_map(filter_level, 0, 1, 0, input_range)
+        filter_data = filter.rdp(input_signal, level)
+    elif request.args.get("filter") == 'gaussian':
+        level = filter.__linear_map(filter_level, 0, 1, 0.1, 30)
+        filter_data = filter.gaussian(input_signal, level)
+    elif request.args.get("filter") == 'median':
+        level = filter.__linear_map(filter_level, 0, 1, 1, 30)
+        filter_data = filter.median(input_signal, int(level))
+    elif request.args.get("filter") == 'mean':
+        level = filter.__linear_map(filter_level, 0, 1, 1, 30)
+        filter_data = filter.mean(input_signal, int(level))
     else:
-        filter_data = list(enumerate(outdata))
+        filter_data = list(enumerate(input_signal))
 
-    d = []
+    output_signal = []
     for X in filter_data:
-        d.append(X[1])
+        output_signal.append(X[1])
+
+    stats = {}
+    stats["mean"] = measures.mean(output_signal)
+    stats["Pop Stdev"] = measures.stdev_population(output_signal)
+    stats["Sample Stdev"] = measures.stdev_sample(output_signal)
+    stats["Pop Variance"] = measures.variance_population(output_signal)
+    stats["Sample Variance"] = measures.variance_sample(output_signal)
+    stats["SNR"] = measures.snr(output_signal)
 
     metrics = {}
-    print( len(d) )
-    print( len(outdata) )
-    print( filter_data )
+    metrics["Covariance"] = measures.covariance(input_signal, output_signal)
+    metrics["PCC"] = measures.pearson_correlation(input_signal, output_signal)
+    metrics["L1-norm"] = measures.l1_norm(input_signal, output_signal)
+    metrics["L2-norm"] = measures.l2_norm(input_signal, output_signal)
+    metrics["Linf-norm"] = measures.linf_norm(input_signal, output_signal)
+    metrics["DVol"] = measures.delta_volume(input_signal, output_signal)
+    metrics["Approx Ent (2,0.25)"] = measures.approximate_entropy(output_signal, 2, 0.25)
+    metrics["Approx Ent (2,0.5)"] = measures.approximate_entropy(output_signal, 2, 0.5)
+    metrics["Approx Ent (2,1.0)"] = measures.approximate_entropy(output_signal, 2, 1.0)
+    metrics["Approx Ent (2,2.0)"] = measures.approximate_entropy(output_signal, 2, 2.0)
+    metrics["Approx Ent (2,4.0)"] = measures.approximate_entropy(output_signal, 2, 4.0)
+    metrics["Frequency Preservation"] = measures.frequency_preservation(input_signal, output_signal)
+    metrics["signal to noise"] = measures.signal_to_noise(input_signal, output_signal)
 
-    print()
-    metrics["mean"] = measures.mean(outdata)
-    metrics["Pop Stdev"] = measures.stdev_population(outdata)
-    metrics["Sample Stdev"] = measures.stdev_sample(outdata)
-    metrics["Pop Variance"] = measures.variance_population(outdata)
-    metrics["Sample Variance"] = measures.variance_sample(outdata)
-    metrics["SNR"] = measures.snr(outdata)
-    metrics["Covariance"] = measures.covariance(outdata,d)
-    metrics["PCC"] = measures.pearson_correlation(outdata,d)
-    metrics["L1-norm"] = measures.l1_norm(outdata,d)
-    metrics["L2-norm"] = measures.l2_norm(outdata,d)
-    metrics["Linf-norm"] = measures.linf_norm(outdata,d)
-    metrics["DVol"] = measures.delta_volume(outdata,d)
-    metrics["Approx Ent"] = measures.approximate_entropy(outdata,4,1)
-    print()
-    print()
-
-    # if (Float.isFinite(f.L1Norm())) ret.setFloat( "L1Norm", f.L1Norm() );
-    # if (Float.isFinite(f.L2Norm())) ret.setFloat( "L2Norm", f.L2Norm() );
-    # if (Float.isFinite(f.LInfNorm())) ret.setFloat("LInfNorm", f.LInfNorm() );
-    # if (Float.isFinite(f.frequencyPreservation())) ret.setFloat( "frequencyPreservation", f.frequencyPreservation() );
-    # if (Float.isFinite(f.deltaVolume())) ret.setFloat( "deltaVolume", f.deltaVolume() );
     # if (Float.isFinite(f.peakinessBottleneck())) ret.setFloat( "peakinessBottleneck", f.peakinessBottleneck() );
     # if (Float.isFinite(f.peakinessWasserstein())) ret.setFloat( "peakinessWasserstein", f.peakinessWasserstein() );
     # if (Float.isFinite(f.phaseShifted(fPhi))) ret.setFloat( "phaseShift", f.phaseShifted(fPhi) );
-    # if (Float.isFinite(f.signalToNoise())) ret.setFloat( "SNR", f.signalToNoise() );
-    # if (Double.isFinite(Measures.getSNR(f))) ret.setFloat( "SNRAlt", (float)Measures.getSNR(f) );
-    # if (Double.isFinite(Measures.approximateEntropy(f, 2, 0.25
-    # f)) ) ret.setFloat( "ent0_25", (float)Measures.approximateEntropy(f, 2, 0.25f) );
-    # if (Double.isFinite(Measures.approximateEntropy(f, 2, 0.50
-    # f)) ) ret.setFloat( "ent0_50", (float)Measures.approximateEntropy(f, 2, 0.50f) );
-    # if (Double.isFinite(Measures.approximateEntropy(f, 2, 1.00
-    # f)) ) ret.setFloat( "ent1_00", (float)Measures.approximateEntropy(f, 2, 1.00f) );
-    # if (Double.isFinite(Measures.approximateEntropy(f, 2, 2.00
-    # f)) ) ret.setFloat( "ent2_00", (float)Measures.approximateEntropy(f, 2, 2.00f) );
-    # if (Double.isFinite(Measures.approximateEntropy(f, 2, 4.00
-    # f)) ) ret.setFloat( "ent4_00", (float)Measures.approximateEntropy(f, 2, 4.00f) );
 
-    return json.dumps({'original': list(enumerate(outdata)), 'filtered': filter_data, 'metrics':metrics})
+    return json.dumps(
+        {'original': list(enumerate(input_signal)), 'filtered': filter_data, 'statistics': stats, 'metrics': metrics})
