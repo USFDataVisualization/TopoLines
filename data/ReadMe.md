@@ -6,7 +6,7 @@
   - src2: `https://www.ncdc.noaa.gov/climate-information/statistical-weather-and-climate-information`
   - couldn't find source of exact data
 
-#### ClimateData
+#### temperature
   - Average Temperature data from a weather station at Tampa International Airport.
   - Data accessed via CURL request at: `https://www.ncdc.noaa.gov/cdo-web/webservices/v2`
 

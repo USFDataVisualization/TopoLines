@@ -46,6 +46,17 @@
     <div class="sidebar">
         <form id="parameterForm">
             <div class="form-group">
+                <label for="dataset">Data Set</label>
+                <select class="form-control form-control-sm" id="dataset" name="dataset" onchange="changeDataset();">
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="datafile">Data File</label>
+                <select class="form-control form-control-sm" id="datafile" name="datafile" onchange="reloadData();">
+                </select>
+            </div>
+
+            <div class="form-group">
                 <label for="filter">Filter Type</label>
                 <select class="form-control form-control-sm" id="filter" name="filter" onchange="reloadData()">
                     <option value="lowpass">Low Pass</option>
@@ -90,6 +101,9 @@
 
 
 <script>
+        var datasets = {};
+
+
 
 		var lc_svg = d3.select("#linechart");
 		var lc_svg_width  = +lc_svg.attr("width");
@@ -154,10 +168,39 @@
 			
 		}
 		
-		
-		reloadData();
-		
-			
+
+
+        function changeDataset(){
+            var e = document.getElementById("dataset");
+            var dset = e.options[e.selectedIndex].value;
+            datasets[dset].sort();
+            html = "";
+            datasets[dset].forEach( function(d){
+		        html += '<option value="'+d+'">'+d+'</option>';
+            });
+            document.getElementById("datafile").innerHTML = html;
+            reloadData();
+        }
+
+
+		d3.json( "datasets", function( dinput ) {
+            datasets = dinput;
+
+            html = "";
+            keys = Object.keys(datasets);
+            keys.sort();
+
+		    keys.forEach( function(d){
+		        html += '<option value="'+d+'">'+d+'</option>';
+		    });
+
+            document.getElementById("dataset").innerHTML = html;
+
+            changeDataset();
+		});
+
+
+
 
 </script>
 

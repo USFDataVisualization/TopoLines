@@ -2,6 +2,7 @@ import json
 import mod_filter1d as filter
 import mod_measures as measures
 import os
+import os, fnmatch
 
 from flask import Flask
 from flask import request
@@ -14,6 +15,19 @@ from operator import itemgetter, attrgetter
 import statistics as stats
 
 app = Flask(__name__)
+
+data_dir = "../data"
+datasets = {}
+
+for dataset in os.listdir(data_dir):
+    if os.path.isdir(data_dir + "/" + dataset):
+        cur_ds = []
+        for data_file in os.listdir(data_dir + "/" + dataset):
+            if fnmatch.fnmatch(data_file, "*.json"):
+                cur_ds.append(data_file[:-5])
+            if fnmatch.fnmatch(data_file, "*.csv"):
+                cur_ds.append(data_file[:-4])
+        datasets[dataset] = cur_ds
 
 
 def error(err):
@@ -36,17 +50,49 @@ def page_not_found(error):
     return 'This page does not exist', 404
 
 
+@app.route('/datasets', methods=['GET', 'POST'])
+def get_datasets():
+    return json.dumps(datasets)
+
+
 @app.route('/data', methods=['GET', 'POST'])
 def get_data():
-
-    with open('../data/climate/avgTemp.json') as json_file:
-        dataset = json.load(json_file)
+    ds = request.args.get("dataset")
+    df = request.args.get("datafile")
 
     input_signal = []
-    dataset['data'].sort(reverse=False, key=itemgetter('timestamp'))
 
-    for X in dataset['data']:
-        input_signal.append(X["value"])
+    if ds == 'climate':
+        if df in datasets[ds]:
+            filename = data_dir + "/" + ds + "/" + df + ".json"
+
+            with open(filename) as json_file:
+                cur_dataset = json.load(json_file)
+                cur_dataset['data'].sort(reverse=False, key=itemgetter('timestamp'))
+
+                for X in cur_dataset['data']:
+                    input_signal.append(X["value"])
+    elif ds == 'stock' or ds == 'temperature' or ds == 'radioAstronomy' or ds == 'statistical':
+        if df in datasets[ds]:
+            filename = data_dir + "/" + ds + "/" + df + ".json"
+
+            with open(filename) as json_file:
+                cur_dataset = json.load(json_file)
+
+                for X in cur_dataset['results']:
+                    input_signal.append(X["value"])
+    elif ds == 'eeg':
+        if df in datasets[ds]:
+            filename = data_dir + "/" + ds + "/" + df + ".csv"
+
+            with open(filename) as json_file:
+                for i in range(0,1000):
+                    input_signal.append(float(json_file.readline()))
+
+
+    else:
+        print("unknown dataset: " + request.args.get("dataset"))
+        return "{}";
 
     input_min = min(input_signal)
     input_max = max(input_signal)
