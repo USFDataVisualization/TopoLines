@@ -32,12 +32,12 @@ def lowpass(data, max_freq: int):
 
 
 def gaussian(data, sigma_val):
-    res = scind.gaussian_filter1d(data, sigma=sigma_val)
+    res = scind.gaussian_filter1d(data, sigma=sigma_val, mode='nearest')
     return list(enumerate(res))
 
 
 def median(data, width: int):
-    res = scind.median_filter(data, size=width)
+    res = scind.median_filter(data, size=width, mode='nearest')
     return list(enumerate(res))
 
 
@@ -45,11 +45,7 @@ def mean(data: list, width: int) -> list:
     pad_pre = int(width/2)
     pad_post = width-1-pad_pre
     tmp = np.pad( data, [( pad_pre,pad_post)], mode='edge' )
-    #print( tmp )
-    #res = np.convolve(data, np.ones((width,)) / width, mode='valid')
     res = np.convolve(tmp, np.ones((width,)) / width, mode='valid')
-    #print( len(data) )
-    #print(len(res))
     return list(enumerate(res))
 
 
@@ -60,9 +56,7 @@ def rdp(data, eps):
 
 
 def tda(data, threshold):
-    cps = mod_tda.extract_cps(data)
-    pairs = mod_tda.cp_pairs(data)
-    cp_keys = mod_tda.filter_cps(data, cps, pairs, threshold)
+    cp_keys = mod_tda.filter_tda(data, threshold)
     return __linear_map_points(data, cp_keys)
 
 

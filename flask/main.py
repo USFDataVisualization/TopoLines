@@ -104,7 +104,8 @@ def get_data():
 
     filter_data = []
     if request.args.get("filter") == 'lowpass':
-        level = filter.__linear_map(filter_level, 0, 1, len(input_signal), 1)
+        level = filter.__linear_map(filter_level, 0, 1, len(input_signal), 2)
+        print(level)
         filter_data = filter.lowpass(input_signal, int(level))
     elif request.args.get("filter") == 'subsample':
         level = filter.__linear_map(filter_level, 0, 1, len(input_signal), 2)
@@ -142,6 +143,7 @@ def get_data():
     metrics = {}
     metrics["Covariance"] = measures.covariance(input_signal, output_signal)
     metrics["PCC"] = measures.pearson_correlation(input_signal, output_signal)
+    metrics["SRC"] = measures.spearman_correlation(input_signal, output_signal)
     metrics["L1-norm"] = measures.l1_norm(input_signal, output_signal)
     metrics["L2-norm"] = measures.l2_norm(input_signal, output_signal)
     metrics["Linf-norm"] = measures.linf_norm(input_signal, output_signal)

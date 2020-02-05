@@ -2,6 +2,8 @@ import statistics as stats
 import numpy as np
 import math
 import scipy.fftpack as scifft
+import scipy.stats as scistat
+
 
 
 def mean(data):
@@ -36,6 +38,11 @@ def covariance(d0, d1):
 def pearson_correlation(d0, d1):
     pcc = np.corrcoef(d0, d1)
     return pcc[0, 1]
+
+
+def spearman_correlation(d0, d1):
+    src = scistat.spearmanr(d0, d1)
+    return src[0]
 
 
 def __approx_ent_max_d(pc, i, j, m):
