@@ -1,7 +1,20 @@
-from typing import TypeVar
-from operator import itemgetter, attrgetter
+from operator import itemgetter
+import os
+import random
 
-T = TypeVar('T')
+__hera_bottleneck = os.getenv('HERA_BOTTLENECK')
+__hera_wasserstein = os.getenv('HERA_WASSERSTEIN')
+
+if __hera_bottleneck is None or __hera_wasserstein is None or \
+        (not os.path.exists(__hera_bottleneck)) or (not os.path.exists(__hera_wasserstein)):
+    print("Path to Hera Bottleneck and Wasserstein not set correctly.")
+    print("   For example: ")
+    print("       > export HERA_BOTTLENECK=\"/bin/tda/hera/bottleneck_dist\"")
+    print("       > export HERA_WASSERSTEIN=\"/bin/tda/hera/wasserstein_dist\"")
+    print()
+    print("These functionalities will be disabled.")
+    __hera_bottleneck = None
+    __hera_wasserstein = None
 
 
 class DisjointSet:
@@ -55,9 +68,9 @@ def extract_cps(data):
     ret.append(b)
 
     for i in range(1, len(data) - 1):
-        if data[i] < data[i - 1] and data[i] < data[i + 1]:
+        if data[i] < data[i - 1] and data[i] <= data[i + 1]:
             ret.append({'idx': i, 'val': data[i], 'type': 'min'})
-        if data[i] > data[i - 1] and data[i] > data[i + 1]:
+        if data[i] >= data[i - 1] and data[i] > data[i + 1]:
             ret.append({'idx': i, 'val': data[i], 'type': 'max'})
 
     ret.append(e)
@@ -70,12 +83,12 @@ def extract_cps(data):
 def cp_pairs(cps):
     cps_list = list(enumerate(cps))
 
-    for c in cps_list:
-        print(str(c[1]['idx']) + " " + c[1]['type'])
+    # for c in cps_list:
+    #    print(str(c[1]['idx']) + " " + c[1]['type'])
 
     # Init disjoint set with all local mins
     ds = DisjointSet(key=(lambda x: x[0]))
-    for c in list(filter((lambda x: x[1]['type'] == 'min'), cps_list)):
+    for c in filter((lambda x: x[1]['type'] == 'min'), cps_list):
         ds.put(c)
 
     # print(ds._data)
@@ -85,6 +98,9 @@ def cp_pairs(cps):
     max_list = list(filter((lambda x: x[1]['type'] == 'max'), cps_list))
     max_list.sort(key=(lambda a: a[1]['val']))
     for c in max_list:
+        # print( c )
+        # print( str(c[0] - 1) + " " + str(c[0] + 1) + " " + str(len(max_list)) )
+        # print( ds._data )
         min0, min1 = ds.find_key(c[0] - 1), ds.find_key(c[0] + 1)
         if min0[1]['val'] < min1[1]['val']:
             minp = min1
@@ -101,18 +117,57 @@ def cp_pairs(cps):
 def filter_cps(data, pairs, threshold):
     indices = {0, len(data) - 1}
 
-    for p in pairs:
-        if p['persistence'] > threshold:
-            if 0 <= p['c0'] <= len(data): indices.add(p['c0'])
-            if 0 <= p['c1'] <= len(data): indices.add(p['c1'])
+    for p in filter(lambda pair: pair['persistence'] >= threshold, pairs):
+        if 0 <= p['c0'] <= len(data): indices.add(p['c0'])
+        if 0 <= p['c1'] <= len(data): indices.add(p['c1'])
 
     new_cps = list(map(lambda x: [x, data[x]], indices))
-
-    return new_cps.sort(key=itemgetter(0))
-
+    new_cps.sort(key=itemgetter(0))
+    return new_cps
 
 
 def filter_tda(data, threshold):
     cps = extract_cps(data)
     pairs = cp_pairs(cps)
     return filter_cps(data, pairs, threshold)
+
+
+def get_persistence_diagram(data):
+    dtmp = list(map(lambda d: d + random.uniform(-0.0001, 0.0001), data))
+    cps = extract_cps(dtmp)
+    pairs = cp_pairs(cps)
+    nonzero_pairs = filter(lambda p: not dtmp[p['c0']] == dtmp[p['c1']], pairs)
+    return list(map(lambda p: [dtmp[p['c0']], dtmp[p['c1']]], nonzero_pairs))
+
+
+def save_persistence_diagram(outfile, pd0, pd1=None):
+    f = open(outfile, "w")
+
+    for x in pd0:
+        f.write(str(x[0]) + " " + str(x[1]) + "\n")
+
+    if pd1 is not None:
+        for x in pd1:
+            f.write(str(x[0]) + " " + str(x[1]) + "\n")
+
+    f.close()
+
+
+def wasserstein_distance(pd_file0, pd_file1, rel_error=0.01):
+    if __hera_wasserstein is None:
+        return float('nan')
+
+    stream = os.popen(__hera_wasserstein + " " + pd_file0 + " " + pd_file1 + " " + str(rel_error))
+    output = stream.read()
+    stream.close()
+    return float(output)
+
+
+def bottleneck_distance(pd_file0, pd_file1, rel_error=0.01):
+    if __hera_bottleneck is None:
+        return float('nan')
+
+    stream = os.popen(__hera_bottleneck + " " + pd_file0 + " " + pd_file1 + " " + str(rel_error))
+    output = stream.read()
+    stream.close()
+    return float(output)

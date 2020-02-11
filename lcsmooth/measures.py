@@ -3,7 +3,12 @@ import numpy as np
 import math
 import scipy.fftpack as scifft
 import scipy.stats as scistat
-
+from entropy import *
+import numpy as np
+import lcsmooth.__tda as tda
+import random
+import string
+import os
 
 
 def mean(data):
@@ -100,7 +105,7 @@ def frequency_preservation(d0, d1):
     return np.linalg.norm(diff, ord=2)
 
 
-def signal_to_noise(original,filtered):
+def signal_to_noise(original, filtered):
     noise = np.subtract(original, filtered)
     n_var = variance_sample(noise)
     if n_var <= 1e-8:
@@ -109,42 +114,60 @@ def signal_to_noise(original,filtered):
         return variance_sample(filtered) / n_var
 
 
+def approximate_entropy_v2(x):
+    # print(perm_entropy(x, order=3, normalize=True))  # Permutation entropy
+    # print(spectral_entropy(x, 100, method='welch', normalize=True))  # Spectral entropy
+    # print(svd_entropy(x, order=3, delay=1, normalize=True))  # Singular value decomposition entropy
+    # print(app_entropy(x, order=2, metric='chebyshev'))  # Approximate entropy
+    # print(sample_entropy(x, order=2, metric='chebyshev'))  # Sample entropy
+    # print(lziv_complexity('01111000011001', normalize=True))  # Lempel-Ziv complexity
+    return app_entropy(x, order=2, metric='chebyshev')
 
-#
-# public
-# float
-# peakinessBottleneck()
-# {
-# if (Float.isNaN(peakinessbottleneck))
-# {
-#     SignalMergeTree
-# m0 = new
-# SignalMergeTree(this);
-# SignalMergeTree
-# m1 = new
-# SignalMergeTree(orig_graph);
-# peakinessbottleneck = (float)
-# SignalMergeTree.BottleneckDistance(m1, m0);
-# }
-# return peakinessbottleneck;
-# }
-#
-# public
-# float
-# peakinessWasserstein()
-# {
-# if (Float.isNaN(peakinesswasserstein)) {
-# SignalMergeTree m0 = new SignalMergeTree( this );
-# SignalMergeTree m1 = new SignalMergeTree( orig_graph );
-# if ( m0.size() <= 1 )
-# peakinesswasserstein = Float.POSITIVE_INFINITY;
-# else
-# peakinesswasserstein = (float)SignalMergeTree.WassersteinDistance(m1, m0);
-# }
-# return peakinesswasserstein;
-# }
-#
 
+def randomString(stringLength=10):
+    """Generate a random string of fixed length """
+    letters = string.ascii_lowercase
+    return ''.join(random.choice(letters) for i in range(stringLength))
+
+
+def peakiness_bottleneck(original, filtered):
+    pd_org = tda.get_persistence_diagram(original)
+    pd_flt = tda.get_persistence_diagram(filtered)
+    file_org = randomString(10) + '.pd'
+    file_flt = randomString(10) + '.pd'
+    tda.save_persistence_diagram(file_org, pd_org)
+    tda.save_persistence_diagram(file_flt, pd_flt)
+    res = tda.bottleneck_distance(file_org, file_flt)
+    os.remove(file_org)
+    os.remove(file_flt)
+    return res
+
+
+def peakiness_wasserstein(original, filtered):
+    pd_org = tda.get_persistence_diagram(original)
+    pd_flt = tda.get_persistence_diagram(filtered)
+    file_org = randomString(10) + '.pd'
+    file_flt = randomString(10) + '.pd'
+    tda.save_persistence_diagram(file_org, pd_org)
+    tda.save_persistence_diagram(file_flt, pd_flt)
+    res = tda.wasserstein_distance(file_org, file_flt)
+    os.remove(file_org)
+    os.remove(file_flt)
+    return res
+
+
+def peakiness(original, filtered):
+    pd_org = tda.get_persistence_diagram(original)
+    pd_flt = tda.get_persistence_diagram(filtered)
+    file_org = randomString(10) + '.pd'
+    file_flt = randomString(10) + '.pd'
+    tda.save_persistence_diagram(file_org, pd_org)
+    tda.save_persistence_diagram(file_flt, pd_flt)
+    res_b = tda.bottleneck_distance(file_org, file_flt)
+    res_w = tda.wasserstein_distance(file_org, file_flt)
+    os.remove(file_org)
+    os.remove(file_flt)
+    return {'peak bottleneck': res_b, 'peak wasserstein': res_w}
 
 #
 # public
@@ -162,4 +185,3 @@ def signal_to_noise(original,filtered):
 # Math.sqrt(tot);
 # }
 #
-
