@@ -34,34 +34,11 @@ def median(data, width: int):
     return list(enumerate(res))
 
 
-def min_filter(data, width: int):
-    res = scind.minimum_filter(data, size=width, mode='nearest')
-    return list(enumerate(res))
-
-
-def max_filter(data, width: int):
-    res = scind.maximum_filter(data, size=width, mode='nearest')
-    return list(enumerate(res))
-
-
 #
 #
 # CONVOLUTIONAL FILTERS
 def gaussian(data, sigma_val):
     res = scind.gaussian_filter1d(data, sigma=sigma_val, mode='nearest')
-    return list(enumerate(res))
-
-
-def mean(data: list, width: int) -> list:
-    pad_pre = int(width / 2)
-    pad_post = width - 1 - pad_pre
-    tmp = np.pad(data, [(pad_pre, pad_post)], mode='edge')
-    res = np.convolve(tmp, np.ones((width,)) / width, mode='valid')
-    return list(enumerate(res))
-
-
-def savitzky_golay(data: list, window_length: int, polyorder: int):
-    res = scisig.savgol_filter(data, window_length, polyorder, mode='nearest')
     return list(enumerate(res))
 
 
@@ -73,25 +50,6 @@ def cutoff(data, filter_level: float):
     fft = scifft.rfft(data)
     fft[max_freq:] = 0
     res = scifft.irfft(fft)
-    return list(enumerate(res))
-
-
-def butterworth(data, cutoff_freq: float, order: int):
-    b, a = scisig.butter(order, cutoff_freq, btype='low')
-    res = scisig.lfilter(b, a, data)
-    return list(enumerate(res))
-
-import matplotlib.pyplot as plt
-
-def chebyshev(data, cutoff_freq: float, order: int, ripple_db: float):
-    b, a = scisig.cheby1(order, ripple_db, cutoff_freq, btype='low')
-    res = scisig.lfilter(b, a, data)
-    return list(enumerate(res))
-
-
-def elliptical(data, cutoff_freq: int, order: int, ripple_db: float, max_atten_db: float):
-    b, a = scisig.ellip(order, ripple_db, max_atten_db, cutoff_freq, btype='low')
-    res = scisig.lfilter(b, a, data)
     return list(enumerate(res))
 
 
@@ -127,5 +85,4 @@ def tda(data, threshold):
         y_ = ir.fit_transform(range(len(y)), y)
         tmp.extend(y_[1:])
 
-    # return __linear_map_points(data, cp_keys)
     return list(enumerate(tmp))

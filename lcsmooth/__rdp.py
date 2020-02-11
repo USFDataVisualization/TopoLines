@@ -16,27 +16,6 @@ def pldist(point, start, end):
             np.linalg.norm(end - start))
 
 
-def rdp_rec(M, epsilon, dist=pldist):
-
-    dmax = 0.0
-    index = -1
-
-    for i in xrange(1, M.shape[0]):
-        d = dist(M[i], M[0], M[-1])
-
-        if d > dmax:
-            index = i
-            dmax = d
-
-    if dmax > epsilon:
-        r1 = rdp_rec(M[:index + 1], epsilon, dist)
-        r2 = rdp_rec(M[index:], epsilon, dist)
-
-        return np.vstack((r1[:-1], r2))
-    else:
-        return np.vstack((M[0], M[-1]))
-
-
 def _rdp_iter(M, start_index, last_index, epsilon, dist=pldist):
     stk = [[start_index, last_index]]
     global_start_index = start_index
@@ -75,15 +54,10 @@ def rdp_iter(M, epsilon, dist=pldist, return_mask=False):
     return M[mask]
 
 
-def rdp(M, epsilon=0, dist=pldist, algo="iter", return_mask=False):
+def rdp(M, epsilon=0, dist=pldist, return_mask=False):
 
-    if algo == "iter":
-        algo = partial(rdp_iter, return_mask=return_mask)
-    elif algo == "rec":
-        if return_mask:
-            raise NotImplementedError("return_mask=True not supported with algo=\"rec\"")
-        algo = rdp_rec
-        
+    algo = partial(rdp_iter, return_mask=return_mask)
+
     if "numpy" in str(type(M)):
         return algo(M, epsilon, dist)
 
