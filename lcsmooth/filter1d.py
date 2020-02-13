@@ -3,10 +3,11 @@ import scipy.fftpack as scifft
 import scipy.ndimage as scind
 import scipy.signal as scisig
 from sklearn.isotonic import IsotonicRegression
-
+# import rdp as mod_rdp
+# from lcsmooth.__rdp import rdp_iter
 import lcsmooth.__rdp as mod_rdp
 import lcsmooth.__tda as mod_tda
-
+import math
 
 def __linear_map(val, in0, in1, out0, out1):
     t = (val - in0) / (in1 - in0)
@@ -71,12 +72,13 @@ def subsample(data, filter_level: float):
 
 def rdp(data, eps):
     dtmp = list(enumerate(data))
-    tmp = mod_rdp.rdp(dtmp, epsilon=eps)
+    count = math.ceil(__linear_map(eps, 0, 1, 1, len(dtmp)))
+    tmp = mod_rdp.rdp_iter_count(dtmp, count)
     return __linear_map_points(data, tmp)
 
 
 def tda(data, threshold):
-    cp_keys = mod_tda.filter_tda(data, threshold)
+    cp_keys = mod_tda.filter_tda_count(data, threshold)
 
     tmp = [data[0]]
     for i in range(len(cp_keys) - 1):

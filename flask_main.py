@@ -1,28 +1,19 @@
 import json
-import lcsmooth.filter1d as filter1d
-import lcsmooth.measures as measures
-import os
-import os, fnmatch
 
 from flask import Flask
 from flask import request
-from flask import render_template
-from flask import send_from_directory
 from flask import send_file
-
-from operator import itemgetter, attrgetter
+from flask import send_from_directory
 
 import common
-import generate
 
 app = Flask(__name__)
 
-data_dir = "data/"
-datasets = common.get_datasets(data_dir)
+datasets = common.get_datasets()
 
-
-def error(err):
-    print(err)
+for _ds in datasets:
+    for _df in datasets[_ds]:
+        common.generate_metric_data(_ds, _df)
 
 
 @app.route('/')
@@ -50,23 +41,18 @@ def get_datasets():
 def get_metric_data():
     ds = request.args.get("dataset")
     df = request.args.get("datafile")
-    filter_name = request.args.get("filter")
 
-    input_signal = common.load_dataset(data_dir, datasets, ds, df )
+    if not common.valid_dataset(datasets, ds, df):
+        print("unknown dataset: " + ds + " or data file: " + df)
+        return "{}"
 
-    if input_signal is None:
-        print("unknown dataset: " + ds + " or data file: " + df )
-        return "{}";
+    metric_data = common.generate_metric_data(ds, df)
+    metric_reg = [common.metric_regression(metric_data, 'approx entropy', 'L1 norm'),
+                  common.metric_regression(metric_data, 'approx entropy', 'L_inf norm'),
+                  common.metric_regression(metric_data, 'approx entropy', 'peak wasserstein'),
+                  common.metric_regression(metric_data, 'approx entropy', 'peak bottleneck')]
 
-    if filter_name == 'all':
-        ret = []
-        for f_name in common.filter_list:
-            f = generate.generate_metric_data(input_signal, f_name, data_dir, ds, df)
-            with open(f) as json_file:
-                ret += json.load(json_file)
-        return json.dumps(ret)
-    else:
-        return send_file(generate.generate_metric_data(input_signal, filter_name, data_dir, ds, df))
+    return json.dumps({'metric': metric_data, 'rank': metric_reg})
 
 
 @app.route('/data', methods=['GET', 'POST'])
@@ -74,12 +60,11 @@ def get_data():
     ds = request.args.get("dataset")
     df = request.args.get("datafile")
 
-    input_signal = common.load_dataset(data_dir, datasets, ds, df )
+    if not common.valid_dataset(datasets, ds, df):
+        print("unknown dataset: " + ds + " or data file: " + df)
+        return "{}"
 
-    if input_signal is None:
-        print("unknown dataset: " + ds + " or data file: " + df )
-        return "{}";
-
-    res = common.process_smoothing(input_signal,request.args.get("filter"), float(request.args.get("level")) )
+    input_signal = common.load_dataset(ds, df)
+    res = common.process_smoothing(input_signal, request.args.get("filter"), float(request.args.get("level")))
 
     return json.dumps(res)

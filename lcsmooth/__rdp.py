@@ -1,64 +1,83 @@
-from functools import partial
 import numpy as np
-import sys
-
-if sys.version_info[0] >= 3:
-    xrange = range
+from queue import PriorityQueue
 
 
 def pldist(point, start, end):
-
     if np.all(np.equal(start, end)):
         return np.linalg.norm(point - start)
 
     return np.divide(
-            np.abs(np.linalg.norm(np.cross(end - start, start - point))),
-            np.linalg.norm(end - start))
+        np.abs(np.linalg.norm(np.cross(end - start, start - point))),
+        np.linalg.norm(end - start))
 
 
-def _rdp_iter(M, start_index, last_index, epsilon, dist=pldist):
+def __max_dist(M, start_index, last_index, dist=pldist):
+    dmax = 0.0
+    index = start_index
+
+    for i in range(start_index + 1, last_index):
+        d = dist(M[i], M[start_index], M[last_index])
+        if d > dmax:
+            index = i
+            dmax = d
+    return index, dmax
+
+
+def rdp_iter_epsilon(_M, epsilon, dist=pldist):
+    if "numpy" in str(type(_M)):
+        M = _M
+    else:
+        M = np.array(_M)
+
+    start_index, last_index = 0, len(M) - 1
     stk = [[start_index, last_index]]
-    global_start_index = start_index
     indices = np.ones(last_index - start_index + 1, dtype=bool)
 
     while stk:
         start_index, last_index = stk.pop()
 
-        dmax = 0.0
-        index = start_index
-
-        for i in xrange(index + 1, last_index):
-            if indices[i - global_start_index]:
-                d = dist(M[i], M[start_index], M[last_index])
-                if d > dmax:
-                    index = i
-                    dmax = d
+        split_index, dmax = __max_dist(M, start_index, last_index, dist)
 
         if dmax > epsilon:
-            stk.append([start_index, index])
-            stk.append([index, last_index])
+            stk.append([start_index, split_index])
+            stk.append([split_index, last_index])
         else:
-            for i in xrange(start_index + 1, last_index):
-                indices[i - global_start_index] = False
+            for i in range(start_index + 1, last_index):
+                indices[i] = False
 
-    return indices
-
-
-def rdp_iter(M, epsilon, dist=pldist, return_mask=False):
-
-    mask = _rdp_iter(M, 0, len(M) - 1, epsilon, dist)
-
-    if return_mask:
-        return mask
-
-    return M[mask]
+    return M[indices]
 
 
-def rdp(M, epsilon=0, dist=pldist, return_mask=False):
+def rdp_iter_count( _M, max_count, dist=pldist):
+    if "numpy" in str(type(_M)):
+        M = _M
+    else:
+        M = np.array(_M)
 
-    algo = partial(rdp_iter, return_mask=return_mask)
+    pq = PriorityQueue()
 
-    if "numpy" in str(type(M)):
-        return algo(M, epsilon, dist)
+    start_index, last_index = 0, len(M) - 1
+    split_index, dmax = __max_dist(M, start_index, last_index, dist)
+    pq.put((-dmax, [start_index, split_index, last_index]))
 
-    return algo(np.array(M), epsilon, dist).tolist()
+    count = 2
+    while count < max_count:
+        curr = pq.get()[1]
+        start_index, split_index, last_index = curr[0], curr[1], curr[2]
+
+        if start_index != split_index:
+            sp0, dmax0 = __max_dist(M, start_index, split_index, dist)
+            sp1, dmax1 = __max_dist(M, split_index, last_index, dist)
+
+            pq.put((-dmax0, [start_index, sp0, split_index]))
+            pq.put((-dmax1, [split_index, sp1, last_index]))
+
+        count += 1
+
+    indices = np.zeros(len(M), dtype=bool)
+    while not pq.empty():
+        curr = pq.get()[1]
+        indices[curr[0]] = True
+        indices[curr[2]] = True
+
+    return M[indices]

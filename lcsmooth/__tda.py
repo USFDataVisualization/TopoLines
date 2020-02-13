@@ -1,3 +1,4 @@
+import math
 from operator import itemgetter
 import os
 import random
@@ -114,7 +115,7 @@ def cp_pairs(cps):
     return pairs
 
 
-def filter_cps(data, pairs, threshold):
+def filter_cps_threshold(data, pairs, threshold):
     indices = {0, len(data) - 1}
 
     for p in filter(lambda pair: pair['persistence'] >= threshold, pairs):
@@ -126,10 +127,39 @@ def filter_cps(data, pairs, threshold):
     return new_cps
 
 
-def filter_tda(data, threshold):
+def __linear_map(val, in0, in1, out0, out1):
+    t = (val - in0) / (in1 - in0)
+    return out0 * (1 - t) + out1 * t
+
+
+def filter_cps_count(data, pairs, count_percent):
+    indices = {0, len(data) - 1}
+
+    pairs.sort(key=(lambda pair: pair['persistence']), reverse=True)
+    count = math.ceil(__linear_map(count_percent, 0, 1, 1, len(pairs)))
+
+    print( count )
+
+    for i in range(count):
+        p = pairs[i]
+        if 0 <= p['c0'] <= len(data): indices.add(p['c0'])
+        if 0 <= p['c1'] <= len(data): indices.add(p['c1'])
+
+    new_cps = list(map(lambda x: [x, data[x]], indices))
+    new_cps.sort(key=itemgetter(0))
+    return new_cps
+
+
+def filter_tda_threshold(data, threshold):
     cps = extract_cps(data)
     pairs = cp_pairs(cps)
-    return filter_cps(data, pairs, threshold)
+    return filter_cps_threshold(data, pairs, threshold)
+
+
+def filter_tda_count(data, threshold):
+    cps = extract_cps(data)
+    pairs = cp_pairs(cps)
+    return filter_cps_count(data, pairs, threshold)
 
 
 def get_persistence_diagram(data):

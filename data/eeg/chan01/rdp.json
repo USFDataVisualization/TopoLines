@@ -1,0 +1,1902 @@
+[
+    {
+        "info": {
+            "processing time": 1.7920899391174316,
+            "filter level": 0.01,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9999999715481395,
+            "spearman rc": 0.9999998963199807,
+            "L1 norm": 1.6615500000000027,
+            "L2 norm": 0.41888571996296425,
+            "L_inf norm": 0.204500000000003,
+            "approx entropy": 0.8288047975309811,
+            "peak bottleneck": 0.000196079666500189,
+            "peak wasserstein": 0.067480575804277
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.7894532680511475,
+            "filter level": 0.02,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9999994952028832,
+            "spearman rc": 0.9999995069439085,
+            "L1 norm": 8.365690000000033,
+            "L2 norm": 1.7660611349837392,
+            "L_inf norm": 0.8000000000000114,
+            "approx entropy": 0.8288103547058023,
+            "peak bottleneck": 0.000197862155874519,
+            "peak wasserstein": 0.0687434945636119
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.8055410385131836,
+            "filter level": 0.03,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9999969641915533,
+            "spearman rc": 0.9999983814397007,
+            "L1 norm": 18.887420000000013,
+            "L2 norm": 4.33838897944847,
+            "L_inf norm": 3.579999999999984,
+            "approx entropy": 0.8285542777515911,
+            "peak bottleneck": 0.000196079634498344,
+            "peak wasserstein": 0.0666866329358003
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.8079380989074707,
+            "filter level": 0.04,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.999996119350054,
+            "spearman rc": 0.9999966382713787,
+            "L1 norm": 28.606700000000004,
+            "L2 norm": 4.903732400232947,
+            "L_inf norm": 3.579999999999984,
+            "approx entropy": 0.8282799609321492,
+            "peak bottleneck": 0.000196079664561408,
+            "peak wasserstein": 0.06953190651061
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.8075461387634277,
+            "filter level": 0.05,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9999943247980462,
+            "spearman rc": 0.9999919327345093,
+            "L1 norm": 43.79276166666668,
+            "L2 norm": 5.925558651712599,
+            "L_inf norm": 3.579999999999984,
+            "approx entropy": 0.8281743461507745,
+            "peak bottleneck": 0.000194297087225013,
+            "peak wasserstein": 0.0683684192268066
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.8013858795166016,
+            "filter level": 0.06,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9999776967478087,
+            "spearman rc": 0.9999872696296501,
+            "L1 norm": 72.87253666666676,
+            "L2 norm": 11.734705377294357,
+            "L_inf norm": 8.880000000000052,
+            "approx entropy": 0.8285002815110638,
+            "peak bottleneck": 0.000197862183518632,
+            "peak wasserstein": 0.0707284585586366
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.7989130020141602,
+            "filter level": 0.07,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9999742121152099,
+            "spearman rc": 0.999977814011905,
+            "L1 norm": 92.61947333333342,
+            "L2 norm": 12.618753699219138,
+            "L_inf norm": 8.880000000000052,
+            "approx entropy": 0.8287789539091381,
+            "peak bottleneck": 0.000194297032419942,
+            "peak wasserstein": 0.0680657303307041
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.792896032333374,
+            "filter level": 0.08,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9999703286912449,
+            "spearman rc": 0.9999680174020967,
+            "L1 norm": 115.24642833333341,
+            "L2 norm": 13.536526781175095,
+            "L_inf norm": 8.880000000000052,
+            "approx entropy": 0.8293174531129539,
+            "peak bottleneck": 0.000196079611033895,
+            "peak wasserstein": 0.0679838896255414
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.7820568084716797,
+            "filter level": 0.09,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9999620036077872,
+            "spearman rc": 0.9999555813678099,
+            "L1 norm": 144.01861166666671,
+            "L2 norm": 15.305940204690083,
+            "L_inf norm": 8.880000000000052,
+            "approx entropy": 0.8288363926793223,
+            "peak bottleneck": 0.000199644659406801,
+            "peak wasserstein": 0.0690548704504875
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.7891361713409424,
+            "filter level": 0.1,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9999502604015862,
+            "spearman rc": 0.9999401643409787,
+            "L1 norm": 178.93598166666672,
+            "L2 norm": 17.511453095342535,
+            "L_inf norm": 8.880000000000052,
+            "approx entropy": 0.8279246522581238,
+            "peak bottleneck": 0.000196079650160939,
+            "peak wasserstein": 0.0681209149029604
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.7888760566711426,
+            "filter level": 0.11,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9999407916844446,
+            "spearman rc": 0.9999206360173818,
+            "L1 norm": 210.83070590000003,
+            "L2 norm": 19.207668401299543,
+            "L_inf norm": 8.880000000000052,
+            "approx entropy": 0.8277646706789685,
+            "peak bottleneck": 0.00849915924217517,
+            "peak wasserstein": 0.0781094268894315
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.791490077972412,
+            "filter level": 0.12,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9999303970873571,
+            "spearman rc": 0.9998936669244143,
+            "L1 norm": 245.72879923333335,
+            "L2 norm": 20.79935926986675,
+            "L_inf norm": 8.880000000000052,
+            "approx entropy": 0.8271219943730528,
+            "peak bottleneck": 0.0085562009642867,
+            "peak wasserstein": 0.0755817554608278
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.7822239398956299,
+            "filter level": 0.13,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9999151624639245,
+            "spearman rc": 0.9998720868884394,
+            "L1 norm": 289.5097834666667,
+            "L2 norm": 22.942151136370395,
+            "L_inf norm": 8.880000000000052,
+            "approx entropy": 0.8261380175958597,
+            "peak bottleneck": 0.00855620271114463,
+            "peak wasserstein": 0.0773012298640893
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.779973030090332,
+            "filter level": 0.14,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9998951686745872,
+            "spearman rc": 0.9998340278734291,
+            "L1 norm": 341.4943234666667,
+            "L2 norm": 25.48633943305422,
+            "L_inf norm": 8.880000000000052,
+            "approx entropy": 0.8261985537043071,
+            "peak bottleneck": 0.0844211969720498,
+            "peak wasserstein": 0.160176788763027
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.817300796508789,
+            "filter level": 0.15,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9998420414966158,
+            "spearman rc": 0.9998178351664817,
+            "L1 norm": 407.5452734666668,
+            "L2 norm": 31.198750058107215,
+            "L_inf norm": 8.890000000000043,
+            "approx entropy": 0.8240572691100523,
+            "peak bottleneck": 0.0844212051586642,
+            "peak wasserstein": 0.160736569108722
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.7770299911499023,
+            "filter level": 0.16,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9998241587999319,
+            "spearman rc": 0.9997930802179268,
+            "L1 norm": 452.20573913333345,
+            "L2 norm": 32.92078363796201,
+            "L_inf norm": 8.890000000000043,
+            "approx entropy": 0.8239921314301819,
+            "peak bottleneck": 0.0839648788943615,
+            "peak wasserstein": 0.211615137760478
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.793121099472046,
+            "filter level": 0.17,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9997765233969956,
+            "spearman rc": 0.9997058899298837,
+            "L1 norm": 525.4073981333333,
+            "L2 norm": 37.11706893930786,
+            "L_inf norm": 8.890000000000043,
+            "approx entropy": 0.8237364010395178,
+            "peak bottleneck": 0.0844212064509721,
+            "peak wasserstein": 0.3306918074939
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.7653932571411133,
+            "filter level": 0.18,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9997303536116521,
+            "spearman rc": 0.9996117150645556,
+            "L1 norm": 594.7687889666668,
+            "L2 norm": 40.798907842848024,
+            "L_inf norm": 8.890000000000043,
+            "approx entropy": 0.8225923375310598,
+            "peak bottleneck": 0.0844211985401543,
+            "peak wasserstein": 0.329869744796761
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.7714252471923828,
+            "filter level": 0.19,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9996924347742325,
+            "spearman rc": 0.9995482634689672,
+            "L1 norm": 661.5492123000001,
+            "L2 norm": 43.54974905216429,
+            "L_inf norm": 8.890000000000043,
+            "approx entropy": 0.8226163514547662,
+            "peak bottleneck": 0.084421202855417,
+            "peak wasserstein": 0.328015274790577
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.7871160507202148,
+            "filter level": 0.2,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9996580769979813,
+            "spearman rc": 0.9994895878741823,
+            "L1 norm": 726.1925389666667,
+            "L2 norm": 45.922741272773386,
+            "L_inf norm": 8.890000000000043,
+            "approx entropy": 0.8215237055099087,
+            "peak bottleneck": 0.0844212073427453,
+            "peak wasserstein": 0.331200240621933
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.7637720108032227,
+            "filter level": 0.21,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9996285707759647,
+            "spearman rc": 0.9994221334616725,
+            "L1 norm": 786.6393873,
+            "L2 norm": 47.86632401352592,
+            "L_inf norm": 8.890000000000043,
+            "approx entropy": 0.8198514044708709,
+            "peak bottleneck": 0.115908015004097,
+            "peak wasserstein": 0.446041928728864
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.7645812034606934,
+            "filter level": 0.22,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9996054034234415,
+            "spearman rc": 0.9993875949593174,
+            "L1 norm": 839.4487423,
+            "L2 norm": 49.318386786428064,
+            "L_inf norm": 8.890000000000043,
+            "approx entropy": 0.8187177624086717,
+            "peak bottleneck": 0.11590802396634,
+            "peak wasserstein": 0.512913401434831
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.766875982284546,
+            "filter level": 0.23,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9995533566130677,
+            "spearman rc": 0.9992872511328542,
+            "L1 norm": 915.5794256333334,
+            "L2 norm": 52.468484254544016,
+            "L_inf norm": 8.890000000000043,
+            "approx entropy": 0.8174080444349596,
+            "peak bottleneck": 0.217213435926802,
+            "peak wasserstein": 0.897939747373439
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.7714548110961914,
+            "filter level": 0.24,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9995235697071477,
+            "spearman rc": 0.9992382632839867,
+            "L1 norm": 973.4684656333334,
+            "L2 norm": 54.19693847132978,
+            "L_inf norm": 8.890000000000043,
+            "approx entropy": 0.8167022886973623,
+            "peak bottleneck": 0.217213407199343,
+            "peak wasserstein": 1.00476409987983
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.7778711318969727,
+            "filter level": 0.25,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9994365372214707,
+            "spearman rc": 0.9990700522452466,
+            "L1 norm": 1060.3495889666667,
+            "L2 norm": 58.93894866164729,
+            "L_inf norm": 12.514999999999986,
+            "approx entropy": 0.8161369181251961,
+            "peak bottleneck": 0.401571115010942,
+            "peak wasserstein": 1.40337941293996
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.7617130279541016,
+            "filter level": 0.26,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.999402639591492,
+            "spearman rc": 0.9989914013511924,
+            "L1 norm": 1125.0270489666666,
+            "L2 norm": 60.6812842967204,
+            "L_inf norm": 12.514999999999986,
+            "approx entropy": 0.8160649571239587,
+            "peak bottleneck": 0.401571049576846,
+            "peak wasserstein": 1.65198454961414
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.7590079307556152,
+            "filter level": 0.27,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9993640463493079,
+            "spearman rc": 0.9989086097840222,
+            "L1 norm": 1192.5867323,
+            "L2 norm": 62.61266812504404,
+            "L_inf norm": 12.514999999999986,
+            "approx entropy": 0.8152845018198538,
+            "peak bottleneck": 0.551247482297087,
+            "peak wasserstein": 2.89628552393795
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.7581560611724854,
+            "filter level": 0.28,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9993158191853039,
+            "spearman rc": 0.9987976852206207,
+            "L1 norm": 1268.0940372999999,
+            "L2 norm": 64.95571310411256,
+            "L_inf norm": 12.514999999999986,
+            "approx entropy": 0.8117777769597523,
+            "peak bottleneck": 0.551247527517404,
+            "peak wasserstein": 3.59984552482146
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.7596659660339355,
+            "filter level": 0.29,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.999187075658672,
+            "spearman rc": 0.9986211999404185,
+            "L1 norm": 1373.0908189666666,
+            "L2 norm": 70.78401187294789,
+            "L_inf norm": 20.34655,
+            "approx entropy": 0.810907309644731,
+            "peak bottleneck": 0.551247650856893,
+            "peak wasserstein": 4.24411272816556
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.7754278182983398,
+            "filter level": 0.3,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9991331570327642,
+            "spearman rc": 0.9985085869284435,
+            "L1 norm": 1454.087348966667,
+            "L2 norm": 73.08300920723727,
+            "L_inf norm": 20.34655,
+            "approx entropy": 0.8090757839372995,
+            "peak bottleneck": 0.726478410708591,
+            "peak wasserstein": 5.34982339338158
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.7573261260986328,
+            "filter level": 0.31,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9990781184834346,
+            "spearman rc": 0.9984087046702569,
+            "L1 norm": 1528.0140489666667,
+            "L2 norm": 75.3605790324488,
+            "L_inf norm": 20.34655,
+            "approx entropy": 0.807726090046653,
+            "peak bottleneck": 0.726478546456694,
+            "peak wasserstein": 7.53942031924083
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.7643189430236816,
+            "filter level": 0.32,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.999005324852522,
+            "spearman rc": 0.9983191758219555,
+            "L1 norm": 1611.1719323000002,
+            "L2 norm": 78.29036113709171,
+            "L_inf norm": 20.34655,
+            "approx entropy": 0.8068253308540143,
+            "peak bottleneck": 0.726478732365924,
+            "peak wasserstein": 8.73062355185053
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.7601451873779297,
+            "filter level": 0.33,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9989370677353598,
+            "spearman rc": 0.9981465403348779,
+            "L1 norm": 1708.7507943,
+            "L2 norm": 80.92471845588602,
+            "L_inf norm": 20.34655,
+            "approx entropy": 0.8060632597788056,
+            "peak bottleneck": 0.934565525236097,
+            "peak wasserstein": 11.1090503430133
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.748715877532959,
+            "filter level": 0.34,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9988828788396454,
+            "spearman rc": 0.9980697345609078,
+            "L1 norm": 1786.756570966667,
+            "L2 norm": 82.94859739053035,
+            "L_inf norm": 20.34655,
+            "approx entropy": 0.8043429333264789,
+            "peak bottleneck": 0.934565574328867,
+            "peak wasserstein": 13.3211415049186
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.7470839023590088,
+            "filter level": 0.35,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.99882771100583,
+            "spearman rc": 0.997959178445191,
+            "L1 norm": 1862.013805966667,
+            "L2 norm": 84.97545096151003,
+            "L_inf norm": 20.34655,
+            "approx entropy": 0.8035515200968715,
+            "peak bottleneck": 0.934565350436252,
+            "peak wasserstein": 14.3296093411348
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.7699909210205078,
+            "filter level": 0.36,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9987739854616173,
+            "spearman rc": 0.9978199077638858,
+            "L1 norm": 1939.4747893000003,
+            "L2 norm": 86.89781939290614,
+            "L_inf norm": 20.34655,
+            "approx entropy": 0.8023413031930295,
+            "peak bottleneck": 1.40184790915332,
+            "peak wasserstein": 22.1093618602193
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.7472379207611084,
+            "filter level": 0.37,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9987125201825682,
+            "spearman rc": 0.9976545319898379,
+            "L1 norm": 2026.4328852523813,
+            "L2 norm": 89.05153485405874,
+            "L_inf norm": 20.34655,
+            "approx entropy": 0.8000955105464387,
+            "peak bottleneck": 1.40184799620061,
+            "peak wasserstein": 28.6068753633002
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.7386698722839355,
+            "filter level": 0.38,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9986327442591963,
+            "spearman rc": 0.997456309425333,
+            "L1 norm": 2112.865888585715,
+            "L2 norm": 91.77322316659814,
+            "L_inf norm": 20.34655,
+            "approx entropy": 0.798958835536673,
+            "peak bottleneck": 1.40184790407297,
+            "peak wasserstein": 30.9930993868983
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.7534210681915283,
+            "filter level": 0.39,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.998552399942116,
+            "spearman rc": 0.9972554666378561,
+            "L1 norm": 2211.2762702523814,
+            "L2 norm": 94.42330004129644,
+            "L_inf norm": 20.34655,
+            "approx entropy": 0.7968682976319754,
+            "peak bottleneck": 1.40184827569553,
+            "peak wasserstein": 40.3237889511702
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.7444937229156494,
+            "filter level": 0.4,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9984431798657973,
+            "spearman rc": 0.9970101061458964,
+            "L1 norm": 2333.895186919048,
+            "L2 norm": 97.92917606500514,
+            "L_inf norm": 20.34655,
+            "approx entropy": 0.7950614740770989,
+            "peak bottleneck": 1.4018481883556,
+            "peak wasserstein": 42.1675880092737
+        }
+    },
+    {
+        "info": {
+            "processing time": 2.015126943588257,
+            "filter level": 0.41,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9982780621970712,
+            "spearman rc": 0.9966104895627426,
+            "L1 norm": 2487.155995252381,
+            "L2 norm": 103.00229385308401,
+            "L_inf norm": 20.34655,
+            "approx entropy": 0.7896376868330384,
+            "peak bottleneck": 1.40184829143932,
+            "peak wasserstein": 51.4805101259223
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.9008548259735107,
+            "filter level": 0.42,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.998229909194927,
+            "spearman rc": 0.9965098919125416,
+            "L1 norm": 2558.5066472761905,
+            "L2 norm": 104.447144138291,
+            "L_inf norm": 20.34655,
+            "approx entropy": 0.7881585514507874,
+            "peak bottleneck": 1.66469426858752,
+            "peak wasserstein": 57.6507233993833
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.7342751026153564,
+            "filter level": 0.43,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9981447538510613,
+            "spearman rc": 0.996325616423201,
+            "L1 norm": 2665.5260401333335,
+            "L2 norm": 106.97034060909476,
+            "L_inf norm": 20.34655,
+            "approx entropy": 0.7856499565139812,
+            "peak bottleneck": 1.66469469341496,
+            "peak wasserstein": 66.3116339728246
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.7518770694732666,
+            "filter level": 0.44,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9962677108134312,
+            "spearman rc": 0.996125309891704,
+            "L1 norm": 3079.5639801333336,
+            "L2 norm": 151.92536242121744,
+            "L_inf norm": 48.514999999999986,
+            "approx entropy": 0.7794352019552084,
+            "peak bottleneck": 1.66469424677103,
+            "peak wasserstein": 70.596239354129
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.733031988143921,
+            "filter level": 0.45,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9961563711295159,
+            "spearman rc": 0.9958835841520155,
+            "L1 norm": 3195.899450133333,
+            "L2 norm": 154.1397148352699,
+            "L_inf norm": 48.514999999999986,
+            "approx entropy": 0.7757322356524168,
+            "peak bottleneck": 1.66469447818165,
+            "peak wasserstein": 83.8798763592045
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.7314791679382324,
+            "filter level": 0.46,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9960131075099791,
+            "spearman rc": 0.9956509388619681,
+            "L1 norm": 3320.6208334666667,
+            "L2 norm": 156.9935831694225,
+            "L_inf norm": 48.514999999999986,
+            "approx entropy": 0.7741608903834782,
+            "peak bottleneck": 1.66469469605768,
+            "peak wasserstein": 95.653059084654
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.717344045639038,
+            "filter level": 0.47,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9958229491349536,
+            "spearman rc": 0.9954397776078036,
+            "L1 norm": 3474.863466085714,
+            "L2 norm": 160.73012626188066,
+            "L_inf norm": 48.514999999999986,
+            "approx entropy": 0.7709380728677142,
+            "peak bottleneck": 1.66469434425421,
+            "peak wasserstein": 107.430441474382
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.7240090370178223,
+            "filter level": 0.48,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9957014984797459,
+            "spearman rc": 0.9952032512290547,
+            "L1 norm": 3605.1246520857144,
+            "L2 norm": 163.05558320885814,
+            "L_inf norm": 48.514999999999986,
+            "approx entropy": 0.7669898156916406,
+            "peak bottleneck": 1.66469502864226,
+            "peak wasserstein": 121.693031333636
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.7556490898132324,
+            "filter level": 0.49,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9955888571521692,
+            "spearman rc": 0.9949086114318026,
+            "L1 norm": 3719.0218105857143,
+            "L2 norm": 165.16143874531068,
+            "L_inf norm": 48.514999999999986,
+            "approx entropy": 0.7640002325010613,
+            "peak bottleneck": 1.66469413920241,
+            "peak wasserstein": 137.946201453023
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.734529972076416,
+            "filter level": 0.5,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9954960203641268,
+            "spearman rc": 0.9946960656643697,
+            "L1 norm": 3816.279560109524,
+            "L2 norm": 166.8119294884932,
+            "L_inf norm": 48.514999999999986,
+            "approx entropy": 0.7615084825160987,
+            "peak bottleneck": 1.94214385461777,
+            "peak wasserstein": 150.692573152211
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.71608304977417,
+            "filter level": 0.51,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.995323519862574,
+            "spearman rc": 0.9943758288064297,
+            "L1 norm": 3966.53489582381,
+            "L2 norm": 169.84073343616504,
+            "L_inf norm": 48.514999999999986,
+            "approx entropy": 0.7584393115844157,
+            "peak bottleneck": 1.94214389911903,
+            "peak wasserstein": 164.63207795267
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.7155840396881104,
+            "filter level": 0.52,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9952463954951323,
+            "spearman rc": 0.9942288934838451,
+            "L1 norm": 4065.9683791571433,
+            "L2 norm": 171.22612295115053,
+            "L_inf norm": 48.514999999999986,
+            "approx entropy": 0.7553369937877936,
+            "peak bottleneck": 2.01515663020266,
+            "peak wasserstein": 185.295554099041
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.701347827911377,
+            "filter level": 0.53,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9951407426318883,
+            "spearman rc": 0.9940311987280767,
+            "L1 norm": 4167.236320823809,
+            "L2 norm": 173.13949768838495,
+            "L_inf norm": 48.514999999999986,
+            "approx entropy": 0.7528730915926602,
+            "peak bottleneck": 2.39482343689374,
+            "peak wasserstein": 203.534584289628
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.7197790145874023,
+            "filter level": 0.54,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9949903965695567,
+            "spearman rc": 0.9936090536326071,
+            "L1 norm": 4323.370045490476,
+            "L2 norm": 175.74469912051453,
+            "L_inf norm": 48.514999999999986,
+            "approx entropy": 0.7486167871447602,
+            "peak bottleneck": 2.48244018788574,
+            "peak wasserstein": 218.893222848155
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.7053608894348145,
+            "filter level": 0.55,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9948117199241181,
+            "spearman rc": 0.993143970410185,
+            "L1 norm": 4476.1978971571425,
+            "L2 norm": 178.86861566723817,
+            "L_inf norm": 48.514999999999986,
+            "approx entropy": 0.7441418445575056,
+            "peak bottleneck": 2.75988889102137,
+            "peak wasserstein": 239.77936388018
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.7091450691223145,
+            "filter level": 0.56,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9943659475150884,
+            "spearman rc": 0.9922864339368428,
+            "L1 norm": 4670.7911637285715,
+            "L2 norm": 186.4251113850032,
+            "L_inf norm": 48.514999999999986,
+            "approx entropy": 0.7426275208399433,
+            "peak bottleneck": 2.75988826382295,
+            "peak wasserstein": 254.485898640684
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.703528881072998,
+            "filter level": 0.57,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9942093983644602,
+            "spearman rc": 0.9920568750489664,
+            "L1 norm": 4805.938789919048,
+            "L2 norm": 189.03667478491062,
+            "L_inf norm": 48.514999999999986,
+            "approx entropy": 0.7363709818022253,
+            "peak bottleneck": 4.76044359352978,
+            "peak wasserstein": 283.38076694366
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.6923439502716064,
+            "filter level": 0.58,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9940213720570815,
+            "spearman rc": 0.9917178529078883,
+            "L1 norm": 4958.041193252381,
+            "L2 norm": 192.08978893659838,
+            "L_inf norm": 48.514999999999986,
+            "approx entropy": 0.7315327574409869,
+            "peak bottleneck": 4.76044310420824,
+            "peak wasserstein": 303.135238622814
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.7045259475708008,
+            "filter level": 0.59,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9938993676113935,
+            "spearman rc": 0.991413240822658,
+            "L1 norm": 5080.329229561905,
+            "L2 norm": 194.0904188751675,
+            "L_inf norm": 48.514999999999986,
+            "approx entropy": 0.7263291272751382,
+            "peak bottleneck": 4.76044269912585,
+            "peak wasserstein": 325.891360397274
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.6877570152282715,
+            "filter level": 0.6,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9937043317843939,
+            "spearman rc": 0.9911398047414482,
+            "L1 norm": 5223.105136419048,
+            "L2 norm": 197.1362518490697,
+            "L_inf norm": 48.514999999999986,
+            "approx entropy": 0.7177886280155108,
+            "peak bottleneck": 4.7604416567684,
+            "peak wasserstein": 343.595980474236
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.727613925933838,
+            "filter level": 0.61,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9936033593947928,
+            "spearman rc": 0.9909531138918499,
+            "L1 norm": 5331.7197504666665,
+            "L2 norm": 198.78278454615958,
+            "L_inf norm": 48.514999999999986,
+            "approx entropy": 0.7123477183470914,
+            "peak bottleneck": 4.76044294037491,
+            "peak wasserstein": 368.869902751985
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.6890649795532227,
+            "filter level": 0.62,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9933831427786978,
+            "spearman rc": 0.9905052046912406,
+            "L1 norm": 5478.555957688889,
+            "L2 norm": 202.2277048832943,
+            "L_inf norm": 48.514999999999986,
+            "approx entropy": 0.7046037344539444,
+            "peak bottleneck": 4.7604431178462,
+            "peak wasserstein": 394.776304488126
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.6833319664001465,
+            "filter level": 0.63,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9932925303954013,
+            "spearman rc": 0.9903090881759459,
+            "L1 norm": 5572.0117598317465,
+            "L2 norm": 203.6123994310445,
+            "L_inf norm": 48.514999999999986,
+            "approx entropy": 0.6999351127175859,
+            "peak bottleneck": 4.76044196028138,
+            "peak wasserstein": 426.688775384523
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.6811859607696533,
+            "filter level": 0.64,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9932089207767816,
+            "spearman rc": 0.9900685739604747,
+            "L1 norm": 5671.293881187057,
+            "L2 norm": 204.88193632613786,
+            "L_inf norm": 48.514999999999986,
+            "approx entropy": 0.6977017381305819,
+            "peak bottleneck": 4.7604415806242,
+            "peak wasserstein": 448.591116604454
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.6728332042694092,
+            "filter level": 0.65,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.993005150485204,
+            "spearman rc": 0.9896614044872938,
+            "L1 norm": 5862.582886901342,
+            "L2 norm": 208.04839734067713,
+            "L_inf norm": 48.514999999999986,
+            "approx entropy": 0.6906846782277007,
+            "peak bottleneck": 4.76044264855627,
+            "peak wasserstein": 474.178405015393
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.6743519306182861,
+            "filter level": 0.66,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9928218354502301,
+            "spearman rc": 0.9892318451144817,
+            "L1 norm": 6032.4659548061045,
+            "L2 norm": 210.77199389769763,
+            "L_inf norm": 48.514999999999986,
+            "approx entropy": 0.6846111658962966,
+            "peak bottleneck": 4.76044270327957,
+            "peak wasserstein": 502.488398847184
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.6636300086975098,
+            "filter level": 0.67,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9926926273339406,
+            "spearman rc": 0.988948393543796,
+            "L1 norm": 6168.900990966278,
+            "L2 norm": 212.64492307688997,
+            "L_inf norm": 48.514999999999986,
+            "approx entropy": 0.6803478900626105,
+            "peak bottleneck": 4.76044237777039,
+            "peak wasserstein": 531.422800866418
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.660264015197754,
+            "filter level": 0.68,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9922390071647552,
+            "spearman rc": 0.9878773040722679,
+            "L1 norm": 6369.79594287104,
+            "L2 norm": 219.2345551822994,
+            "L_inf norm": 48.514999999999986,
+            "approx entropy": 0.6752517641481335,
+            "peak bottleneck": 4.77290580239793,
+            "peak wasserstein": 561.890752737564
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.6544647216796875,
+            "filter level": 0.69,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9918862893209625,
+            "spearman rc": 0.9869991588912417,
+            "L1 norm": 6589.1360000138975,
+            "L2 norm": 224.23533941932322,
+            "L_inf norm": 48.514999999999986,
+            "approx entropy": 0.668154179816975,
+            "peak bottleneck": 4.77290619212942,
+            "peak wasserstein": 590.723621607382
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.6526691913604736,
+            "filter level": 0.7,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9915894435276965,
+            "spearman rc": 0.9863482557348499,
+            "L1 norm": 6806.980368109136,
+            "L2 norm": 228.2232976897585,
+            "L_inf norm": 48.514999999999986,
+            "approx entropy": 0.6623982025669659,
+            "peak bottleneck": 4.77290607865846,
+            "peak wasserstein": 622.999971273343
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.6492078304290771,
+            "filter level": 0.71,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9912285321116423,
+            "spearman rc": 0.9857830598577836,
+            "L1 norm": 7036.481720461228,
+            "L2 norm": 233.1326855121347,
+            "L_inf norm": 48.514999999999986,
+            "approx entropy": 0.6574974784828731,
+            "peak bottleneck": 4.77290592458813,
+            "peak wasserstein": 652.045583081109
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.6638500690460205,
+            "filter level": 0.72,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9907344823505133,
+            "spearman rc": 0.9851730642287068,
+            "L1 norm": 7307.54738336166,
+            "L2 norm": 239.28628603961332,
+            "L_inf norm": 48.514999999999986,
+            "approx entropy": 0.6514776292778235,
+            "peak bottleneck": 4.77290537847838,
+            "peak wasserstein": 683.434984534484
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.6359758377075195,
+            "filter level": 0.73,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9905246007391595,
+            "spearman rc": 0.9848002573780428,
+            "L1 norm": 7492.476720461228,
+            "L2 norm": 242.16753082558728,
+            "L_inf norm": 48.514999999999986,
+            "approx entropy": 0.6437017561362257,
+            "peak bottleneck": 4.77290678921514,
+            "peak wasserstein": 716.95692068733
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.6246492862701416,
+            "filter level": 0.74,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9901531825819211,
+            "spearman rc": 0.9842467930870745,
+            "L1 norm": 7718.23344784218,
+            "L2 norm": 246.88302496963794,
+            "L_inf norm": 48.514999999999986,
+            "approx entropy": 0.6381030079442147,
+            "peak bottleneck": 4.77290711327725,
+            "peak wasserstein": 743.52374881199
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.6283819675445557,
+            "filter level": 0.75,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9899377274268585,
+            "spearman rc": 0.9839367767756386,
+            "L1 norm": 7886.685753349183,
+            "L2 norm": 249.70858660569633,
+            "L_inf norm": 48.514999999999986,
+            "approx entropy": 0.630931853972255,
+            "peak bottleneck": 4.77290605273772,
+            "peak wasserstein": 788.593245385372
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.6210839748382568,
+            "filter level": 0.76,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9893734074952221,
+            "spearman rc": 0.9828311760659396,
+            "L1 norm": 8197.240911700832,
+            "L2 norm": 256.5555970118334,
+            "L_inf norm": 48.514999999999986,
+            "approx entropy": 0.6230929862940666,
+            "peak bottleneck": 5.44227846815566,
+            "peak wasserstein": 826.714858976009
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.6113085746765137,
+            "filter level": 0.77,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9889121447250403,
+            "spearman rc": 0.9820159830881702,
+            "L1 norm": 8471.118315276588,
+            "L2 norm": 261.8763940089282,
+            "L_inf norm": 48.514999999999986,
+            "approx entropy": 0.6175633549679223,
+            "peak bottleneck": 5.4422782130036,
+            "peak wasserstein": 876.300117405654
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.5987470149993896,
+            "filter level": 0.78,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9883754474364547,
+            "spearman rc": 0.9809322348660394,
+            "L1 norm": 8772.186012462736,
+            "L2 norm": 268.1011457739485,
+            "L_inf norm": 48.514999999999986,
+            "approx entropy": 0.6066250224162801,
+            "peak bottleneck": 5.44227612642683,
+            "peak wasserstein": 927.973169903189
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.592759132385254,
+            "filter level": 0.79,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.987269882043174,
+            "spearman rc": 0.9786063650786909,
+            "L1 norm": 9183.659061034165,
+            "L2 norm": 280.98447001332045,
+            "L_inf norm": 48.514999999999986,
+            "approx entropy": 0.599821921631229,
+            "peak bottleneck": 5.44227654414895,
+            "peak wasserstein": 975.156316288481
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.576603889465332,
+            "filter level": 0.8,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9868197235714766,
+            "spearman rc": 0.9776500305720501,
+            "L1 norm": 9479.978496944528,
+            "L2 norm": 285.80441020052336,
+            "L_inf norm": 48.514999999999986,
+            "approx entropy": 0.592447479933091,
+            "peak bottleneck": 6.51909118005201,
+            "peak wasserstein": 1030.81428280922
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.5896339416503906,
+            "filter level": 0.81,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9862258067930002,
+            "spearman rc": 0.976381711182276,
+            "L1 norm": 9786.429684970502,
+            "L2 norm": 292.1090249898563,
+            "L_inf norm": 48.514999999999986,
+            "approx entropy": 0.58390114566921,
+            "peak bottleneck": 26.5420167198762,
+            "peak wasserstein": 1139.62837297467
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.5781559944152832,
+            "filter level": 0.82,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9853156045520768,
+            "spearman rc": 0.9739029028044532,
+            "L1 norm": 10151.930154104703,
+            "L2 norm": 301.9400327744148,
+            "L_inf norm": 48.514999999999986,
+            "approx entropy": 0.5689453565802443,
+            "peak bottleneck": 26.5420111446406,
+            "peak wasserstein": 1212.78901134131
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.563873052597046,
+            "filter level": 0.83,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9844761951423752,
+            "spearman rc": 0.9727994688209998,
+            "L1 norm": 10538.5990891047,
+            "L2 norm": 309.88911620502483,
+            "L_inf norm": 48.514999999999986,
+            "approx entropy": 0.5594712633609911,
+            "peak bottleneck": 26.5420114456096,
+            "peak wasserstein": 1276.58915035836
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.5524811744689941,
+            "filter level": 0.84,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9834758998157928,
+            "spearman rc": 0.9706608480242227,
+            "L1 norm": 10960.864000879745,
+            "L2 norm": 319.87191890296106,
+            "L_inf norm": 48.514999999999986,
+            "approx entropy": 0.5500948060604496,
+            "peak bottleneck": 26.5420140105858,
+            "peak wasserstein": 1342.77719530412
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.5510289669036865,
+            "filter level": 0.85,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9825044278942929,
+            "spearman rc": 0.9688391332678699,
+            "L1 norm": 11418.402330715575,
+            "L2 norm": 329.39561922808997,
+            "L_inf norm": 48.514999999999986,
+            "approx entropy": 0.5370197836886064,
+            "peak bottleneck": 7.97424650758304,
+            "peak wasserstein": 1370.89631641236
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.5279040336608887,
+            "filter level": 0.86,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.98082506894566,
+            "spearman rc": 0.9652303466802272,
+            "L1 norm": 12076.477029754036,
+            "L2 norm": 344.9097282356118,
+            "L_inf norm": 48.514999999999986,
+            "approx entropy": 0.5276745465932522,
+            "peak bottleneck": 8.20707069662689,
+            "peak wasserstein": 1441.67658491835
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.5023648738861084,
+            "filter level": 0.87,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9783877391673693,
+            "spearman rc": 0.9620041977789234,
+            "L1 norm": 12970.301700367867,
+            "L2 norm": 367.0054820119494,
+            "L_inf norm": 48.514999999999986,
+            "approx entropy": 0.5136045807005987,
+            "peak bottleneck": 8.20706911078272,
+            "peak wasserstein": 1522.48880156551
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.533337116241455,
+            "filter level": 0.88,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9768806579632819,
+            "spearman rc": 0.9588280450933208,
+            "L1 norm": 13633.946173968301,
+            "L2 norm": 379.6501864768686,
+            "L_inf norm": 48.514999999999986,
+            "approx entropy": 0.5008970781772666,
+            "peak bottleneck": 8.20707094816803,
+            "peak wasserstein": 1617.91429061066
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.4676449298858643,
+            "filter level": 0.89,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9738887044537825,
+            "spearman rc": 0.9532794591464715,
+            "L1 norm": 14691.691819746999,
+            "L2 norm": 405.48941976750655,
+            "L_inf norm": 48.514999999999986,
+            "approx entropy": 0.47924699915774216,
+            "peak bottleneck": 9.02195820401801,
+            "peak wasserstein": 1726.04142278808
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.4496829509735107,
+            "filter level": 0.9,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9721357838755501,
+            "spearman rc": 0.9497894553257533,
+            "L1 norm": 15435.723541252271,
+            "L2 norm": 418.6643990638372,
+            "L_inf norm": 48.514999999999986,
+            "approx entropy": 0.4659053446816652,
+            "peak bottleneck": 10.5935234693694,
+            "peak wasserstein": 1837.58053035277
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.4428002834320068,
+            "filter level": 0.91,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9697250697610427,
+            "spearman rc": 0.9446455751148835,
+            "L1 norm": 16430.4949763335,
+            "L2 norm": 439.77387267395443,
+            "L_inf norm": 48.514999999999986,
+            "approx entropy": 0.44341647247964033,
+            "peak bottleneck": 10.5935214513661,
+            "peak wasserstein": 1940.63293670137
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.4117600917816162,
+            "filter level": 0.92,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9658402722260987,
+            "spearman rc": 0.936553638827684,
+            "L1 norm": 17635.352970471627,
+            "L2 norm": 467.6745454237368,
+            "L_inf norm": 48.514999999999986,
+            "approx entropy": 0.41367255672270264,
+            "peak bottleneck": 11.6412347766961,
+            "peak wasserstein": 2083.88053456458
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.3686420917510986,
+            "filter level": 0.93,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9615220558536021,
+            "spearman rc": 0.9283205195393742,
+            "L1 norm": 19042.90070305179,
+            "L2 norm": 498.26960890909214,
+            "L_inf norm": 48.514999999999986,
+            "approx entropy": 0.38838326576238247,
+            "peak bottleneck": 12.4561229417719,
+            "peak wasserstein": 2209.62939580764
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.3174998760223389,
+            "filter level": 0.94,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9539483979958224,
+            "spearman rc": 0.9127725710460783,
+            "L1 norm": 20958.817786084728,
+            "L2 norm": 549.313069939576,
+            "L_inf norm": 57.91491304347825,
+            "approx entropy": 0.3471294027455216,
+            "peak bottleneck": 19.4408638373263,
+            "peak wasserstein": 2362.0074493283
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.2872159481048584,
+            "filter level": 0.95,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.9026590633998909,
+            "spearman rc": 0.8997529492744606,
+            "L1 norm": 25882.785782139275,
+            "L2 norm": 929.0486767104021,
+            "L_inf norm": 186.49727999999993,
+            "approx entropy": 0.26454976666989927,
+            "peak bottleneck": 19.5090474447886,
+            "peak wasserstein": 2548.85171761006
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.2198400497436523,
+            "filter level": 0.96,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.895744837561944,
+            "spearman rc": 0.8794201502661502,
+            "L1 norm": 28745.1227697829,
+            "L2 norm": 975.9244157967978,
+            "L_inf norm": 186.49727999999993,
+            "approx entropy": 0.22571389933336405,
+            "peak bottleneck": 19.5090503087718,
+            "peak wasserstein": 2740.26520698175
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.1548089981079102,
+            "filter level": 0.97,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.8828617122575538,
+            "spearman rc": 0.8575274181803965,
+            "L1 norm": 31890.613183868176,
+            "L2 norm": 1030.0704192733942,
+            "L_inf norm": 186.49727999999993,
+            "approx entropy": 0.17865412836190897,
+            "peak bottleneck": 19.976341544343,
+            "peak wasserstein": 2938.85805268453
+        }
+    },
+    {
+        "info": {
+            "processing time": 1.0558288097381592,
+            "filter level": 0.98,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.856404692931899,
+            "spearman rc": 0.8263677890864696,
+            "L1 norm": 36392.80839673059,
+            "L2 norm": 1109.9999914483149,
+            "L_inf norm": 186.49727999999993,
+            "approx entropy": 0.13845656427269626,
+            "peak bottleneck": 21.8454678615435,
+            "peak wasserstein": 3145.18813013716
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.894212007522583,
+            "filter level": 0.99,
+            "filter name": "rdp",
+            "minimum": -86.64,
+            "maximum": 402.31
+        },
+        "metrics": {
+            "pearson cc": 0.8533226073885,
+            "spearman rc": 0.8020438800585209,
+            "L1 norm": 41284.234541016434,
+            "L2 norm": 1193.2750735585048,
+            "L_inf norm": 186.49727999999993,
+            "approx entropy": 0.06396217523674785,
+            "peak bottleneck": 28.2706051423931,
+            "peak wasserstein": 3559.61922605727
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.13406991958618164,
+            "filter level": 1.0,
+            "filter name": "rdp",
+            "minimum": -35.797,
+            "maximum": -32.898
+        },
+        "metrics": {
+            "pearson cc": 0.014322231504570827,
+            "spearman rc": 0.05639955892262464,
+            "L1 norm": 97488.49134563994,
+            "L2 norm": 2526.9990315413697,
+            "L_inf norm": 437.4991264505802,
+            "approx entropy": -0.00038603441726969834,
+            "peak bottleneck": 244.856118814252,
+            "peak wasserstein": 4081.06716323117
+        }
+    }
+]
