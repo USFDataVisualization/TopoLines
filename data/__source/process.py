@@ -3,7 +3,7 @@ import fnmatch
 
 import simplejson as json
 import os
-
+import csv
 
 def load_dataset(datasets, ds, df):
     if ds == 'climate' and df in datasets[ds]:
@@ -26,6 +26,12 @@ def load_dataset(datasets, ds, df):
         with open(filename) as csv_file:
             data = [next(csv_file) for x in range(2500)]
             return list(map(lambda X: float(X), data))
+
+    elif ds == 'stock2' and df in datasets[ds]:
+        filename = ds + "/" + df + ".csv"
+        with open(filename, newline='') as csvfile:
+            reader = csv.DictReader(csvfile)
+            return list(map(lambda X: float(X['Close']), reader))
 
     return None
 

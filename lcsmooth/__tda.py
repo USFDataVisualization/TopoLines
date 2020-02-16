@@ -138,7 +138,7 @@ def filter_cps_count(data, pairs, count_percent):
     pairs.sort(key=(lambda pair: pair['persistence']), reverse=True)
     count = math.ceil(__linear_map(count_percent, 0, 1, 1, len(pairs)))
 
-    print( count )
+    # print( count )
 
     for i in range(count):
         p = pairs[i]
@@ -157,6 +157,7 @@ def filter_tda_threshold(data, threshold):
 
 
 def filter_tda_count(data, threshold):
+    threshold = min(1, max(0, threshold))
     cps = extract_cps(data)
     pairs = cp_pairs(cps)
     return filter_cps_count(data, pairs, threshold)

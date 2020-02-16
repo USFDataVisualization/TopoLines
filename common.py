@@ -5,6 +5,8 @@ import time
 import simplejson as json
 import numpy as np
 
+import math
+
 import lcsmooth.filter1d as filter1d
 import lcsmooth.measures as measures
 
@@ -20,22 +22,46 @@ def process_smoothing(input_signal, filter_name, filter_level):
 
     start = time.time()
     if filter_name == 'cutoff':
-        filter_data = filter1d.cutoff(input_signal, filter_level)
+        min_level = math.exp(0)
+        max_level = math.exp(1)
+        scaled_level = filter1d.__linear_map(filter_level, 0, 1, min_level, max_level)
+        level = filter1d.__linear_map(math.log(scaled_level), 0, 1, 0, 1.0)
+        filter_data = filter1d.cutoff(input_signal, level)
     elif filter_name == 'subsample':
-        filter_data = filter1d.subsample(input_signal, filter_level)
+        min_level = math.exp(0)
+        max_level = math.exp(1)
+        scaled_level = filter1d.__linear_map(filter_level, 0, 1, min_level, max_level)
+        level = filter1d.__linear_map(math.log(scaled_level), 0, 1, 0, 1.0)
+        filter_data = filter1d.subsample(input_signal, level)
     elif filter_name == 'tda':
+        min_level = math.log(1)
+        max_level = math.log(100)
+        scaled_level = filter1d.__linear_map(filter_level, 1, 0, min_level, max_level)
+        level = filter1d.__linear_map(math.exp(scaled_level), 1, 100, 0, 1.0)
         # level = filter1d.__linear_map(filter_level, 0, 1, 0, input_range)
-        level = filter1d.__linear_map(filter_level, 0, 1, 1, 0)
+        # level = filter1d.__linear_map(filter_level, 0, 1, 1, 0)
         filter_data = filter1d.tda(input_signal, level)
     elif filter_name == 'rdp':
         # level = filter1d.__linear_map(filter_level, 0, 1, 0, input_range)
-        level = filter1d.__linear_map(filter_level, 0, 1, 1, 0)
+        # level = filter1d.__linear_map(filter_level, 0, 1, 1, 0)
+        min_level = math.log(1)
+        max_level = math.log(100)
+        scaled_level = filter1d.__linear_map(filter_level, 1, 0, min_level, max_level)
+        level = filter1d.__linear_map(math.exp(scaled_level), 1, 100, 0, 1.0)
         filter_data = filter1d.rdp(input_signal, level)
     elif filter_name == 'gaussian':
-        level = filter1d.__linear_map(filter_level, 0, 1, 0.1, 30)
+        min_level = math.log(1)
+        max_level = math.log(len(input_signal) * 0.1)
+        scaled_level = filter1d.__linear_map(filter_level, 0, 1, min_level, max_level)
+        level = math.exp(scaled_level)
+        # level = filter1d.__linear_map(filter_level, 0, 1, 0.1, len(input_signal)*0.1 )
         filter_data = filter1d.gaussian(input_signal, level)
     elif filter_name == 'median':
-        level = filter1d.__linear_map(filter_level, 0, 1, 1, 100)
+        min_level = math.log(1)
+        max_level = math.log(len(input_signal) * 0.1)
+        scaled_level = filter1d.__linear_map(filter_level, 0, 1, min_level, max_level)
+        level = math.exp(scaled_level)
+        # level = filter1d.__linear_map(filter_level, 0, 1, 1, len(input_signal)*0.1)
         filter_data = filter1d.median(input_signal, int(level))
     else:
         filter_data = list(enumerate(input_signal))
@@ -117,32 +143,42 @@ def generate_metric_data(_dataset, _datafile, _filter_name='all', _input_signal=
     return results
 
 
-def __metric_regression(metrics, fieldX, fieldY):
+def __metric_regression(metrics, fieldX, fieldY, xmax, ymax):
     x = np.array(list(map((lambda d: d['metrics'][fieldX]), metrics)))
     y = np.array(list(map((lambda d: d['metrics'][fieldY]), metrics)))
 
     A = np.vstack([x, np.ones(len(x))]).T
     m, c = np.linalg.lstsq(A, y, rcond=None)[0]
 
-    y_intercept = [0, c]
-    if m < 0:
-        x_intercept = [-c / m, 0]
-    else:
-        x_intercept = [1, c + m]
-    area = (x_intercept[1] + y_intercept[1]) * (x_intercept[0] - y_intercept[0]) / 2
     r2 = abs(np.corrcoef(x, y)[0][1])
 
-    return {'x-intercept': x_intercept,
-            'y-intercept': y_intercept,
+    x0 = [0, c]
+    x1 = [xmax, m * xmax + c]
+
+    if x0[1] < 0: x0 = [-c / m, 0]
+    if x1[1] < 0: x1 = [-c / m, 0]
+
+    area = (x0[1] + x1[1]) * (x1[0] - x0[0]) / 2
+
+    # print(area)
+
+    # if x0[1] > ymax: x0 = [(ymax - c) / m, ymax]
+    # if x1[1] > ymax: x1 = [(ymax - c) / m, ymax]
+
+    return {'points': [x0, x1],
             'area': area,
             'r^2': r2}
 
 
 def metric_regression(metrics, fieldX, fieldY):
     metric_reg = {}
+
+    xmax = max(map((lambda d: d['metrics'][fieldX]), metrics))
+    ymax = max(map((lambda d: d['metrics'][fieldY]), metrics))
+
     for f in filter_list:
         filtered = list(filter(lambda m: m['info']['filter name'] == f, metrics))
-        metric_reg[f] = __metric_regression(filtered, fieldX, fieldY)
+        metric_reg[f] = __metric_regression(filtered, fieldX, fieldY, xmax, ymax)
 
     rank = list(metric_reg.keys())
     rank.sort(key=(lambda m: metric_reg[m]['area']))
@@ -150,3 +186,45 @@ def metric_regression(metrics, fieldX, fieldY):
         metric_reg[rank[i]]['rank'] = i + 1
 
     return {'x': fieldX, 'y': fieldY, 'result': metric_reg}
+
+
+def __sort_ds(a, b):
+    if a['dataset'] < b['dataset']: return -1
+    if a['dataset'] > b['dataset']: return 1
+    if a['datafile'] < b['datafile']: return -1
+    if a['datafile'] > b['datafile']: return 1
+
+
+def metric_ranks(datasets):
+    res = []
+    measures = ['L1 norm','L_inf norm', 'peak wasserstein', 'peak bottleneck']
+
+    for ds in datasets:
+
+        overall = {}
+        for m in measures:
+            overall[m] = dict.fromkeys(filter_list, 0 )
+
+        for df in datasets[ds]:
+            metric_data = generate_metric_data(ds, df)
+
+            metric_reg = {}
+            for m in measures:
+                metric_tmp = metric_regression(metric_data, 'approx entropy', m)
+                metric_reg[m] = metric_tmp['result']
+                for f in filter_list:
+                    overall[m][f] += metric_tmp['result'][f]['rank']
+
+            res.append({'dataset': ds, 'datafile': df, 'rank': metric_reg})
+
+        for m in measures:
+            keys = list(overall[m].keys())
+            keys.sort( key=(lambda a: overall[m][a]) )
+            for f in filter_list:
+                overall[m][f] = {'rank':keys.index(f)+1,'r^2':1}
+
+        res.append( {'dataset': ds+'_z', 'datafile': 'overall', 'rank': overall } )
+
+    res.sort(key=(lambda a: (a['dataset'] + "_" + a['datafile']).lower() ))
+
+    return res

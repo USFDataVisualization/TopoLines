@@ -1,0 +1,1602 @@
+[
+    {
+        "info": {
+            "processing time": 0.00047087669372558594,
+            "filter level": 0.01,
+            "filter name": "cutoff",
+            "minimum": -0.19354565715455133,
+            "maximum": 0.12924543774499364
+        },
+        "metrics": {
+            "L1 norm": 0.7385351355653167,
+            "L_inf norm": 0.0022949025880286966,
+            "approx entropy": 1.2848436666555854,
+            "peak bottleneck": 0.0720919402979508,
+            "peak wasserstein": 0.283428889818606
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.00043487548828125,
+            "filter level": 0.02,
+            "filter name": "cutoff",
+            "minimum": -0.19125195762895963,
+            "maximum": 0.13139028363270316
+        },
+        "metrics": {
+            "L1 norm": 0.9660205810714696,
+            "L_inf norm": 0.0046610970002551695,
+            "approx entropy": 1.2874909482341175,
+            "peak bottleneck": 0.00468026701471657,
+            "peak wasserstein": 0.152074354628092
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.00046515464782714844,
+            "filter level": 0.03,
+            "filter name": "cutoff",
+            "minimum": -0.18857283905158545,
+            "maximum": 0.1338489661348808
+        },
+        "metrics": {
+            "L1 norm": 1.0897927971738355,
+            "L_inf norm": 0.007371441950240443,
+            "approx entropy": 1.2641320424813869,
+            "peak bottleneck": 0.00734323884943104,
+            "peak wasserstein": 0.161118336966544
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.00041294097900390625,
+            "filter level": 0.04,
+            "filter name": "cutoff",
+            "minimum": -0.18612561848527534,
+            "maximum": 0.13596528161196594
+        },
+        "metrics": {
+            "L1 norm": 1.2050438312411502,
+            "L_inf norm": 0.009835319879549598,
+            "approx entropy": 1.2673234951767025,
+            "peak bottleneck": 0.00978828741034121,
+            "peak wasserstein": 0.164283449590528
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.0006201267242431641,
+            "filter level": 0.05,
+            "filter name": "cutoff",
+            "minimum": -0.18355819869480533,
+            "maximum": 0.13800818162759454
+        },
+        "metrics": {
+            "L1 norm": 1.3451890410856566,
+            "L_inf norm": 0.012453464219072024,
+            "approx entropy": 1.265214672922113,
+            "peak bottleneck": 0.0121488557123223,
+            "peak wasserstein": 0.177540092426371
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.00043582916259765625,
+            "filter level": 0.06,
+            "filter name": "cutoff",
+            "minimum": -0.18146072153012063,
+            "maximum": 0.13921811202302467
+        },
+        "metrics": {
+            "L1 norm": 1.4553434977495192,
+            "L_inf norm": 0.014748404573575903,
+            "approx entropy": 1.2651715825304426,
+            "peak bottleneck": 0.0778658767776356,
+            "peak wasserstein": 0.320717002745093
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.00043511390686035156,
+            "filter level": 0.07,
+            "filter name": "cutoff",
+            "minimum": -0.17897666903541457,
+            "maximum": 0.14039766752380312
+        },
+        "metrics": {
+            "L1 norm": 1.5314001504569486,
+            "L_inf norm": 0.017507321051321773,
+            "approx entropy": 1.2557428907676398,
+            "peak bottleneck": 0.0792366199573705,
+            "peak wasserstein": 0.322828116336148
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.0005388259887695312,
+            "filter level": 0.08,
+            "filter name": "cutoff",
+            "minimum": -0.17649702542024406,
+            "maximum": 0.14123268579960932
+        },
+        "metrics": {
+            "L1 norm": 1.6166990411214845,
+            "L_inf norm": 0.02032644399995856,
+            "approx entropy": 1.2594467008476995,
+            "peak bottleneck": 0.0810122130164503,
+            "peak wasserstein": 0.334566717760113
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.0006189346313476562,
+            "filter level": 0.09,
+            "filter name": "cutoff",
+            "minimum": -0.17388266322376494,
+            "maximum": 0.14226631787098218
+        },
+        "metrics": {
+            "L1 norm": 1.690199711768543,
+            "L_inf norm": 0.023073906774061986,
+            "approx entropy": 1.2659344597342437,
+            "peak bottleneck": 0.0817318539091047,
+            "peak wasserstein": 0.344556711669706
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.00043487548828125,
+            "filter level": 0.1,
+            "filter name": "cutoff",
+            "minimum": -0.17137665246429734,
+            "maximum": 0.14258871419758437
+        },
+        "metrics": {
+            "L1 norm": 1.7716206269214374,
+            "L_inf norm": 0.025942444453564216,
+            "approx entropy": 1.2594406785913415,
+            "peak bottleneck": 0.0823259502706742,
+            "peak wasserstein": 0.346148944193265
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.0004260540008544922,
+            "filter level": 0.11,
+            "filter name": "cutoff",
+            "minimum": -0.1681757117155764,
+            "maximum": 0.1430036012029406
+        },
+        "metrics": {
+            "L1 norm": 1.8852107191310687,
+            "L_inf norm": 0.029409542631132324,
+            "approx entropy": 1.2395931136578384,
+            "peak bottleneck": 0.084779778078619,
+            "peak wasserstein": 0.371750915353975
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.00045108795166015625,
+            "filter level": 0.12,
+            "filter name": "cutoff",
+            "minimum": -0.16576191164455154,
+            "maximum": 0.14288135187739492
+        },
+        "metrics": {
+            "L1 norm": 1.9322630759796486,
+            "L_inf norm": 0.0321149885244924,
+            "approx entropy": 1.238569099519879,
+            "peak bottleneck": 0.0857100374678705,
+            "peak wasserstein": 0.378358197596633
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.00043702125549316406,
+            "filter level": 0.13,
+            "filter name": "cutoff",
+            "minimum": -0.16258581354728904,
+            "maximum": 0.14245129368672008
+        },
+        "metrics": {
+            "L1 norm": 2.0336946444243975,
+            "L_inf norm": 0.03563812886338348,
+            "approx entropy": 1.2352586256618734,
+            "peak bottleneck": 0.0876415916603716,
+            "peak wasserstein": 0.402856062468951
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.0004210472106933594,
+            "filter level": 0.14,
+            "filter name": "cutoff",
+            "minimum": -0.15997703371322822,
+            "maximum": 0.142129016328193
+        },
+        "metrics": {
+            "L1 norm": 2.0790309614627698,
+            "L_inf norm": 0.038314355929943096,
+            "approx entropy": 1.2363109361782834,
+            "peak bottleneck": 0.0360122804029424,
+            "peak wasserstein": 0.29348497577763
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.000560760498046875,
+            "filter level": 0.15,
+            "filter name": "cutoff",
+            "minimum": -0.15686047006203138,
+            "maximum": 0.14091169557613087
+        },
+        "metrics": {
+            "L1 norm": 2.126742939766718,
+            "L_inf norm": 0.041847447908882125,
+            "approx entropy": 1.2463852432278668,
+            "peak bottleneck": 0.089247722487102,
+            "peak wasserstein": 0.420187630843483
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.0004341602325439453,
+            "filter level": 0.16,
+            "filter name": "cutoff",
+            "minimum": -0.15370650260748667,
+            "maximum": 0.14004097200964183
+        },
+        "metrics": {
+            "L1 norm": 2.202132284310327,
+            "L_inf norm": 0.044954308148619886,
+            "approx entropy": 1.2204355194321872,
+            "peak bottleneck": 0.042079251906246,
+            "peak wasserstein": 0.312608906886913
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.0004401206970214844,
+            "filter level": 0.17,
+            "filter name": "cutoff",
+            "minimum": -0.15095051707466436,
+            "maximum": 0.13819724616931242
+        },
+        "metrics": {
+            "L1 norm": 2.2196754829088583,
+            "L_inf norm": 0.04822128227210315,
+            "approx entropy": 1.2123733812703446,
+            "peak bottleneck": 0.0911946228694672,
+            "peak wasserstein": 0.426668126010232
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.000492095947265625,
+            "filter level": 0.18,
+            "filter name": "cutoff",
+            "minimum": -0.1472275400332847,
+            "maximum": 0.13680799436964564
+        },
+        "metrics": {
+            "L1 norm": 2.2900043524845124,
+            "L_inf norm": 0.05155877987907331,
+            "approx entropy": 1.2080743506881144,
+            "peak bottleneck": 0.0917532735118935,
+            "peak wasserstein": 0.452994997296451
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.00045013427734375,
+            "filter level": 0.19,
+            "filter name": "cutoff",
+            "minimum": -0.14402244362853037,
+            "maximum": 0.13508531681885766
+        },
+        "metrics": {
+            "L1 norm": 2.3427654103634135,
+            "L_inf norm": 0.054554092406320545,
+            "approx entropy": 1.1998137137781848,
+            "peak bottleneck": 0.0931743122361576,
+            "peak wasserstein": 0.45891857713274
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.0004930496215820312,
+            "filter level": 0.2,
+            "filter name": "cutoff",
+            "minimum": -0.14071919490940668,
+            "maximum": 0.13340500864559654
+        },
+        "metrics": {
+            "L1 norm": 2.379999580354089,
+            "L_inf norm": 0.0572927960062269,
+            "approx entropy": 1.2089171098388136,
+            "peak bottleneck": 0.0936611612148005,
+            "peak wasserstein": 0.471630918046201
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.00043201446533203125,
+            "filter level": 0.21,
+            "filter name": "cutoff",
+            "minimum": -0.1371480243432766,
+            "maximum": 0.13078168706887086
+        },
+        "metrics": {
+            "L1 norm": 2.4384293220166855,
+            "L_inf norm": 0.060645948032410205,
+            "approx entropy": 1.206411946730963,
+            "peak bottleneck": 0.0589502075023937,
+            "peak wasserstein": 0.409015479710395
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.0006308555603027344,
+            "filter level": 0.22,
+            "filter name": "cutoff",
+            "minimum": -0.13394887890120352,
+            "maximum": 0.12870392921265764
+        },
+        "metrics": {
+            "L1 norm": 2.4856591007772932,
+            "L_inf norm": 0.06315843343362802,
+            "approx entropy": 1.1768163024288478,
+            "peak bottleneck": 0.0948284465614569,
+            "peak wasserstein": 0.502458502408633
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.0004448890686035156,
+            "filter level": 0.23,
+            "filter name": "cutoff",
+            "minimum": -0.1306729005041849,
+            "maximum": 0.12617629724258936
+        },
+        "metrics": {
+            "L1 norm": 2.5046133619268263,
+            "L_inf norm": 0.0658343579903235,
+            "approx entropy": 1.1822807976921021,
+            "peak bottleneck": 0.0651526737038308,
+            "peak wasserstein": 0.438244187674774
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.0004189014434814453,
+            "filter level": 0.24,
+            "filter name": "cutoff",
+            "minimum": -0.1271671895360111,
+            "maximum": 0.12351634866932432
+        },
+        "metrics": {
+            "L1 norm": 2.560157806009693,
+            "L_inf norm": 0.06866278046398888,
+            "approx entropy": 1.1718600462123123,
+            "peak bottleneck": 0.096977844253651,
+            "peak wasserstein": 0.511178293708797
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.0004050731658935547,
+            "filter level": 0.25,
+            "filter name": "cutoff",
+            "minimum": -0.12388892732643075,
+            "maximum": 0.1208590215746702
+        },
+        "metrics": {
+            "L1 norm": 2.619502383969219,
+            "L_inf norm": 0.07194104267356924,
+            "approx entropy": 1.1620141405482096,
+            "peak bottleneck": 0.0969300566812755,
+            "peak wasserstein": 0.53086997321943
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.0004200935363769531,
+            "filter level": 0.26,
+            "filter name": "cutoff",
+            "minimum": -0.12017072191996815,
+            "maximum": 0.11771665845927176
+        },
+        "metrics": {
+            "L1 norm": 2.697305269494838,
+            "L_inf norm": 0.07565924808003184,
+            "approx entropy": 1.1425484042674445,
+            "peak bottleneck": 0.0978275846006208,
+            "peak wasserstein": 0.548219791242975
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.0004181861877441406,
+            "filter level": 0.27,
+            "filter name": "cutoff",
+            "minimum": -0.11661686569955892,
+            "maximum": 0.11471207690200202
+        },
+        "metrics": {
+            "L1 norm": 2.6933602425412295,
+            "L_inf norm": 0.07921310430044107,
+            "approx entropy": 1.1471003770455965,
+            "peak bottleneck": 0.0987105396892752,
+            "peak wasserstein": 0.551137529651284
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.00047469139099121094,
+            "filter level": 0.28,
+            "filter name": "cutoff",
+            "minimum": -0.1134058900040138,
+            "maximum": 0.11210784116595823
+        },
+        "metrics": {
+            "L1 norm": 2.753562360833029,
+            "L_inf norm": 0.0824240799959862,
+            "approx entropy": 1.114947128936726,
+            "peak bottleneck": 0.0828632063309253,
+            "peak wasserstein": 0.534515774614208
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.0007050037384033203,
+            "filter level": 0.29,
+            "filter name": "cutoff",
+            "minimum": -0.11014351482381751,
+            "maximum": 0.10919098671722052
+        },
+        "metrics": {
+            "L1 norm": 2.756603697671635,
+            "L_inf norm": 0.08568645517618248,
+            "approx entropy": 1.1109137957748834,
+            "peak bottleneck": 0.10061386820928,
+            "peak wasserstein": 0.571326540310769
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.000507354736328125,
+            "filter level": 0.3,
+            "filter name": "cutoff",
+            "minimum": -0.10662001706537358,
+            "maximum": 0.10619539258214267
+        },
+        "metrics": {
+            "L1 norm": 2.7987996960075376,
+            "L_inf norm": 0.08920995293462641,
+            "approx entropy": 1.1136868212587765,
+            "peak bottleneck": 0.101723322565711,
+            "peak wasserstein": 0.578115163829537
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.00043082237243652344,
+            "filter level": 0.31,
+            "filter name": "cutoff",
+            "minimum": -0.10338488312593071,
+            "maximum": 0.1032234573431478
+        },
+        "metrics": {
+            "L1 norm": 2.8363729060428517,
+            "L_inf norm": 0.09244508687406928,
+            "approx entropy": 1.102738557663804,
+            "peak bottleneck": 0.101872835239422,
+            "peak wasserstein": 0.592738613393128
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.0004830360412597656,
+            "filter level": 0.32,
+            "filter name": "cutoff",
+            "minimum": -0.09948751698597962,
+            "maximum": 0.09967538294438043
+        },
+        "metrics": {
+            "L1 norm": 2.8881409195053642,
+            "L_inf norm": 0.09634245301402038,
+            "approx entropy": 1.0985826563655858,
+            "peak bottleneck": 0.102545350199994,
+            "peak wasserstein": 0.607041672769095
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.0004551410675048828,
+            "filter level": 0.33,
+            "filter name": "cutoff",
+            "minimum": -0.0961996775449816,
+            "maximum": 0.09661695167467138
+        },
+        "metrics": {
+            "L1 norm": 2.9375228776069826,
+            "L_inf norm": 0.0996302924550184,
+            "approx entropy": 1.0934962807994264,
+            "peak bottleneck": 0.103429241363901,
+            "peak wasserstein": 0.606344233182434
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.0004436969757080078,
+            "filter level": 0.34,
+            "filter name": "cutoff",
+            "minimum": -0.09292427363851817,
+            "maximum": 0.09335432575541815
+        },
+        "metrics": {
+            "L1 norm": 2.983643954075532,
+            "L_inf norm": 0.10290569636148182,
+            "approx entropy": 1.0735079016301663,
+            "peak bottleneck": 0.104948375373331,
+            "peak wasserstein": 0.634706065502356
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.0004260540008544922,
+            "filter level": 0.35,
+            "filter name": "cutoff",
+            "minimum": -0.08943303723299041,
+            "maximum": 0.09000507493221727
+        },
+        "metrics": {
+            "L1 norm": 3.018187185893555,
+            "L_inf norm": 0.10639693276700958,
+            "approx entropy": 1.057618318600697,
+            "peak bottleneck": 0.106499315197742,
+            "peak wasserstein": 0.658205265470599
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.0004470348358154297,
+            "filter level": 0.36,
+            "filter name": "cutoff",
+            "minimum": -0.08615343309247482,
+            "maximum": 0.08684974164197411
+        },
+        "metrics": {
+            "L1 norm": 3.0439594619696146,
+            "L_inf norm": 0.10967653690752517,
+            "approx entropy": 1.0345992905858945,
+            "peak bottleneck": 0.110105811082214,
+            "peak wasserstein": 0.688122186322459
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.00042700767517089844,
+            "filter level": 0.37,
+            "filter name": "cutoff",
+            "minimum": -0.08333404157361408,
+            "maximum": 0.08381031467535277
+        },
+        "metrics": {
+            "L1 norm": 3.0678814322480883,
+            "L_inf norm": 0.11279382714623092,
+            "approx entropy": 0.9886620100821246,
+            "peak bottleneck": 0.112401218529015,
+            "peak wasserstein": 0.719970588284603
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.0004208087921142578,
+            "filter level": 0.38,
+            "filter name": "cutoff",
+            "minimum": -0.08297771714026901,
+            "maximum": 0.0808181170371705
+        },
+        "metrics": {
+            "L1 norm": 3.0414280623721464,
+            "L_inf norm": 0.1157883086819876,
+            "approx entropy": 0.9919053650567236,
+            "peak bottleneck": 0.112798643131966,
+            "peak wasserstein": 0.727060030380554
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.00042700767517089844,
+            "filter level": 0.39,
+            "filter name": "cutoff",
+            "minimum": -0.0820131606083022,
+            "maximum": 0.07773658074006444
+        },
+        "metrics": {
+            "L1 norm": 3.084298235062654,
+            "L_inf norm": 0.11882663153194942,
+            "approx entropy": 0.9710475365165281,
+            "peak bottleneck": 0.113786036157001,
+            "peak wasserstein": 0.750129928653581
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.0004189014434814453,
+            "filter level": 0.4,
+            "filter name": "cutoff",
+            "minimum": -0.08104399883903232,
+            "maximum": 0.07457760147382547
+        },
+        "metrics": {
+            "L1 norm": 3.153102174455645,
+            "L_inf norm": 0.1219164760885893,
+            "approx entropy": 0.9327573765918054,
+            "peak bottleneck": 0.114653465491777,
+            "peak wasserstein": 0.737118220060344
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.0007319450378417969,
+            "filter level": 0.41,
+            "filter name": "cutoff",
+            "minimum": -0.0802698110305501,
+            "maximum": 0.0716992495139115
+        },
+        "metrics": {
+            "L1 norm": 3.1581444414892124,
+            "L_inf norm": 0.12475666747403635,
+            "approx entropy": 0.9624039563872233,
+            "peak bottleneck": 0.115560422986741,
+            "peak wasserstein": 0.717992577121685
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.0004298686981201172,
+            "filter level": 0.42,
+            "filter name": "cutoff",
+            "minimum": -0.07900844539659317,
+            "maximum": 0.06816899538258409
+        },
+        "metrics": {
+            "L1 norm": 3.2032426125390643,
+            "L_inf norm": 0.12819053685098136,
+            "approx entropy": 0.9286332807000584,
+            "peak bottleneck": 0.116812217350925,
+            "peak wasserstein": 0.74678771213207
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.00045490264892578125,
+            "filter level": 0.43,
+            "filter name": "cutoff",
+            "minimum": -0.07722457781802575,
+            "maximum": 0.06520829457209291
+        },
+        "metrics": {
+            "L1 norm": 3.244604366482376,
+            "L_inf norm": 0.13086599597900064,
+            "approx entropy": 0.9151193758338576,
+            "peak bottleneck": 0.118543028406939,
+            "peak wasserstein": 0.756364792728738
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.00042319297790527344,
+            "filter level": 0.44,
+            "filter name": "cutoff",
+            "minimum": -0.07541607746943385,
+            "maximum": 0.062046311758938294
+        },
+        "metrics": {
+            "L1 norm": 3.2568738599809404,
+            "L_inf norm": 0.13375175543174647,
+            "approx entropy": 0.9200241745579372,
+            "peak bottleneck": 0.12039416446865,
+            "peak wasserstein": 0.761257416221327
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.00043487548828125,
+            "filter level": 0.45,
+            "filter name": "cutoff",
+            "minimum": -0.07354576287592894,
+            "maximum": 0.05875894417662242
+        },
+        "metrics": {
+            "L1 norm": 3.2668954616650128,
+            "L_inf norm": 0.13679662277613547,
+            "approx entropy": 0.898419987882682,
+            "peak bottleneck": 0.122205621328804,
+            "peak wasserstein": 0.78632283016064
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.0004150867462158203,
+            "filter level": 0.46,
+            "filter name": "cutoff",
+            "minimum": -0.07219079680296117,
+            "maximum": 0.05777385166953701
+        },
+        "metrics": {
+            "L1 norm": 3.2771776778303217,
+            "L_inf norm": 0.13908401967792325,
+            "approx entropy": 0.8780217368779915,
+            "peak bottleneck": 0.123636091395845,
+            "peak wasserstein": 0.795516678200041
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.0004451274871826172,
+            "filter level": 0.47,
+            "filter name": "cutoff",
+            "minimum": -0.07020378769835176,
+            "maximum": 0.05667779324088456
+        },
+        "metrics": {
+            "L1 norm": 3.3054118876826357,
+            "L_inf norm": 0.14181956229425527,
+            "approx entropy": 0.856299762837609,
+            "peak bottleneck": 0.125579148430566,
+            "peak wasserstein": 0.812608075021239
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.0004172325134277344,
+            "filter level": 0.48,
+            "filter name": "cutoff",
+            "minimum": -0.06826360689882503,
+            "maximum": 0.055596967777327616
+        },
+        "metrics": {
+            "L1 norm": 3.3185328473740374,
+            "L_inf norm": 0.14419938913092453,
+            "approx entropy": 0.8614520198007898,
+            "peak bottleneck": 0.127474056403798,
+            "peak wasserstein": 0.819191356993681
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.00041413307189941406,
+            "filter level": 0.49,
+            "filter name": "cutoff",
+            "minimum": -0.0661802605967098,
+            "maximum": 0.054053434985272916
+        },
+        "metrics": {
+            "L1 norm": 3.3538001117009344,
+            "L_inf norm": 0.14686756258601225,
+            "approx entropy": 0.8371556222626304,
+            "peak bottleneck": 0.12671846912944,
+            "peak wasserstein": 0.913841628173531
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.000453948974609375,
+            "filter level": 0.5,
+            "filter name": "cutoff",
+            "minimum": -0.06420721216694153,
+            "maximum": 0.05273097975804689
+        },
+        "metrics": {
+            "L1 norm": 3.3562058206472893,
+            "L_inf norm": 0.14904264925365548,
+            "approx entropy": 0.8259408163943633,
+            "peak bottleneck": 0.131628379603686,
+            "peak wasserstein": 0.849607412197792
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.00046324729919433594,
+            "filter level": 0.51,
+            "filter name": "cutoff",
+            "minimum": -0.06207821879903105,
+            "maximum": 0.050892872331672
+        },
+        "metrics": {
+            "L1 norm": 3.380265520283507,
+            "L_inf norm": 0.1515697090671687,
+            "approx entropy": 0.8099196718382609,
+            "peak bottleneck": 0.133670016006706,
+            "peak wasserstein": 0.870611791664975
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.0004229545593261719,
+            "filter level": 0.52,
+            "filter name": "cutoff",
+            "minimum": -0.06015581573922861,
+            "maximum": 0.04920794473948237
+        },
+        "metrics": {
+            "L1 norm": 3.4067750359431708,
+            "L_inf norm": 0.1537011818190333,
+            "approx entropy": 0.7995452084408035,
+            "peak bottleneck": 0.135578955249435,
+            "peak wasserstein": 0.882892763414989
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.0004401206970214844,
+            "filter level": 0.53,
+            "filter name": "cutoff",
+            "minimum": -0.05756687818348509,
+            "maximum": 0.04709958952090318
+        },
+        "metrics": {
+            "L1 norm": 3.3945052261524755,
+            "L_inf norm": 0.15624012301590062,
+            "approx entropy": 0.7815398942111602,
+            "peak bottleneck": 0.127528306149517,
+            "peak wasserstein": 0.975975946949174
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.0005538463592529297,
+            "filter level": 0.54,
+            "filter name": "cutoff",
+            "minimum": -0.0553567306726618,
+            "maximum": 0.04544427294325984
+        },
+        "metrics": {
+            "L1 norm": 3.4344980592350423,
+            "L_inf norm": 0.15813143121868656,
+            "approx entropy": 0.7588496267466587,
+            "peak bottleneck": 0.140419660699804,
+            "peak wasserstein": 0.928047646464642
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.0004451274871826172,
+            "filter level": 0.55,
+            "filter name": "cutoff",
+            "minimum": -0.052891739338339995,
+            "maximum": 0.0437092726293613
+        },
+        "metrics": {
+            "L1 norm": 3.4727644654182463,
+            "L_inf norm": 0.15997788911554478,
+            "approx entropy": 0.7626838273972911,
+            "peak bottleneck": 0.143108571814072,
+            "peak wasserstein": 0.938427292864446
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.0004551410675048828,
+            "filter level": 0.56,
+            "filter name": "cutoff",
+            "minimum": -0.05024596690563217,
+            "maximum": 0.041189088765938006
+        },
+        "metrics": {
+            "L1 norm": 3.4835008777768417,
+            "L_inf norm": 0.16245689097649546,
+            "approx entropy": 0.7487438401180064,
+            "peak bottleneck": 0.145632407176679,
+            "peak wasserstein": 0.958732132968365
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.0004360675811767578,
+            "filter level": 0.57,
+            "filter name": "cutoff",
+            "minimum": -0.047775002597805975,
+            "maximum": 0.03911679929085743
+        },
+        "metrics": {
+            "L1 norm": 3.467777296185389,
+            "L_inf norm": 0.1643504489074205,
+            "approx entropy": 0.741571991699749,
+            "peak bottleneck": 0.12729462869595,
+            "peak wasserstein": 1.0212862866297
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.00043010711669921875,
+            "filter level": 0.58,
+            "filter name": "cutoff",
+            "minimum": -0.04571079719111102,
+            "maximum": 0.037148584084189175
+        },
+        "metrics": {
+            "L1 norm": 3.492035743369141,
+            "L_inf norm": 0.16610621696632438,
+            "approx entropy": 0.7219166365157266,
+            "peak bottleneck": 0.150029801228415,
+            "peak wasserstein": 0.991188664984448
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.00046706199645996094,
+            "filter level": 0.59,
+            "filter name": "cutoff",
+            "minimum": -0.04337335227699873,
+            "maximum": 0.03518697239390843
+        },
+        "metrics": {
+            "L1 norm": 3.50817449201385,
+            "L_inf norm": 0.16764742525987467,
+            "approx entropy": 0.7178821689178334,
+            "peak bottleneck": 0.152503168291633,
+            "peak wasserstein": 1.00778502641786
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.0004298686981201172,
+            "filter level": 0.6,
+            "filter name": "cutoff",
+            "minimum": -0.04140708067512983,
+            "maximum": 0.03344800660772061
+        },
+        "metrics": {
+            "L1 norm": 3.5067834205359216,
+            "L_inf norm": 0.1689455331098661,
+            "approx entropy": 0.7111247662322717,
+            "peak bottleneck": 0.154415817509799,
+            "peak wasserstein": 1.01298263971424
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.0004367828369140625,
+            "filter level": 0.61,
+            "filter name": "cutoff",
+            "minimum": -0.03915841513948283,
+            "maximum": 0.03144091616257533
+        },
+        "metrics": {
+            "L1 norm": 3.514407844281345,
+            "L_inf norm": 0.1703339953151278,
+            "approx entropy": 0.7065807579599306,
+            "peak bottleneck": 0.127174023927297,
+            "peak wasserstein": 1.04509011470489
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.0004200935363769531,
+            "filter level": 0.62,
+            "filter name": "cutoff",
+            "minimum": -0.036958278326535476,
+            "maximum": 0.029368311101314066
+        },
+        "metrics": {
+            "L1 norm": 3.5263006093951157,
+            "L_inf norm": 0.17174796714331142,
+            "approx entropy": 0.707291535628852,
+            "peak bottleneck": 0.126576795206338,
+            "peak wasserstein": 1.0488369944452
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.0006377696990966797,
+            "filter level": 0.63,
+            "filter name": "cutoff",
+            "minimum": -0.03528793382474541,
+            "maximum": 0.02709345153097676
+        },
+        "metrics": {
+            "L1 norm": 3.5449739885265,
+            "L_inf norm": 0.1733512963089333,
+            "approx entropy": 0.6896648902960525,
+            "peak bottleneck": 0.12655694714888,
+            "peak wasserstein": 1.06137577079564
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.000698089599609375,
+            "filter level": 0.64,
+            "filter name": "cutoff",
+            "minimum": -0.0338800855306652,
+            "maximum": 0.025974300940335704
+        },
+        "metrics": {
+            "L1 norm": 3.545349937164519,
+            "L_inf norm": 0.17462637595942426,
+            "approx entropy": 0.6787418991380747,
+            "peak bottleneck": 0.127143225166801,
+            "peak wasserstein": 1.06876431757247
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.0004780292510986328,
+            "filter level": 0.65,
+            "filter name": "cutoff",
+            "minimum": -0.03247525038750281,
+            "maximum": 0.024701089106425347
+        },
+        "metrics": {
+            "L1 norm": 3.537502204175838,
+            "L_inf norm": 0.17598585845387582,
+            "approx entropy": 0.6837533818577182,
+            "peak bottleneck": 0.126963782698879,
+            "peak wasserstein": 1.07542809898968
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.0004439353942871094,
+            "filter level": 0.66,
+            "filter name": "cutoff",
+            "minimum": -0.03110838440497587,
+            "maximum": 0.023036657440718
+        },
+        "metrics": {
+            "L1 norm": 3.5789529295988554,
+            "L_inf norm": 0.17760128997031682,
+            "approx entropy": 0.6637836965839603,
+            "peak bottleneck": 0.162228713860384,
+            "peak wasserstein": 1.09071940075678
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.00043010711669921875,
+            "filter level": 0.67,
+            "filter name": "cutoff",
+            "minimum": -0.02959262314678185,
+            "maximum": 0.02170763551970578
+        },
+        "metrics": {
+            "L1 norm": 3.5741825110178267,
+            "L_inf norm": 0.17874778317373008,
+            "approx entropy": 0.6568918399296249,
+            "peak bottleneck": 0.162363049787364,
+            "peak wasserstein": 1.10120241208596
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.00043892860412597656,
+            "filter level": 0.68,
+            "filter name": "cutoff",
+            "minimum": -0.027792158016867883,
+            "maximum": 0.020258484691995444
+        },
+        "metrics": {
+            "L1 norm": 3.5721781695239336,
+            "L_inf norm": 0.17982642210706043,
+            "approx entropy": 0.6573023104260045,
+            "peak bottleneck": 0.161562300715241,
+            "peak wasserstein": 1.10432792830679
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.0004391670227050781,
+            "filter level": 0.69,
+            "filter name": "cutoff",
+            "minimum": -0.026302644318062847,
+            "maximum": 0.018748061527957192
+        },
+        "metrics": {
+            "L1 norm": 3.6040323799162173,
+            "L_inf norm": 0.18097244721172231,
+            "approx entropy": 0.6465439797948069,
+            "peak bottleneck": 0.127123203632,
+            "peak wasserstein": 1.11897454845009
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.0004451274871826172,
+            "filter level": 0.7,
+            "filter name": "cutoff",
+            "minimum": -0.02455662323330009,
+            "maximum": 0.017347506578735943
+        },
+        "metrics": {
+            "L1 norm": 3.5914575698940046,
+            "L_inf norm": 0.18175611141932643,
+            "approx entropy": 0.6413460587550217,
+            "peak bottleneck": 0.161934673380836,
+            "peak wasserstein": 1.12669615344012
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.00043511390686035156,
+            "filter level": 0.71,
+            "filter name": "cutoff",
+            "minimum": -0.022784429171294144,
+            "maximum": 0.01577144319315869
+        },
+        "metrics": {
+            "L1 norm": 3.59076523803197,
+            "L_inf norm": 0.18263421481136638,
+            "approx entropy": 0.64242099087667,
+            "peak bottleneck": 0.162350693153047,
+            "peak wasserstein": 1.13366063012767
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.0004191398620605469,
+            "filter level": 0.72,
+            "filter name": "cutoff",
+            "minimum": -0.02131949143018614,
+            "maximum": 0.014839075084538989
+        },
+        "metrics": {
+            "L1 norm": 3.6154408174375945,
+            "L_inf norm": 0.18336641271403673,
+            "approx entropy": 0.6390100133830012,
+            "peak bottleneck": 0.162339847819829,
+            "peak wasserstein": 1.1456944944048
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.0004992485046386719,
+            "filter level": 0.73,
+            "filter name": "cutoff",
+            "minimum": -0.019746648680263802,
+            "maximum": 0.013820671532273163
+        },
+        "metrics": {
+            "L1 norm": 3.600463956776764,
+            "L_inf norm": 0.1842076626248089,
+            "approx entropy": 0.6328323357782208,
+            "peak bottleneck": 0.162362552626919,
+            "peak wasserstein": 1.15058892839654
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.0004200935363769531,
+            "filter level": 0.74,
+            "filter name": "cutoff",
+            "minimum": -0.01821452331919341,
+            "maximum": 0.012852949969172797
+        },
+        "metrics": {
+            "L1 norm": 3.602702288202592,
+            "L_inf norm": 0.184847542802928,
+            "approx entropy": 0.6227319970632266,
+            "peak bottleneck": 0.126953037183034,
+            "peak wasserstein": 1.16264579058065
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.00045800209045410156,
+            "filter level": 0.75,
+            "filter name": "cutoff",
+            "minimum": -0.016838647819710575,
+            "maximum": 0.011378037141369604
+        },
+        "metrics": {
+            "L1 norm": 3.619067306843546,
+            "L_inf norm": 0.18594311629529378,
+            "approx entropy": 0.5974560064248182,
+            "peak bottleneck": 0.162193151012903,
+            "peak wasserstein": 1.18675568273859
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.0005099773406982422,
+            "filter level": 0.76,
+            "filter name": "cutoff",
+            "minimum": -0.016101580591061374,
+            "maximum": 0.010815047973057794
+        },
+        "metrics": {
+            "L1 norm": 3.6284476060328696,
+            "L_inf norm": 0.18622148093935145,
+            "approx entropy": 0.5984173340812,
+            "peak bottleneck": 0.127055371128102,
+            "peak wasserstein": 1.18988318975399
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.0005280971527099609,
+            "filter level": 0.77,
+            "filter name": "cutoff",
+            "minimum": -0.015427575848205111,
+            "maximum": 0.010113345238132902
+        },
+        "metrics": {
+            "L1 norm": 3.614547191389772,
+            "L_inf norm": 0.18685738979301594,
+            "approx entropy": 0.6125571419499405,
+            "peak bottleneck": 0.161928217400427,
+            "peak wasserstein": 1.19482109461148
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.0004980564117431641,
+            "filter level": 0.78,
+            "filter name": "cutoff",
+            "minimum": -0.01436356325653049,
+            "maximum": 0.009468949133122496
+        },
+        "metrics": {
+            "L1 norm": 3.620145947772264,
+            "L_inf norm": 0.1872642211379087,
+            "approx entropy": 0.5997291184626028,
+            "peak bottleneck": 0.126941306430699,
+            "peak wasserstein": 1.19694016040033
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.0004248619079589844,
+            "filter level": 0.79,
+            "filter name": "cutoff",
+            "minimum": -0.0131919864162608,
+            "maximum": 0.008484202121070624
+        },
+        "metrics": {
+            "L1 norm": 3.6522931365406777,
+            "L_inf norm": 0.18790090420927952,
+            "approx entropy": 0.5922032420113483,
+            "peak bottleneck": 0.162704946106153,
+            "peak wasserstein": 1.20564405736004
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.0005979537963867188,
+            "filter level": 0.8,
+            "filter name": "cutoff",
+            "minimum": -0.011816086768109912,
+            "maximum": 0.007463967638471145
+        },
+        "metrics": {
+            "L1 norm": 3.656947491488976,
+            "L_inf norm": 0.1885293119360085,
+            "approx entropy": 0.5933395570320048,
+            "peak bottleneck": 0.127124680753689,
+            "peak wasserstein": 1.20999324241029
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.00043487548828125,
+            "filter level": 0.81,
+            "filter name": "cutoff",
+            "minimum": -0.010492422614821686,
+            "maximum": 0.006546947911991603
+        },
+        "metrics": {
+            "L1 norm": 3.6604956042444616,
+            "L_inf norm": 0.1892026831416297,
+            "approx entropy": 0.581847640996787,
+            "peak bottleneck": 0.126666175966034,
+            "peak wasserstein": 1.22103421468551
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.0004360675811767578,
+            "filter level": 0.82,
+            "filter name": "cutoff",
+            "minimum": -0.009575403309940235,
+            "maximum": 0.0056795822220594
+        },
+        "metrics": {
+            "L1 norm": 3.6602039636136636,
+            "L_inf norm": 0.18985023947247165,
+            "approx entropy": 0.5836975219286602,
+            "peak bottleneck": 0.16145277342859,
+            "peak wasserstein": 1.23278822871366
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.0004360675811767578,
+            "filter level": 0.83,
+            "filter name": "cutoff",
+            "minimum": -0.008561229771020598,
+            "maximum": 0.0054348406212745785
+        },
+        "metrics": {
+            "L1 norm": 3.665595061717341,
+            "L_inf norm": 0.19034746785395543,
+            "approx entropy": 0.5801725984856989,
+            "peak bottleneck": 0.162398106318627,
+            "peak wasserstein": 1.23626411160251
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.00043010711669921875,
+            "filter level": 0.84,
+            "filter name": "cutoff",
+            "minimum": -0.007758101024060937,
+            "maximum": 0.005352532419967263
+        },
+        "metrics": {
+            "L1 norm": 3.682319387987401,
+            "L_inf norm": 0.1906424997460777,
+            "approx entropy": 0.5559851214936775,
+            "peak bottleneck": 0.161662689835812,
+            "peak wasserstein": 1.24696052694092
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.0004241466522216797,
+            "filter level": 0.85,
+            "filter name": "cutoff",
+            "minimum": -0.0067886662547815705,
+            "maximum": 0.004776554405756124
+        },
+        "metrics": {
+            "L1 norm": 3.6950862803581987,
+            "L_inf norm": 0.19152784688019656,
+            "approx entropy": 0.5458789394453398,
+            "peak bottleneck": 0.162494430698016,
+            "peak wasserstein": 1.25456619347122
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.00041794776916503906,
+            "filter level": 0.86,
+            "filter name": "cutoff",
+            "minimum": -0.005928645213118395,
+            "maximum": 0.004640638526511802
+        },
+        "metrics": {
+            "L1 norm": 3.7119520129427905,
+            "L_inf norm": 0.19175634140929845,
+            "approx entropy": 0.5373910218007141,
+            "peak bottleneck": 0.161723183998723,
+            "peak wasserstein": 1.2611242287778
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.0006120204925537109,
+            "filter level": 0.87,
+            "filter name": "cutoff",
+            "minimum": -0.005655537953651856,
+            "maximum": 0.004284446082243226
+        },
+        "metrics": {
+            "L1 norm": 3.731169246087881,
+            "L_inf norm": 0.19179512169845386,
+            "approx entropy": 0.5004114403550521,
+            "peak bottleneck": 0.161957297893426,
+            "peak wasserstein": 1.27116760578081
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.00043392181396484375,
+            "filter level": 0.88,
+            "filter name": "cutoff",
+            "minimum": -0.004980328904277553,
+            "maximum": 0.004368405476861121
+        },
+        "metrics": {
+            "L1 norm": 3.730602301337295,
+            "L_inf norm": 0.19228270556710997,
+            "approx entropy": 0.49200667799808295,
+            "peak bottleneck": 0.162535053002662,
+            "peak wasserstein": 1.27542001346818
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.00043201446533203125,
+            "filter level": 0.89,
+            "filter name": "cutoff",
+            "minimum": -0.004044990239685642,
+            "maximum": 0.004193493957080983
+        },
+        "metrics": {
+            "L1 norm": 3.7374283686225467,
+            "L_inf norm": 0.1929663680558005,
+            "approx entropy": 0.455088288381722,
+            "peak bottleneck": 0.162090224349853,
+            "peak wasserstein": 1.28147467222715
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.0005879402160644531,
+            "filter level": 0.9,
+            "filter name": "cutoff",
+            "minimum": -0.0033578035926692756,
+            "maximum": 0.003977640396736585
+        },
+        "metrics": {
+            "L1 norm": 3.740265428928848,
+            "L_inf norm": 0.19335271822939085,
+            "approx entropy": 0.41752659068489306,
+            "peak bottleneck": 0.162367307276474,
+            "peak wasserstein": 1.2870283241663
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.00042700767517089844,
+            "filter level": 0.91,
+            "filter name": "cutoff",
+            "minimum": -0.003455586481271226,
+            "maximum": 0.00358988907674684
+        },
+        "metrics": {
+            "L1 norm": 3.777205274608151,
+            "L_inf norm": 0.19322335657369372,
+            "approx entropy": 0.3822422848479592,
+            "peak bottleneck": 0.162344187583534,
+            "peak wasserstein": 1.29256670344427
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.00043201446533203125,
+            "filter level": 0.92,
+            "filter name": "cutoff",
+            "minimum": -0.003024613718550737,
+            "maximum": 0.0035122727610141023
+        },
+        "metrics": {
+            "L1 norm": 3.7713505330284676,
+            "L_inf norm": 0.19341822463152192,
+            "approx entropy": 0.3759339543016438,
+            "peak bottleneck": 0.162675162953552,
+            "peak wasserstein": 1.29256939115101
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.0004398822784423828,
+            "filter level": 0.93,
+            "filter name": "cutoff",
+            "minimum": -0.002561096188519584,
+            "maximum": 0.003907864299243599
+        },
+        "metrics": {
+            "L1 norm": 3.79905585289853,
+            "L_inf norm": 0.19402751742763738,
+            "approx entropy": 0.32389512766714423,
+            "peak bottleneck": 0.161500439507423,
+            "peak wasserstein": 1.29945462319795
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.00041794776916503906,
+            "filter level": 0.94,
+            "filter name": "cutoff",
+            "minimum": -0.00237189656331507,
+            "maximum": 0.003490745648546893
+        },
+        "metrics": {
+            "L1 norm": 3.8275047964269096,
+            "L_inf norm": 0.19442032173248883,
+            "approx entropy": 0.2736866140938963,
+            "peak bottleneck": 0.126614770686762,
+            "peak wasserstein": 1.29759962726301
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.00046896934509277344,
+            "filter level": 0.95,
+            "filter name": "cutoff",
+            "minimum": -0.0023961091072139964,
+            "maximum": 0.00294858021114525
+        },
+        "metrics": {
+            "L1 norm": 3.8572611260405223,
+            "L_inf norm": 0.1949517563285719,
+            "approx entropy": 0.241538988541802,
+            "peak bottleneck": 0.161709346753456,
+            "peak wasserstein": 1.3057783799896
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.0004799365997314453,
+            "filter level": 0.96,
+            "filter name": "cutoff",
+            "minimum": -0.0016969297419861362,
+            "maximum": 0.002320790508651794
+        },
+        "metrics": {
+            "L1 norm": 3.8998821309266214,
+            "L_inf norm": 0.1947224754874384,
+            "approx entropy": 0.18946610001313013,
+            "peak bottleneck": 0.162440546427914,
+            "peak wasserstein": 1.30959985441605
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.0005061626434326172,
+            "filter level": 0.97,
+            "filter name": "cutoff",
+            "minimum": -0.0013675290070797226,
+            "maximum": 0.002042612977182541
+        },
+        "metrics": {
+            "L1 norm": 3.952505893679928,
+            "L_inf norm": 0.1950563091131488,
+            "approx entropy": 0.1471289307412067,
+            "peak bottleneck": 0.162513523078976,
+            "peak wasserstein": 1.31405694141811
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.0004520416259765625,
+            "filter level": 0.98,
+            "filter name": "cutoff",
+            "minimum": -0.0008703087158898298,
+            "maximum": 0.0013084115133550128
+        },
+        "metrics": {
+            "L1 norm": 4.009095566994069,
+            "L_inf norm": 0.19521327223645812,
+            "approx entropy": 0.06896244273145768,
+            "peak bottleneck": 0.127162578795719,
+            "peak wasserstein": 1.31656193700203
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.0004298686981201172,
+            "filter level": 0.99,
+            "filter name": "cutoff",
+            "minimum": -0.0008880740156365755,
+            "maximum": 0.0010271147310298538
+        },
+        "metrics": {
+            "L1 norm": 4.025141948091735,
+            "L_inf norm": 0.19566054058002372,
+            "approx entropy": 0.042687161641210114,
+            "peak bottleneck": 0.127151661816539,
+            "peak wasserstein": 1.32608926297539
+        }
+    },
+    {
+        "info": {
+            "processing time": 0.0004410743713378906,
+            "filter level": 1.0,
+            "filter name": "cutoff",
+            "minimum": -2.324547048853462e-05,
+            "maximum": 6.645209911806454e-05
+        },
+        "metrics": {
+            "L1 norm": 4.055117938336652,
+            "L_inf norm": 0.19589226339285953,
+            "approx entropy": 0.007985188956950884,
+            "peak bottleneck": 0.126848984057459,
+            "peak wasserstein": 1.35672797108515
+        }
+    }
+]

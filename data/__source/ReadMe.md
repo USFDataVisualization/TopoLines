@@ -23,3 +23,5 @@
   - src: `https://finance.google.com`
   - examples can be found in data/getData.js
 
+#### Stock2
+ - From https://finance.yahoo.com/

@@ -12,7 +12,7 @@ def pldist(point, start, end):
 
 
 def __max_dist(M, start_index, last_index, dist=pldist):
-    dmax = 0.0
+    dmax = -1.0
     index = start_index
 
     for i in range(start_index + 1, last_index):
@@ -63,6 +63,7 @@ def rdp_iter_count( _M, max_count, dist=pldist):
     count = 2
     while count < max_count:
         curr = pq.get()[1]
+
         start_index, split_index, last_index = curr[0], curr[1], curr[2]
 
         if start_index != split_index:
@@ -77,6 +78,9 @@ def rdp_iter_count( _M, max_count, dist=pldist):
     indices = np.zeros(len(M), dtype=bool)
     while not pq.empty():
         curr = pq.get()[1]
+
+        start_index, split_index, last_index = curr[0], curr[1], curr[2]
+
         indices[curr[0]] = True
         indices[curr[2]] = True
 

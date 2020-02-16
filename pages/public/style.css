@@ -12,6 +12,10 @@
     stroke-width: 2;
 }
 
+.regression {
+    stroke-width: 5px;
+}
+
 
 
 
@@ -33,11 +37,39 @@
 	vertical-align: top;
 }
 
+.rankspan{
+    text-align: left;
+    float: left;
+    width: 135px;
+    line-height: 1.1;
+    padding-top: 5px;
+    padding-left: 5px;
+}
 
+.rankbox{
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+}
 
+.ranklabel{
+    height: 20px;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 15px;
+    padding-left: 4px;
+    padding-top: 1px;
+}
+
+.ranktext{
+    text-align: center;
+    width: 100%;
+    display: inline-block;
+}
 
 .checkmark-container {
   display: block;
+  /*width: 230px;*/
   position: relative;
   padding-left: 35px;
   margin-bottom: 12px;
@@ -105,121 +137,100 @@
 }
 
 
+.checkmark-container input:checked ~ .checkmark_tda {
+  background-color: #4e79a7;
+}
+.tda_background {
+  background-color: #4e79a7;
+}
+.tda_filter {
+    fill: #4e79a7;
+    stroke: #4e79a7;
+}
+.tda_filter_light {
+    fill: #b3cde3;
+    stroke: #b3cde3;
+}
+
 .checkmark-container input:checked ~ .checkmark_median {
-  background-color: gold;
+  background-color: #e15759;
 }
-
+.median_background {
+  background-color: #e15759;
+}
 .median_filter {
-    fill: gold;
-    stroke: gold;
+    stroke: #e15759;
+    fill: #e15759;
 }
-
-
-.checkmark-container input:checked ~ .checkmark_min {
-  background-color: blue;
-}
-
-.min_filter {
-    fill: blue;
-    stroke: blue;
-}
-
-
-.checkmark-container input:checked ~ .checkmark_max {
-  background-color: green;
-}
-
-.max_filter {
-    fill: green;
-    stroke: green;
+.median_filter_light {
+    stroke: #fbb4ae;
+    fill: #fbb4ae;
 }
 
 
 .checkmark-container input:checked ~ .checkmark_gaussian {
-  background-color: CornflowerBlue;
+    background-color: #59a14f;
 }
-
+.gaussian_background {
+    background-color: #59a14f;
+}
 .gaussian_filter {
-    fill: CornflowerBlue;
-    stroke: CornflowerBlue;
+    stroke: #59a14f;
+    fill: #59a14f;
 }
-
-
-.checkmark-container input:checked ~ .checkmark_mean {
-  background-color: DeepPink;
-}
-
-.mean_filter {
-    fill: DeepPink;
-    stroke: DeepPink;
-}
-
-
-.checkmark-container input:checked ~ .checkmark_savitzky_golay {
-  background-color: grey;
-}
-
-.savitzky_golay_filter {
-    fill: grey;
-    stroke: grey;
+.gaussian_filter_light {
+    stroke: #ccebc5;
+    fill: #ccebc5;
 }
 
 
 .checkmark-container input:checked ~ .checkmark_cutoff {
-  background-color: darkgreen;
+    background-color: #af7aa1;
 }
-
+.cutoff_background {
+    background-color: #af7aa1;
+}
 .cutoff_filter {
-    fill: darkgreen;
-    stroke: darkgreen;
+    stroke: #af7aa1;
+    fill: #af7aa1;
 }
-
-
-.checkmark-container input:checked ~ .checkmark_butterworth {
-  background-color: pink;
-}
-
-.butterworth_filter {
-    fill: pink;
-    stroke: pink;
-}
-
-
-.checkmark-container input:checked ~ .checkmark_chebyshev {
-  background-color: brown;
-}
-
-.chebyshev_filter {
-    fill: brown;
-    stroke: brown;
+.cutoff_filter_light {
+    stroke: #decbe4;
+    fill: #decbe4;
 }
 
 
 .checkmark-container input:checked ~ .checkmark_subsample {
-  background-color: slateblue;
+    background-color: #f28e2c;
 }
-
+.subsample_background {
+    background-color: #f28e2c;
+}
 .subsample_filter {
-    fill: slateblue;
-    stroke: slateblue;
+    fill: #f28e2c;
+    stroke: #f28e2c;
+}
+.subsample_filter_light {
+    fill: #fed9a6;
+    stroke: #fed9a6;
 }
 
 
 .checkmark-container input:checked ~ .checkmark_rdp {
-  background-color: darkgrey;
+  background-color: #ff9da7;
 }
-
+.rdp_background{
+  background-color: #ff9da7;
+}
 .rdp_filter {
-    fill: darkgrey;
-    stroke: darkgrey;
+    fill: #ff9da7;
+    stroke: #ff9da7;
+}
+.rdp_filter_light {
+    fill: #fddaec;
+    stroke: #fddaec;
 }
 
 
-.checkmark-container input:checked ~ .checkmark_tda {
-  background-color: orange;
-}
 
-.tda_filter {
-    fill: orange;
-    stroke: orange;
-}
+

@@ -98,7 +98,7 @@
     </div>
     <div class="page-content" id="visualization" style="padding-bottom: 0;">
         <div>
-        <svg width="1000" height="250" style="border: none;" id="linechart"></svg>
+        <svg width="1000" height="300" style="border: none;" id="linechart"></svg>
         </div>
     </div>
 </div>
@@ -107,27 +107,57 @@
 
     <div class="sidebar">
         <div>
-            <span style="display: inline-block; width: 100%;">
-                    <label class="checkmark-container">TopoLines<input type="checkbox" id="metric_tda" checked="checked" onchange="updateMetrics();"><span class="checkmark checkmark_tda"></span></label>
-                    <label class="checkmark-container">Rank - Median<input type="checkbox" id="metric_median" checked="checked" onchange="updateMetrics();"><span class="checkmark checkmark_median"></span></label>
-                    <label class="checkmark-container">Convolutional - Gaussian<input type="checkbox" id="metric_gaussian" checked="checked" onchange="updateMetrics();"><span class="checkmark checkmark_gaussian"></span></label>
-                    <label class="checkmark-container">Frequency - Cutoff<input type="checkbox" id="metric_cutoff" checked="checked" onchange="updateMetrics();"><span class="checkmark checkmark_cutoff"></span></label>
-                    <label class="checkmark-container">Subsampling - Uniform<input type="checkbox" id="metric_subsample" checked="checked" onchange="updateMetrics();"><span class="checkmark checkmark_subsample"></span></label>
-                    <label class="checkmark-container">Subsampling - Ramer-Douglas<input type="checkbox" id="metric_rdp" checked="checked" onchange="updateMetrics();"><span class="checkmark checkmark_rdp"></span></label>
-            </span>
+            <label class="checkmark-container">TopoLines<input type="checkbox" id="metric_tda" checked="checked" onchange="updateMetrics();"><span class="checkmark checkmark_tda"></span></label>
+            <label class="checkmark-container">Rank - Median<input type="checkbox" id="metric_median" checked="checked" onchange="updateMetrics();"><span class="checkmark checkmark_median"></span></label>
+            <label class="checkmark-container">Convolutional - Gaussian<input type="checkbox" id="metric_gaussian" checked="checked" onchange="updateMetrics();"><span class="checkmark checkmark_gaussian"></span></label>
+            <label class="checkmark-container">Frequency - Cutoff<input type="checkbox" id="metric_cutoff" checked="checked" onchange="updateMetrics();"><span class="checkmark checkmark_cutoff"></span></label>
+            <label class="checkmark-container">Subsampling - Uniform<input type="checkbox" id="metric_subsample" checked="checked" onchange="updateMetrics();"><span class="checkmark checkmark_subsample"></span></label>
+            <label class="checkmark-container">Subsampling - Ramer-Douglas<input type="checkbox" id="metric_rdp" checked="checked" onchange="updateMetrics();"><span class="checkmark checkmark_rdp"></span></label>
         </div>
-        <code><pre id="object_details" name="object_details" style=" width: 300px; ">
-			</pre>
-        </code>
     </div>
 
 
     <div class="page-content">
-        <div>
-        <svg width="350" height="200" style="border: none;" id="test_plot1"></svg>
-        <svg width="350" height="200" style="border: none;" id="test_plot2"></svg>
-        <svg width="350" height="200" style="border: none;" id="test_plot3"></svg>
-        <svg width="350" height="200" style="border: none;" id="test_plot4"></svg>
+        <div style="width: 1000px; height: 250px;">
+            <span style="text-align: center; width:auto; float: left; height:230px;">
+                Retrieve Value: Entropy vs. L<sub>1</sub>-norm<br>
+                <span>
+                    <span style="text-align: center; width:auto; float: left;">
+                        <svg width="360" height="200" style="border: none;" id="entropy_l1"></svg>
+                    </span>
+                    <span id="entropy_l1_rank" class="rankspan"></span>
+                </span>
+            </span>
+            <span style="text-align: center; width:auto; float: left;  height:230px; padding-left: 5px; ">
+                Retrieve Value: Entropy vs. L<sub>&#8734;</sub>-norm<br>
+                <span>
+                    <span style="text-align: center; width:auto; float: left;">
+                        <svg width="360" height="200" style="border: none;" id="entropy_linf"></svg>
+                    </span>
+                    <span id="entropy_linf_rank" class="rankspan"></span>
+                </span>
+            </span>
+        </div>
+        <div style="width: 1000px; height: 250px;">
+            <span style="text-align: center; float: left;">
+                Find Extrema: Entropy vs. Wasserstein<br>
+                <span>
+                    <span style="text-align: center; width:auto; float: left; ">
+                        <svg width="360" height="200" style="border: none;" id="entropy_wass"></svg>
+                    </span>
+                    <span id="entropy_wass_rank" class="rankspan"></span>
+                </span>
+            </span>
+            <span style="text-align: center; float: left;">
+                Find Extrema: Entropy vs. Bottleneck<br>
+                <span>
+                    <span style="text-align: center; width:auto; float: left; padding-left: 5px; ">
+                        <svg width="360" height="200" style="border: none;" id="entropy_bott"></svg>
+                    </span>
+                    <span id="entropy_bott_rank" class="rankspan"></span>
+                </span>
+            </span>
+
         </div>
         <div>
             <svg width="250" height="150" style="border: none;" id="info_perf"></svg>
@@ -153,6 +183,7 @@
 
 
         var metrics_data = null;
+        var rank_data = null;
 
         function updateMetrics(){
 			var active_filters = filter_list.filter( function(f){
@@ -172,6 +203,7 @@
             func_wasserstein = function(d){ return d['metrics']['peak wasserstein']; };
             func_bottleneck = function(d){ return d['metrics']['peak bottleneck']; };
 
+
             update_scatterplot( "#info_perf",   dinput, func_level, func_time, func_class );
             update_scatterplot( "#metric_ent",  dinput, func_level, func_entropy, func_class );
             update_scatterplot( "#metric_l1",   dinput, func_level, func_l1, func_class );
@@ -179,17 +211,24 @@
             update_scatterplot( "#metric_wass", dinput, func_level, func_wasserstein, func_class );
             update_scatterplot( "#metric_bott", dinput, func_level, func_bottleneck, func_class );
 
-            update_scatterplot( "#test_plot1", dinput, func_entropy, func_l1, func_class );
-            update_scatterplot( "#test_plot2", dinput, func_entropy, func_linf, func_class );
-            update_scatterplot( "#test_plot3", dinput, func_entropy, func_wasserstein, func_class );
-            update_scatterplot( "#test_plot4", dinput, func_entropy, func_bottleneck, func_class );
+            update_scatterplot( "#entropy_l1", dinput, func_entropy, func_l1, func_class, rank_data.filter( d => d['x']=='approx entropy' && d['y']=='L1 norm' )[0]['result'] );
+            update_scatterplot( "#entropy_linf", dinput, func_entropy, func_linf, func_class, rank_data.filter( d => d['x']=='approx entropy' && d['y']=='L_inf norm' )[0]['result'] );
+            update_scatterplot( "#entropy_wass", dinput, func_entropy, func_wasserstein, func_class, rank_data.filter( d => d['x']=='approx entropy' && d['y']=='peak wasserstein' )[0]['result'] );
+            update_scatterplot( "#entropy_bott", dinput, func_entropy, func_bottleneck, func_class, rank_data.filter( d => d['x']=='approx entropy' && d['y']=='peak bottleneck' )[0]['result'] );
+
+
+            update_ranking( "entropy_l1_rank",   rank_data.filter( d => d['x']=='approx entropy' && d['y']=='L1 norm' )[0]['result'] )
+            update_ranking( "entropy_linf_rank", rank_data.filter( d => d['x']=='approx entropy' && d['y']=='L_inf norm' )[0]['result'] );
+            update_ranking( "entropy_wass_rank", rank_data.filter( d => d['x']=='approx entropy' && d['y']=='peak wasserstein' )[0]['result'] );
+            update_ranking( "entropy_bott_rank", rank_data.filter( d => d['x']=='approx entropy' && d['y']=='peak bottleneck' )[0]['result'] );
+
 
         }
 
         function reloadMetrics(){
             d3.json( "metric?" + $('#parameterForm').serialize(), function( dinput ) {
                 metrics_data = dinput['metric'];
-                console.log( dinput['rank'] );
+                rank_data = dinput['rank'];
                 updateMetrics();
             });
         }
@@ -247,6 +286,28 @@
 		});
 
 
+        function update_ranking( doc_id, rank_data ){
+            html = '<span class="ranktext" style="text-decoration: underline;"><underline>Ranking</underline></span><br>'
+                    + '<span class="ranktext" style="color: darkgrey; font-size: small; ">Best</span><br>';
+
+            keys = Object.keys(rank_data)
+            keys.sort( (a,b) => rank_data[a]['rank'] - rank_data[b]['rank'] );
+            keys.forEach( function(key) {
+                val = rank_data[key];
+                switch( key ){
+                    case 'tda':       html += '<span class="rankbox tda_background"></span><span class="ranklabel">TopoLines</span><br>';     break;
+                    case 'median':    html += '<span class="rankbox median_background"></span><span class="ranklabel">Median</span><br>';     break;
+                    case 'gaussian':  html += '<span class="rankbox gaussian_background"></span><span class="ranklabel">Gaussian</span><br>'; break;
+                    case 'cutoff':    html += '<span class="rankbox cutoff_background"></span><span class="ranklabel">Cutoff</span><br>';     break;
+                    case 'subsample': html += '<span class="rankbox subsample_background"></span><span class="ranklabel">Uniform</span><br>'; break;
+                    case 'rdp':       html += '<span class="rankbox rdp_background"></span><span class="ranklabel">Ramer-Douglas</span><br>'; break;
+                }
+            });
+
+            html += '<span class="ranktext" style="color: darkgrey; font-size: small; ">Worst</span>';
+
+            document.getElementById(doc_id).innerHTML = html;
+        }
 
 
 </script>
