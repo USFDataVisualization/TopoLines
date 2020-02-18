@@ -12,10 +12,21 @@
     stroke-width: 2;
 }
 
+.teaser_line {
+    fill: none;
+    stroke: #4e79a7;
+    stroke-width: 3;
+}
+
 .regression {
     stroke-width: 5px;
 }
 
+.orig_fig_filter {
+    stroke: #888888;
+    stroke-width: 3;
+    fill: none;
+}
 
 
 
@@ -147,6 +158,11 @@
     fill: #4e79a7;
     stroke: #4e79a7;
 }
+.tda_fig_filter {
+    stroke: #4e79a7;
+    stroke-width: 3;
+    fill: none;
+}
 .tda_filter_light {
     fill: #b3cde3;
     stroke: #b3cde3;
@@ -161,6 +177,11 @@
 .median_filter {
     stroke: #e15759;
     fill: #e15759;
+}
+.median_fig_filter {
+    stroke: #e15759;
+    stroke-width: 3;
+    fill: none;
 }
 .median_filter_light {
     stroke: #fbb4ae;
@@ -178,6 +199,11 @@
     stroke: #59a14f;
     fill: #59a14f;
 }
+.gaussian_fig_filter {
+    stroke: #59a14f;
+    stroke-width: 3;
+    fill: none;
+}
 .gaussian_filter_light {
     stroke: #ccebc5;
     fill: #ccebc5;
@@ -193,6 +219,11 @@
 .cutoff_filter {
     stroke: #af7aa1;
     fill: #af7aa1;
+}
+.cutoff_fig_filter {
+    stroke: #af7aa1;
+    stroke-width: 3;
+    fill: none;
 }
 .cutoff_filter_light {
     stroke: #decbe4;
@@ -210,6 +241,11 @@
     fill: #f28e2c;
     stroke: #f28e2c;
 }
+.subsample_fig_filter {
+    stroke: #f28e2c;
+    stroke-width: 3;
+    fill: none;
+}
 .subsample_filter_light {
     fill: #fed9a6;
     stroke: #fed9a6;
@@ -226,6 +262,12 @@
     fill: #ff9da7;
     stroke: #ff9da7;
 }
+.rdp_fig_filter {
+    stroke: #ff9da7;
+    stroke-width: 3;
+    fill: none;
+}
+
 .rdp_filter_light {
     fill: #fddaec;
     stroke: #fddaec;

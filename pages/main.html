@@ -93,12 +93,25 @@
                 <input type="range" class="custom-range" min="0" max="1" step="0.01" value="0" id="level" name="level"
                        onchange="changeFilterLevel()">
             </div>
+            <div style="font-size:14px;">
+                <span>Approx Entropy: </span><span id="approx_ent_value"></span>
+                <div style="padding-top: 5px;">
+                    <span style="padding-top: 10px; text-decoration: underline;">Retrieve Value</span><br>
+                    <span style="padding-left:7px;">Average case (L<sub>1</sub>-norm): </span><span id="l1_norm_value"></span><br>
+                    <span style="padding-left:7px;">Worst case (L<sub>&#8734;</sub>-norm): </span><span id="linf_norm_value"></span>
+                </div>
+                <div style="padding-top: 5px;">
+                    <span style="padding-top: 10px; text-decoration: underline;">Find Extrema</span><br>
+                    <span style="padding-left:7px;">Average case (Wasserstein): </span><span id="wass_value"></span><br>
+                    <span style="padding-left:7px;">Worst case (Bottleneck): </span><span id="bott_value"></span>
+                </div>
+            </div>
 
         </form>
     </div>
     <div class="page-content" id="visualization" style="padding-bottom: 0;">
         <div>
-        <svg width="1000" height="300" style="border: none;" id="linechart"></svg>
+        <svg width="1000" height="375" style="border: none;" id="linechart"></svg>
         </div>
     </div>
 </div>
@@ -120,7 +133,7 @@
     <div class="page-content">
         <div style="width: 1000px; height: 250px;">
             <span style="text-align: center; width:auto; float: left; height:230px;">
-                Retrieve Value: Entropy vs. L<sub>1</sub>-norm<br>
+                Retrieve Value (average case): L<sub>1</sub>-norm vs. Entropy<br>
                 <span>
                     <span style="text-align: center; width:auto; float: left;">
                         <svg width="360" height="200" style="border: none;" id="entropy_l1"></svg>
@@ -129,7 +142,7 @@
                 </span>
             </span>
             <span style="text-align: center; width:auto; float: left;  height:230px; padding-left: 5px; ">
-                Retrieve Value: Entropy vs. L<sub>&#8734;</sub>-norm<br>
+                Retrieve Value (worst case): L<sub>&#8734;</sub>-norm vs. Entropy<br>
                 <span>
                     <span style="text-align: center; width:auto; float: left;">
                         <svg width="360" height="200" style="border: none;" id="entropy_linf"></svg>
@@ -140,7 +153,7 @@
         </div>
         <div style="width: 1000px; height: 250px;">
             <span style="text-align: center; float: left;">
-                Find Extrema: Entropy vs. Wasserstein<br>
+                Find Extrema (average case): Wasserstein vs. Entropy<br>
                 <span>
                     <span style="text-align: center; width:auto; float: left; ">
                         <svg width="360" height="200" style="border: none;" id="entropy_wass"></svg>
@@ -149,7 +162,7 @@
                 </span>
             </span>
             <span style="text-align: center; float: left;">
-                Find Extrema: Entropy vs. Bottleneck<br>
+                Find Extrema (worst case): Bottleneck vs. Entropy<br>
                 <span>
                     <span style="text-align: center; width:auto; float: left; padding-left: 5px; ">
                         <svg width="360" height="200" style="border: none;" id="entropy_bott"></svg>
@@ -159,16 +172,17 @@
             </span>
 
         </div>
-        <div>
-            <svg width="250" height="150" style="border: none;" id="info_perf"></svg>
-            <svg width="250" height="150" style="border: none;" id="metric_ent"></svg>
+        <div style="width: 410px; text-align: center;">
+            Compute Time vs. Normalized Smoothing Threshold<br>
+            <svg width="400" height="220" style="border: none;" id="info_perf"></svg>
+            <!--svg width="250" height="150" style="border: none;" id="metric_ent"></svg-->
         </div>
-        <div>
+        <!--div>
         <svg width="250" height="150" style="border: none;" id="metric_l1"></svg>
         <svg width="250" height="150" style="border: none;" id="metric_linf"></svg>
         <svg width="250" height="150" style="border: none;" id="metric_wass"></svg>
         <svg width="250" height="150" style="border: none;" id="metric_bott"></svg>
-        </div>
+        </div-->
 
     </div>
 </div>
@@ -204,17 +218,19 @@
             func_bottleneck = function(d){ return d['metrics']['peak bottleneck']; };
 
 
-            update_scatterplot( "#info_perf",   dinput, func_level, func_time, func_class );
+            log_scatterplot( "#info_perf",   dinput, func_level, func_time, func_class );
+            /*
             update_scatterplot( "#metric_ent",  dinput, func_level, func_entropy, func_class );
             update_scatterplot( "#metric_l1",   dinput, func_level, func_l1, func_class );
             update_scatterplot( "#metric_linf", dinput, func_level, func_linf, func_class );
             update_scatterplot( "#metric_wass", dinput, func_level, func_wasserstein, func_class );
             update_scatterplot( "#metric_bott", dinput, func_level, func_bottleneck, func_class );
+            */
 
-            update_scatterplot( "#entropy_l1", dinput, func_entropy, func_l1, func_class, rank_data.filter( d => d['x']=='approx entropy' && d['y']=='L1 norm' )[0]['result'] );
-            update_scatterplot( "#entropy_linf", dinput, func_entropy, func_linf, func_class, rank_data.filter( d => d['x']=='approx entropy' && d['y']=='L_inf norm' )[0]['result'] );
-            update_scatterplot( "#entropy_wass", dinput, func_entropy, func_wasserstein, func_class, rank_data.filter( d => d['x']=='approx entropy' && d['y']=='peak wasserstein' )[0]['result'] );
-            update_scatterplot( "#entropy_bott", dinput, func_entropy, func_bottleneck, func_class, rank_data.filter( d => d['x']=='approx entropy' && d['y']=='peak bottleneck' )[0]['result'] );
+            update_scatterplot( "#entropy_l1", dinput, func_entropy, func_l1, func_class, rank_data.filter( d => d['x']=='approx entropy' && d['y']=='L1 norm' )[0]['result'], active_filters );
+            update_scatterplot( "#entropy_linf", dinput, func_entropy, func_linf, func_class, rank_data.filter( d => d['x']=='approx entropy' && d['y']=='L_inf norm' )[0]['result'], active_filters );
+            update_scatterplot( "#entropy_wass", dinput, func_entropy, func_wasserstein, func_class, rank_data.filter( d => d['x']=='approx entropy' && d['y']=='peak wasserstein' )[0]['result'], active_filters );
+            update_scatterplot( "#entropy_bott", dinput, func_entropy, func_bottleneck, func_class, rank_data.filter( d => d['x']=='approx entropy' && d['y']=='peak bottleneck' )[0]['result'], active_filters );
 
 
             update_ranking( "entropy_l1_rank",   rank_data.filter( d => d['x']=='approx entropy' && d['y']=='L1 norm' )[0]['result'] )
@@ -234,7 +250,15 @@
         }
 
 		function reloadChart(){
+		    console.log( "data?" + $('#parameterForm').serialize() );
 			d3.json( "data?" + $('#parameterForm').serialize(), function( dinput ) {
+
+			    document.getElementById("approx_ent_value").innerHTML = dinput['metrics']['approx entropy'].toFixed(4);
+			    document.getElementById("l1_norm_value").innerHTML = dinput['metrics']['L1 norm'].toFixed(4);
+			    document.getElementById("linf_norm_value").innerHTML = dinput['metrics']['L_inf norm'].toFixed(4);
+			    document.getElementById("wass_value").innerHTML = dinput['metrics']['peak wasserstein'].toFixed(4);
+			    document.getElementById("bott_value").innerHTML = dinput['metrics']['peak bottleneck'].toFixed(4);
+
                 update_linechart( "#linechart", dinput );
 			});
 		}

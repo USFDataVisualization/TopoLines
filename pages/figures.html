@@ -30,6 +30,7 @@
 	<script src="public/javascript/canvas-toBlob.js"></script>
 	<script src="public/javascript/FileSaver.min.js"></script>
 	<script src="public/javascript/saveSVG.js"></script>
+    <script src="public/charts.js"></script>
 
     <link rel="apple-touch-icon" sizes="57x57" href="public/favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="public/favicon/apple-icon-60x60.png">
@@ -60,18 +61,37 @@
 
 
 <div class="page">
-    <svg width="1075" height="553" style="border: none;" id="psets"></svg>
-    <input type="submit" value="Save Image" onclick="saveImage('psets');" />
-
+    <div style="padding-left: 20px;">
+        <h4>Figure 1</h4>
+        <svg width="1340" height="490" style="border: none;" id="fig_teaser"></svg>
+        <input type="submit" value="Save Image" onclick="saveImage('fig_teaser');" />
+    </div>
+    <div style="padding-left: 20px; padding-top: 40px;">
+        <h4>Figure 3</h4>
+        <svg width="1675" height="325" style="border: none;" id="fig_fitlers"></svg>
+        <input type="submit" value="Save Image" onclick="saveImage('fig_fitlers');" />
+    </div>
+    <div style="padding-left: 20px; padding-top: 40px;">
+        <h4>Figure 4</h4>
+        <svg width="1170" height="495" style="border: none;" id="fig_ranks"></svg>
+        <input type="submit" value="Save Image" onclick="saveImage('fig_ranks');" />
+    </div>
 </div>
 
 
+
 <script src="public/fig_summary_rank.js"></script>
+<script src="public/fig_filters.js"></script>
+<script src="public/fig_teaser.js"></script>
 <script>
 	function saveImage( plotID ){
 		var svg_save = d3.select('#'+plotID);
 		saveSVGImage(svg_save, plotID+".png" );
 	}
+
+    load_rank_figure();
+    load_teaser();
+    load_filters_fig();
 </script>
 
 </body>
