@@ -62,7 +62,7 @@ function load_rank_figure(){
                 if( curM++ == 1 ) curY += 10;
             });
             curX += 55
-            if( (curDS%5)==4) curX -= 10;
+            if( (curDS%6)==5) curX -= 10;
             curDS++;
         });
 
@@ -72,7 +72,7 @@ function load_rank_figure(){
 
         links = [];
         for( i = 0; i < instances.length-4; i++ ){
-            if( (i%20)>=16 ) continue;
+            if( (i%24)>=20 ) continue;
             links = links.concat( find_links( instances[i], instances[i+4] ) );
         }
 
@@ -91,15 +91,15 @@ function load_rank_figure(){
         dinput.forEach( function(d){
             gtmp.append("text")
               .style("fill", "black")
-              .style("font-size", (d.datafile=='overall')?"14px":"12px" )
+              .style("font-size", (d.datafile=='overall')?"15px":"13px" )
               .attr("dy", ".35em")
               .attr("font-family", "Arial")
               .attr("text-anchor", "start")
-              .attr("transform", "translate("+ curX+",38) rotate(335)")
+              .attr("transform", "translate("+ curX+",38) rotate(340)")
               .text(d.datafile);
 
               curX+=55;
-              if( (curI%5)==4) curX-=10;
+              if( (curI%6)==5) curX-=10;
               curI++;
         });
 
@@ -108,7 +108,7 @@ function load_rank_figure(){
         task_names.forEach( function(d){
             gtmp.append("text")
               .style("fill", "black")
-              .style("font-size", ((iter%2)==1?"14px":"12px"))
+              .style("font-size", ((iter%2)==1?"15px":"13px"))
               .attr("dy", ".35em")
               .attr("font-family", "Arial")
               .attr("text-anchor", "middle")
@@ -121,12 +121,12 @@ function load_rank_figure(){
 
         gtmp.append("text")
           .style("fill", "gray")
-          .style("font-size", "12px")
+          .style("font-size", "13px")
           .attr("dy", ".35em")
           .attr("font-family", "Arial")
           .attr("text-anchor", "middle")
           .attr("text-decoration", "underline")
-          .attr("transform", "translate(1085,97) rotate(90)")
+          .attr("transform", "translate(1310,97) rotate(90)")
           .text( 'rank' );
 
         curY = 53;
@@ -134,11 +134,11 @@ function load_rank_figure(){
             for( i = 1; i <= 6; i++ ){
                 gtmp.append("text")
                   .style("fill", "gray")
-                  .style("font-size", "11px")
+                  .style("font-size", "12px")
                   .attr("dy", ".35em")
                   .attr("font-family", "Arial")
                   .attr("text-anchor", "middle")
-                  .attr("transform", "translate(1072,"+ curY+")")
+                  .attr("transform", "translate(1293,"+ curY+")")
                   .text( i );
                 curY += 17;
             }
@@ -152,7 +152,7 @@ function load_rank_figure(){
 
             gtmp.append("text")
                   .style("fill", "gray")
-                  .style("font-size", "12px")
+                  .style("font-size", "13px")
                   .attr("dy", ".35em")
                   .attr("font-family", "Arial")
                   .attr("text-anchor", "start")

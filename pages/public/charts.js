@@ -64,6 +64,10 @@ function add_linechart( chart_name, dinput, doutput, upper_left, width_height, c
 	xExt = [0,dinput.length-1];
 	yExt = d3.extent( dinput, function(d){ return d[1]; });
 
+	expand_range = (yExt[1]-yExt[0])*0.05;
+	yExt[0] -= expand_range;
+	yExt[1] += expand_range;
+
 	data = doutput;
 
 	var xAxis = d3.scaleLinear().domain( xExt ).range([ 0, lc_width ]);
@@ -205,7 +209,7 @@ function log_scatterplot( doc_id, data, func_x, func_y, func_class ){
     var sp_xExt = [ 0, Math.max(0,sp_xTmp[1]) ];
     var sp_yExt = d3.extent( data, func_y );
 
-    console.log( sp_yExt );
+    //console.log( sp_yExt );
     sp_yExt[0] = Math.exp( ( Math.ceil( Math.log( sp_yExt[0] )/Math.log(10))-1 ) * Math.log(10) );
     sp_yExt[1] = Math.exp( ( Math.floor( Math.log( sp_yExt[1] )/Math.log(10) )+1 ) * Math.log(10) );
 

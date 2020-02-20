@@ -30,6 +30,16 @@ def render_figures():
     return send_file('pages/figures.html')
 
 
+@app.route('/ranks.html')
+def render_ranks():
+    return send_file('pages/ranks.html')
+
+
+@app.route('/performance.html')
+def render_performance():
+    return send_file('pages/performance.html')
+
+
 @app.route('/public/<path:path>')
 def send_static(path):
     return send_from_directory('pages/public', path)

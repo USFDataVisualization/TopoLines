@@ -50,7 +50,6 @@
 </head>
 <body>
 
-
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="index.html">TopoLines</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -59,12 +58,12 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link active" href="index.html">Interactive Smoothing</a>
+        <a class="nav-link" href="index.html">Interactive Smoothing</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="ranks.html">Ranking Visualization</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item active">
         <a class="nav-link" href="performance.html">Performance Visualization</a>
       </li>
       <li class="nav-item">
@@ -103,41 +102,21 @@
                 </div>
               </div>
             </div>
-            <div class="form-group">
-                <label for="filter">Filter Type</label>
-                <select class="form-control form-control-sm" id="filter" name="filter" onchange="changeFilter()">
-                    <option value="tda">TopoLines</option>
-                    <option value="median">Median</option>
-                    <option value="gaussian">Gaussian</option>
-                    <option value="cutoff">Low-Pass Cutoff</option>
-                    <option value="subsample">Uniform Subsampling</option>
-                    <option value="rdp">Douglas-Peucker</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="level">Filter Level</label>
-                <input type="range" class="custom-range" min="0" max="1" step="0.01" value="0" id="level" name="level"
-                       onchange="changeFilterLevel()">
-            </div>
-            <div style="font-size:14px;">
-                <span>Approx Entropy: </span><span id="approx_ent_value"></span>
-                <div style="padding-top: 5px;">
-                    <span style="padding-top: 10px; text-decoration: underline;">Retrieve Value</span><br>
-                    <span style="padding-left:7px;">Average case (L<sub>1</sub>-norm): </span><span id="l1_norm_value"></span><br>
-                    <span style="padding-left:7px;">Worst case (L<sub>&#8734;</sub>-norm): </span><span id="linf_norm_value"></span>
-                </div>
-                <div style="padding-top: 5px;">
-                    <span style="padding-top: 10px; text-decoration: underline;">Find Extrema</span><br>
-                    <span style="padding-left:7px;">Average case (Wasserstein): </span><span id="wass_value"></span><br>
-                    <span style="padding-left:7px;">Worst case (Bottleneck): </span><span id="bott_value"></span>
-                </div>
-            </div>
-
         </form>
-    </div>
-    <div class="page-content" id="visualization" style="padding-bottom: 0;">
         <div>
-        <svg width="1000" height="375" style="border: none;" id="linechart"></svg>
+            <label class="checkmark-container">TopoLines<input type="checkbox" id="metric_tda" checked="checked" onchange="updateMetrics();"><span class="checkmark checkmark_tda"></span></label>
+            <label class="checkmark-container">Median<input type="checkbox" id="metric_median" checked="checked" onchange="updateMetrics();"><span class="checkmark checkmark_median"></span></label>
+            <label class="checkmark-container">Gaussian<input type="checkbox" id="metric_gaussian" checked="checked" onchange="updateMetrics();"><span class="checkmark checkmark_gaussian"></span></label>
+            <label class="checkmark-container">Low-Pass Cutoff<input type="checkbox" id="metric_cutoff" checked="checked" onchange="updateMetrics();"><span class="checkmark checkmark_cutoff"></span></label>
+            <label class="checkmark-container">Uniform Subsampling<input type="checkbox" id="metric_subsample" checked="checked" onchange="updateMetrics();"><span class="checkmark checkmark_subsample"></span></label>
+            <label class="checkmark-container">Douglas-Peucker<input type="checkbox" id="metric_rdp" checked="checked" onchange="updateMetrics();"><span class="checkmark checkmark_rdp"></span></label>
+        </div>
+
+    </div>
+    <div class="page-content" style="padding-bottom: 0;">
+        <div style="width: 600px; text-align: center;">
+            Compute Time vs. Normalized Smoothing Threshold<br>
+            <svg width="600" height="400" style="border: none;" id="info_perf"></svg>
         </div>
     </div>
 </div>
@@ -145,27 +124,36 @@
 
 
 
-
-
 <script>
         var datasets = {};
         var filter_list = [ "median", "gaussian", "cutoff", "subsample", "rdp", "tda" ]
+        var metrics_data = null;
 
 
-		function reloadChart(){
-		    //console.log( "data?" + $('#parameterForm').serialize() );
-			d3.json( "data?" + $('#parameterForm').serialize(), function( dinput ) {
-
-			    document.getElementById("approx_ent_value").innerHTML = dinput['metrics']['approx entropy'].toFixed(4);
-			    document.getElementById("l1_norm_value").innerHTML = dinput['metrics']['L1 norm'].toFixed(4);
-			    document.getElementById("linf_norm_value").innerHTML = dinput['metrics']['L_inf norm'].toFixed(4);
-			    document.getElementById("wass_value").innerHTML = dinput['metrics']['peak wasserstein'].toFixed(4);
-			    document.getElementById("bott_value").innerHTML = dinput['metrics']['peak bottleneck'].toFixed(4);
-
-                update_linechart( "#linechart", dinput );
+        function updateMetrics(){
+			var active_filters = filter_list.filter( function(f){
+			    return document.getElementById("metric_"+f).checked;
 			});
-		}
-		
+
+            dinput = metrics_data.filter( function(d){
+                return active_filters.includes(d['info']['filter name']);
+            });
+
+            func_class = function(d){ return d['info']['filter name'] + "_filter"; };
+            func_level = function(d){ return d['info']['filter level']; };
+            func_time = function(d){ return d['info']['processing time']; };
+
+            log_scatterplot( "#info_perf",   dinput, func_level, func_time, func_class );
+        }
+
+
+        function reloadMetrics(){
+            d3.json( "metric?" + $('#parameterForm').serialize(), function( dinput ) {
+                metrics_data = dinput['metric'];
+                updateMetrics();
+            });
+        }
+
 
         function changeDataset(){
             var e = document.getElementById("dataset");
@@ -176,19 +164,12 @@
 		        html += '<option value="'+d+'">'+d+'</option>';
             });
             document.getElementById("datafile").innerHTML = html;
-            reloadChart();
+            reloadMetrics();
         }
+
 
         function changeDatafile(){
-            reloadChart();
-        }
-
-        function changeFilter(){
-            reloadChart();
-        }
-
-        function changeFilterLevel(){
-            reloadChart();
+            reloadMetrics();
         }
 
 
