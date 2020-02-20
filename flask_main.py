@@ -16,7 +16,7 @@ for _ds in datasets:
     for _df in datasets[_ds]:
         experiments.generate_metric_data(_ds, _df)
 
-# webbrowser.open_new_tab("http://localhost:6500")
+webbrowser.open_new_tab("http://localhost:5050")
 
 
 @app.route('/')

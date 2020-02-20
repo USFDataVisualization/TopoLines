@@ -3,6 +3,7 @@
 # Delete old files and directories
 rm -rf __pycache__
 rm -rf lcsmooth/__pycache__
+rm -rf topolines/__pycache__
 rm -rf venv
 rm -rf entropy
 rm tmp_*.pd
@@ -17,7 +18,7 @@ python3 -m venv venv
 pip install --upgrade pip
 
 # Install Flask and other dependancies within virtual environment
-pip install wheel Flask numpy sklearn python-dotenv watchdog simplejson blinker gunicorn rdp
+pip install wheel Flask numpy sklearn python-dotenv watchdog simplejson blinker gunicorn
 
 # Install entropy package
 git clone https://github.com/raphaelvallat/entropy.git entropy/
