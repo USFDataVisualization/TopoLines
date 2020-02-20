@@ -7,6 +7,7 @@ from flask import send_from_directory
 
 import experiments
 import webbrowser
+import os
 
 app = Flask(__name__)
 
@@ -22,7 +23,7 @@ webbrowser.open_new_tab("http://localhost:5050")
 @app.route('/')
 @app.route('/index.html')
 def render_index():
-    return send_file('pages/main.html')
+    return send_file('pages/index.html')
 
 
 @app.route('/figures.html')
