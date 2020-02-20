@@ -1,9 +1,8 @@
 import numpy as np
 import scipy.fftpack as scifft
 import scipy.ndimage as scind
-from sklearn.isotonic import IsotonicRegression
 import lcsmooth.__rdp as mod_rdp
-import lcsmooth.__tda as mod_tda
+import topolines.topolines as mod_tda
 import math
 
 
@@ -76,13 +75,4 @@ def rdp(data, eps):
 
 
 def tda(data, threshold):
-    cp_keys = mod_tda.filter_tda_count(data, threshold)
-
-    tmp = [data[0]]
-    for i in range(len(cp_keys) - 1):
-        ir = IsotonicRegression(increasing=(cp_keys[i][1] < cp_keys[i + 1][1]))
-        y = data[cp_keys[i][0]: cp_keys[i + 1][0] + 1]
-        y_ = ir.fit_transform(range(len(y)), y)
-        tmp.extend(y_[1:])
-
-    return list(enumerate(tmp))
+    return list(enumerate(mod_tda.filter_tda_count(data, threshold)))

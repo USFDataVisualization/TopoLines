@@ -2,6 +2,8 @@ import math
 from operator import itemgetter
 import os
 import random
+from sklearn.isotonic import IsotonicRegression
+
 
 __hera_bottleneck = os.getenv('HERA_BOTTLENECK')
 __hera_wasserstein = os.getenv('HERA_WASSERSTEIN')
@@ -160,7 +162,16 @@ def filter_tda_count(data, threshold):
     threshold = min(1, max(0, threshold))
     cps = extract_cps(data)
     pairs = cp_pairs(cps)
-    return filter_cps_count(data, pairs, threshold)
+    cp_keys = filter_cps_count(data, pairs, threshold)
+
+    tmp = [data[0]]
+    for i in range(len(cp_keys) - 1):
+        ir = IsotonicRegression(increasing=(cp_keys[i][1] < cp_keys[i + 1][1]))
+        y = data[cp_keys[i][0]: cp_keys[i + 1][0] + 1]
+        y_ = ir.fit_transform(range(len(y)), y)
+        tmp.extend(y_[1:])
+
+    return tmp
 
 
 def get_persistence_diagram(data):

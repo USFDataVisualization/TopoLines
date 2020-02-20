@@ -4,7 +4,7 @@ import string
 
 from entropy import *
 
-import lcsmooth.__tda as tda
+import topolines.topolines as tda
 
 
 def __random_string(stringLength=10):
