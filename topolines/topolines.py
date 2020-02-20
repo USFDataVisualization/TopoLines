@@ -197,7 +197,7 @@ def save_persistence_diagram(outfile, pd0, pd1=None):
 
 def wasserstein_distance(pd_file0, pd_file1, rel_error=0.01):
     if __hera_wasserstein is None:
-        return float('nan')
+        return 'nan'
 
     stream = os.popen(__hera_wasserstein + " " + pd_file0 + " " + pd_file1 + " " + str(rel_error))
     output = stream.read()
@@ -207,7 +207,7 @@ def wasserstein_distance(pd_file0, pd_file1, rel_error=0.01):
 
 def bottleneck_distance(pd_file0, pd_file1, rel_error=0.01):
     if __hera_bottleneck is None:
-        return float('nan')
+        return 'nan'
 
     stream = os.popen(__hera_bottleneck + " " + pd_file0 + " " + pd_file1 + " " + str(rel_error))
     output = stream.read()

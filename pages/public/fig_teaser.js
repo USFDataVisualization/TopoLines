@@ -9,6 +9,11 @@ function load_teaser(){
                  'dataset=eeg&datafile=eeg_chan07', 'dataset=stock&datafile=stock_goog' ];
     var flevel = ['0.40','0.85'];
 
+        function stringize( v ){
+            if( v == 'nan' ) return 'NaN';
+            return v.toFixed(3);
+        }
+
 	function load_dataset( i, j ){
             //console.log("data?" + dsets[i] + "&filter=tda&level=" + flevel[j]);
             d3.json( "data?" + dsets[i] + "&filter=tda&level=" + flevel[j], function( dinput ) {
@@ -42,11 +47,11 @@ function load_teaser(){
                 }
 
 
-                    document.getElementById("teaser_approx_ent_value_" + i + "_" + j).innerHTML = dinput['metrics']['approx entropy'].toFixed(3);
-                    document.getElementById("teaser_l1_norm_value_" + i + "_" + j).innerHTML = dinput['metrics']['L1 norm'].toFixed(3);
-                    document.getElementById("teaser_linf_norm_value_" + i + "_" + j).innerHTML = dinput['metrics']['L_inf norm'].toFixed(3);
-                    document.getElementById("teaser_wass_value_" + i + "_" + j).innerHTML = dinput['metrics']['peak wasserstein'].toFixed(3);
-                    document.getElementById("teaser_bott_value_" + i + "_" + j).innerHTML = dinput['metrics']['peak bottleneck'].toFixed(3);
+                    document.getElementById("teaser_approx_ent_value_" + i + "_" + j).innerHTML = stringize(dinput['metrics']['approx entropy']);
+                    document.getElementById("teaser_l1_norm_value_" + i + "_" + j).innerHTML = stringize(dinput['metrics']['L1 norm']);
+                    document.getElementById("teaser_linf_norm_value_" + i + "_" + j).innerHTML = stringize(dinput['metrics']['L_inf norm']);
+                    document.getElementById("teaser_wass_value_" + i + "_" + j).innerHTML = stringize(dinput['metrics']['peak wasserstein']);
+                    document.getElementById("teaser_bott_value_" + i + "_" + j).innerHTML = stringize(dinput['metrics']['peak bottleneck']);
 
 
             });

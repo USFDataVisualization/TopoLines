@@ -3,15 +3,21 @@
         var datasets = {};
         var filter_list = [ "median", "gaussian", "cutoff", "subsample", "rdp", "tda" ]
 
+        function stringize( v ){
+            if( v == 'nan' ) return 'NaN';
+            return v.toFixed(4);
+        }
 
 		function reloadChart(){
+		    console.log("data?" + $('#parameterForm').serialize() );
 			d3.json( "data?" + $('#parameterForm').serialize(), function( dinput ) {
 
-			    document.getElementById("approx_ent_value").innerHTML = dinput['metrics']['approx entropy'].toFixed(4);
-			    document.getElementById("l1_norm_value").innerHTML = dinput['metrics']['L1 norm'].toFixed(4);
-			    document.getElementById("linf_norm_value").innerHTML = dinput['metrics']['L_inf norm'].toFixed(4);
-			    document.getElementById("wass_value").innerHTML = dinput['metrics']['peak wasserstein'].toFixed(4);
-			    document.getElementById("bott_value").innerHTML = dinput['metrics']['peak bottleneck'].toFixed(4);
+                console.log( dinput );
+			    document.getElementById("approx_ent_value").innerHTML = stringize(dinput['metrics']['approx entropy']);
+			    document.getElementById("l1_norm_value").innerHTML = stringize(dinput['metrics']['L1 norm']);
+			    document.getElementById("linf_norm_value").innerHTML = stringize(dinput['metrics']['L_inf norm']);
+			    document.getElementById("wass_value").innerHTML = stringize(dinput['metrics']['peak wasserstein']);
+			    document.getElementById("bott_value").innerHTML = stringize(dinput['metrics']['peak bottleneck']);
 
                 update_linechart( "#linechart", dinput );
 			});

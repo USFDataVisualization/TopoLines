@@ -50,7 +50,7 @@ def process_smoothing(input_signal, filter_name, filter_level):
         level = filter1d.__linear_map(math.exp(scaled_level), 1, 100, 0, 1.0)
         filter_data = filter1d.rdp(input_signal, level)
     elif filter_name == 'gaussian':
-        min_level = math.log(1)
+        min_level = math.log(0.1)
         max_level = math.log(len(input_signal) * 0.1)
         scaled_level = filter1d.__linear_map(filter_level, 0, 1, min_level, max_level)
         level = math.exp(scaled_level)
