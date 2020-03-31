@@ -11,13 +11,19 @@
 		function reloadChart(){
 
             let e = document.getElementById("dataset");
-            console.log( e.options[e.selectedIndex].value);
+            let ds = e.options[e.selectedIndex].value;
             let f = document.getElementById("datafile");
-            console.log( f.options[f.selectedIndex].value);
+            let df = f.options[f.selectedIndex].value;
             let g = document.getElementById("level");
-            console.log( g.value*100 );
-		    console.log("data?" + $('#parameterForm').serialize() );
-			d3.json( "data?" + $('#parameterForm').serialize(), function( dinput ) {
+            let level = g.value*100;
+            let h = document.getElementById("filter");
+            let filter = h.options[h.selectedIndex].value;
+
+		    //console.log("data?" + $('#parameterForm').serialize() );
+		    let file = "json/results/" + ds + "/" + df + "/" + filter + "/level" + level + ".json";
+		    console.log(file);
+		    d3.json( file, function( dinput ) {
+			//d3.json( "data?" + $('#parameterForm').serialize(), function( dinput ) {
 
                 console.log( dinput );
 			    document.getElementById("approx_ent_value").innerHTML = stringize(dinput['metrics']['approx entropy']);
