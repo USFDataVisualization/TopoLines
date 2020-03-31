@@ -9,6 +9,11 @@
         }
 
 		function reloadChart(){
+
+            let e = document.getElementById("dataset");
+            console.log( e.options[e.selectedIndex].value);
+            let f = document.getElementById("datafile");
+            console.log( f.options[f.selectedIndex].value);
 		    console.log("data?" + $('#parameterForm').serialize() );
 			d3.json( "data?" + $('#parameterForm').serialize(), function( dinput ) {
 
