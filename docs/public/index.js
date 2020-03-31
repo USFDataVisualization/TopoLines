@@ -15,7 +15,7 @@
             let f = document.getElementById("datafile");
             let df = f.options[f.selectedIndex].value;
             let g = document.getElementById("level");
-            let level = g.value*100;
+            let level = Math.round(g.value*100);
             let h = document.getElementById("filter");
             let filter = h.options[h.selectedIndex].value;
 
