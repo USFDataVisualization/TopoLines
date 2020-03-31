@@ -119,6 +119,14 @@ def generate_metric_data(_dataset, _datafile, _filter_name='all', _input_signal=
             print("Creating: " + out_dir)
         os.mkdir(out_dir)
 
+    precomp_dir = 'docs/json/results/' + _dataset + '/' + _datafile + '/'
+    if not os.path.exists('docs/json/results/'):
+        os.mkdir('docs/json/results/')
+    if not os.path.exists('docs/json/results/' + _dataset + '/'):
+        os.mkdir('docs/json/results/' + _dataset + '/')
+    if not os.path.exists(precomp_dir):
+        os.mkdir(precomp_dir)
+
     if _input_signal is None:
         _input_signal = load_dataset(_dataset, _datafile)
 
@@ -128,9 +136,18 @@ def generate_metric_data(_dataset, _datafile, _filter_name='all', _input_signal=
             results += generate_metric_data(_dataset, _datafile, _filter_name=_filter, _input_signal=_input_signal,
                                             quiet=quiet)
     else:
-        process_smoothing(_input_signal, _filter_name, 0)  # warm up
+        if not os.path.exists(precomp_dir + _filter_name + '/'):
+            os.mkdir(precomp_dir + _filter_name + '/')
+        res = process_smoothing(_input_signal, _filter_name, 0)  # warm up
+        with open(precomp_dir + _filter_name + '/level_0.json', 'w') as outfile:
+            json.dump(res, outfile)
+
         for i in range(100):
             res = process_smoothing(_input_signal, _filter_name, float(i + 1) / 100)
+
+            with open(precomp_dir + _filter_name + '/level_' + str(i+1) + '.json', 'w') as outfile:
+                json.dump(res, outfile)
+
             res.pop('input')
             res.pop('output')
             results.append(res)

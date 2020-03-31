@@ -12,10 +12,22 @@ import os
 app = Flask(__name__)
 
 datasets = experiments.get_datasets()
+with open("docs/json/datasets.json", 'w') as outfile:
+    json.dump(datasets, outfile)
 
 for _ds in datasets:
     for _df in datasets[_ds]:
-        experiments.generate_metric_data(_ds, _df)
+        metric_data = experiments.generate_metric_data(_ds, _df)
+        metric_reg = [experiments.metric_regression(metric_data, 'approx entropy', 'L1 norm'),
+                      experiments.metric_regression(metric_data, 'approx entropy', 'L_inf norm'),
+                      experiments.metric_regression(metric_data, 'approx entropy', 'peak wasserstein'),
+                      experiments.metric_regression(metric_data, 'approx entropy', 'peak bottleneck')]
+        with open("docs/json/metric/" + _ds + '_' + _df + ".json", 'w') as outfile:
+            json.dump({'metric': metric_data, 'rank': metric_reg}, outfile)
+
+with open("docs/json/all_ranks.json", 'w') as outfile:
+    json.dump( experiments.metric_ranks(datasets), outfile )
+
 
 webbrowser.open_new_tab("http://localhost:5050")
 

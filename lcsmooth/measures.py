@@ -5,6 +5,7 @@ import string
 from entropy import *
 
 import topolines.topolines as tda
+import topolines.TopoDistance as topodist
 
 
 def __random_string(stringLength=10):
@@ -26,9 +27,9 @@ def peakiness_bottleneck(original, filtered):
     pd_flt = tda.get_persistence_diagram(filtered)
     file_org = 'tmp_' + __random_string(7) + '.pd'
     file_flt = 'tmp_' + __random_string(7) + '.pd'
-    tda.save_persistence_diagram(file_org, pd_org)
-    tda.save_persistence_diagram(file_flt, pd_flt)
-    res = tda.bottleneck_distance(file_org, file_flt)
+    topodist.save_persistence_diagram(file_org, pd_org)
+    topodist.save_persistence_diagram(file_flt, pd_flt)
+    res = topodist.bottleneck_distance(file_org, file_flt)
     os.remove(file_org)
     os.remove(file_flt)
     return res
@@ -39,9 +40,9 @@ def peakiness_wasserstein(original, filtered):
     pd_flt = tda.get_persistence_diagram(filtered)
     file_org = 'tmp_' + __random_string(7) + '.pd'
     file_flt = 'tmp_' + __random_string(7) + '.pd'
-    tda.save_persistence_diagram(file_org, pd_org)
-    tda.save_persistence_diagram(file_flt, pd_flt)
-    res = tda.wasserstein_distance(file_org, file_flt)
+    topodist.save_persistence_diagram(file_org, pd_org)
+    topodist.save_persistence_diagram(file_flt, pd_flt)
+    res = topodist.wasserstein_distance(file_org, file_flt)
     os.remove(file_org)
     os.remove(file_flt)
     return res
@@ -52,10 +53,10 @@ def peakiness(original, filtered):
     pd_flt = tda.get_persistence_diagram(filtered)
     file_org = 'tmp_' + __random_string(7) + '.pd'
     file_flt = 'tmp_' + __random_string(7) + '.pd'
-    tda.save_persistence_diagram(file_org, pd_org)
-    tda.save_persistence_diagram(file_flt, pd_flt)
-    res_b = tda.bottleneck_distance(file_org, file_flt)
-    res_w = tda.wasserstein_distance(file_org, file_flt)
+    topodist.save_persistence_diagram(file_org, pd_org)
+    topodist.save_persistence_diagram(file_flt, pd_flt)
+    res_b = topodist.bottleneck_distance(file_org, file_flt)
+    res_w = topodist.wasserstein_distance(file_org, file_flt)
     os.remove(file_org)
     os.remove(file_flt)
     return {'peak bottleneck': res_b, 'peak wasserstein': res_w}
