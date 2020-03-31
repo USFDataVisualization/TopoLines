@@ -1,0 +1,278 @@
+
+
+.input_line {
+    fill: none;
+    stroke: lightgray;
+    stroke-width: 2;
+}
+
+.output_line {
+    fill: none;
+    stroke: steelblue;
+    stroke-width: 2;
+}
+
+.teaser_line {
+    fill: none;
+    stroke: #4e79a7;
+    stroke-width: 3;
+}
+
+.regression {
+    stroke-width: 5px;
+}
+
+.orig_fig_filter {
+    stroke: #888888;
+    stroke-width: 3;
+    fill: none;
+}
+
+
+
+
+
+.page {
+	display: table;
+	width: 100%;
+}
+.page-content{
+	display: table-cell;
+	padding: 20px;
+}
+.sidebar {
+	display: table-cell;
+	width: 300px;
+	min-width: 300px;
+	padding: 20px;
+	vertical-align: top;
+}
+
+.rankspan{
+    text-align: left;
+    float: left;
+    width: 145px;
+    line-height: 1.1;
+    padding-top: 5px;
+    padding-left: 5px;
+}
+
+.rankbox{
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+}
+
+.ranklabel{
+    height: 20px;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 15px;
+    padding-left: 4px;
+    padding-top: 1px;
+}
+
+.ranktext{
+    text-align: center;
+    width: 100%;
+    display: inline-block;
+}
+
+.checkmark-container {
+  display: block;
+  /*width: 230px;*/
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 14px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.checkmark-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.checkmark-container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkmark-container input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.checkmark-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkmark-container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+
+.checkmark-container input:checked ~ .checkmark_tda {
+  background-color: #4e79a7;
+}
+.tda_background {
+  background-color: #4e79a7;
+}
+.tda_filter {
+    fill: #4e79a7;
+    stroke: #4e79a7;
+}
+.tda_fig_filter {
+    stroke: #4e79a7;
+    stroke-width: 3;
+    fill: none;
+}
+.tda_filter_light {
+    fill: #b3cde3;
+    stroke: #b3cde3;
+}
+
+.checkmark-container input:checked ~ .checkmark_median {
+  background-color: #e15759;
+}
+.median_background {
+  background-color: #e15759;
+}
+.median_filter {
+    stroke: #e15759;
+    fill: #e15759;
+}
+.median_fig_filter {
+    stroke: #e15759;
+    stroke-width: 3;
+    fill: none;
+}
+.median_filter_light {
+    stroke: #fbb4ae;
+    fill: #fbb4ae;
+}
+
+
+.checkmark-container input:checked ~ .checkmark_gaussian {
+    background-color: #59a14f;
+}
+.gaussian_background {
+    background-color: #59a14f;
+}
+.gaussian_filter {
+    stroke: #59a14f;
+    fill: #59a14f;
+}
+.gaussian_fig_filter {
+    stroke: #59a14f;
+    stroke-width: 3;
+    fill: none;
+}
+.gaussian_filter_light {
+    stroke: #ccebc5;
+    fill: #ccebc5;
+}
+
+
+.checkmark-container input:checked ~ .checkmark_cutoff {
+    background-color: #af7aa1;
+}
+.cutoff_background {
+    background-color: #af7aa1;
+}
+.cutoff_filter {
+    stroke: #af7aa1;
+    fill: #af7aa1;
+}
+.cutoff_fig_filter {
+    stroke: #af7aa1;
+    stroke-width: 3;
+    fill: none;
+}
+.cutoff_filter_light {
+    stroke: #decbe4;
+    fill: #decbe4;
+}
+
+
+.checkmark-container input:checked ~ .checkmark_subsample {
+    background-color: #f28e2c;
+}
+.subsample_background {
+    background-color: #f28e2c;
+}
+.subsample_filter {
+    fill: #f28e2c;
+    stroke: #f28e2c;
+}
+.subsample_fig_filter {
+    stroke: #f28e2c;
+    stroke-width: 3;
+    fill: none;
+}
+.subsample_filter_light {
+    fill: #fed9a6;
+    stroke: #fed9a6;
+}
+
+
+.checkmark-container input:checked ~ .checkmark_rdp {
+  background-color: #ff9da7;
+}
+.rdp_background{
+  background-color: #ff9da7;
+}
+.rdp_filter {
+    fill: #ff9da7;
+    stroke: #ff9da7;
+}
+.rdp_fig_filter {
+    stroke: #ff9da7;
+    stroke-width: 3;
+    fill: none;
+}
+
+.rdp_filter_light {
+    fill: #fddaec;
+    stroke: #fddaec;
+}
+
+
+
+
