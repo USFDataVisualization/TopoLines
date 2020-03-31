@@ -8,9 +8,13 @@ function load_filters_fig(){
     var dset = 'climate/climate_17-18';
 
     // approx entropy 0.49
-    var filter_list = [{'cutoff': '0.625', 'gaussian': '0.42', 'median' : '0.545', 'subsample': '0.5', 'rdp': '0.465'},
+    //var filter_list = [{'cutoff': '0.625', 'gaussian': '0.42', 'median' : '0.545', 'subsample': '0.5', 'rdp': '0.465'},
     // approx entropy 0.195
-                        {'cutoff': '0.882', 'gaussian': '0.635', 'median' : '0.81', 'subsample': '0.88', 'rdp': '0.72'} ];
+    //                    {'cutoff': '0.882', 'gaussian': '0.635', 'median' : '0.81', 'subsample': '0.88', 'rdp': '0.72'} ];
+    // approx entropy 0.49
+    var filter_list = [{'cutoff': '62.5', 'gaussian': '42', 'median' : '54.5', 'subsample': '50', 'rdp': '46.5'},
+    // approx entropy 0.195
+                        {'cutoff': '88.2', 'gaussian': '63.5', 'median' : '81', 'subsample': '88', 'rdp': '72'} ];
 
     var filter_keys = ['median', 'gaussian', 'cutoff', 'subsample', 'rdp'];
 
@@ -21,7 +25,10 @@ function load_filters_fig(){
 
 
 	function load_dataset( i, j ){
-            d3.json( "data?" + dset + "&filter=" + filter_keys[j] + "&level=" + filter_list[i][filter_keys[j]], function( dinput ) {
+
+            let file = "json/results/" + dset + "/" + filter_keys[j] + "/level_" + filter_list[i][filter_keys[j]] + ".json";
+            d3.json( file, function( dinput ) {
+            //d3.json( "data?" + dset + "&filter=" + filter_keys[j] + "&level=" + filter_list[i][filter_keys[j]], function( dinput ) {
                 //console.log(filter_keys[j] + "_fig_filter");
                 add_linechart( "#fig_fitlers", dinput['input'], dinput['output'], [5+335*j,5+155*i], [320,153], filter_keys[j] + "_fig_filter"  );
 
