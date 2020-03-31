@@ -12,9 +12,10 @@ function load_filters_fig(){
     // approx entropy 0.195
     //                    {'cutoff': '0.882', 'gaussian': '0.635', 'median' : '0.81', 'subsample': '0.88', 'rdp': '0.72'} ];
     // approx entropy 0.49
-    var filter_list = [{'cutoff': '62.5', 'gaussian': '42', 'median' : '54.5', 'subsample': '50', 'rdp': '46.5'},
+    //var filter_list = [{'cutoff': '62.5', 'gaussian': '42', 'median' : '54.5', 'subsample': '50', 'rdp': '46.5'},
+    var filter_list = [{'cutoff': '62', 'gaussian': '42', 'median' : '55', 'subsample': '50', 'rdp': '46'},
     // approx entropy 0.195
-                        {'cutoff': '88.2', 'gaussian': '63.5', 'median' : '81', 'subsample': '88', 'rdp': '72'} ];
+                        {'cutoff': '88', 'gaussian': '63', 'median' : '81', 'subsample': '88', 'rdp': '72'} ];
 
     var filter_keys = ['median', 'gaussian', 'cutoff', 'subsample', 'rdp'];
 
