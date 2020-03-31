@@ -14,6 +14,8 @@
             console.log( e.options[e.selectedIndex].value);
             let f = document.getElementById("datafile");
             console.log( f.options[f.selectedIndex].value);
+            let g = document.getElementById("level");
+            console.log( g.value*100 );
 		    console.log("data?" + $('#parameterForm').serialize() );
 			d3.json( "data?" + $('#parameterForm').serialize(), function( dinput ) {
 
