@@ -44,7 +44,8 @@ function load_rank_figure(){
 
 
 
-    d3.json( "/all_ranks", function( dinput ) {
+    //d3.json( "/all_ranks", function( dinput ) {
+    d3.json( "/json/all_ranks.json", function( dinput ) {
         datasets = ['astro','climate','eeg','stock'];
         metric_names = ["L1 norm", "L_inf norm", "peak wasserstein", "peak bottleneck"];
         filter_list = {'tda': 'TopoLines', 'cutoff': "Cutoff", 'gaussian': "Gaussian", 'median' : "Median", 'subsample': "Uniform", 'rdp': "Douglas-Peucker"};

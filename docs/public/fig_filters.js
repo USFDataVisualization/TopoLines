@@ -4,7 +4,8 @@
 function load_filters_fig(){
 
 
-    var dset = 'dataset=climate&datafile=climate_17-18';
+    //var dset = 'dataset=climate&datafile=climate_17-18';
+    var dset = 'climate/climate_17-18';
 
     // approx entropy 0.49
     var filter_list = [{'cutoff': '0.625', 'gaussian': '0.42', 'median' : '0.545', 'subsample': '0.5', 'rdp': '0.465'},

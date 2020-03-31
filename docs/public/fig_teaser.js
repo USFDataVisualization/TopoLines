@@ -5,9 +5,13 @@
 function load_teaser(){
 
 
-    var dsets = ['dataset=astro&datafile=astro_115_128', 'dataset=climate&datafile=climate_17-18',
-                 'dataset=eeg&datafile=eeg_chan07', 'dataset=stock&datafile=stock_goog' ];
-    var flevel = ['0.40','0.85'];
+    //var dsets = ['dataset=astro&datafile=astro_115_128', 'dataset=climate&datafile=climate_17-18',
+    //             'dataset=eeg&datafile=eeg_chan07', 'dataset=stock&datafile=stock_goog' ];
+    //var flevel = ['0.40','0.85'];
+var dsets = ['astro/astro_115_128', 'climate/climate_17-18',
+                 'eeg/eeg_chan07', 'stock/stock_goog' ];
+    var flevel = ['40','85'];
+
 
         function stringize( v ){
             if( v == 'nan' ) return 'NaN';
@@ -15,8 +19,12 @@ function load_teaser(){
         }
 
 	function load_dataset( i, j ){
+
+		    let file = "json/results/" + dsets[i] + "/tda/level_" + flevel[j] + ".json";
+
             //console.log("data?" + dsets[i] + "&filter=tda&level=" + flevel[j]);
-            d3.json( "data?" + dsets[i] + "&filter=tda&level=" + flevel[j], function( dinput ) {
+            //d3.json( "data?" + dsets[i] + "&filter=tda&level=" + flevel[j], function( dinput ) {
+            d3.json( file, function( dinput ) {
                 //console.log( dsets[i] );
                 //console.log( dinput );
                 if( j == 0 )
