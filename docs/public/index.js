@@ -20,7 +20,7 @@
             let filter = h.options[h.selectedIndex].value;
 
 		    //console.log("data?" + $('#parameterForm').serialize() );
-		    let file = "json/results/" + ds + "/" + df + "/" + filter + "/level" + level + ".json";
+		    let file = "json/results/" + ds + "/" + df + "/" + filter + "/level_" + level + ".json";
 		    console.log(file);
 		    d3.json( file, function( dinput ) {
 			//d3.json( "data?" + $('#parameterForm').serialize(), function( dinput ) {
