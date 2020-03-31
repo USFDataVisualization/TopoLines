@@ -49,7 +49,7 @@
         }
 
 
-		d3.json( "datasets", function( dinput ) {
+		d3.json( "json/datasets.json", function( dinput ) {
             datasets = dinput;
 
             html = "";
