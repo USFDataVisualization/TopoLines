@@ -40,7 +40,16 @@
         }
 
         function reloadMetrics(){
-            d3.json( "metric?" + $('#parameterForm').serialize(), function( dinput ) {
+
+            let e = document.getElementById("dataset");
+            let ds = e.options[e.selectedIndex].value;
+            let f = document.getElementById("datafile");
+            let df = f.options[f.selectedIndex].value;
+
+		    let file = "json/metric/" + ds + "_" + df + ".json";
+
+            //d3.json( "metric?" + $('#parameterForm').serialize(), function( dinput ) {
+            d3.json( file, function( dinput ) {
                 metrics_data = dinput['metric'];
                 rank_data = dinput['rank'];
                 updateMetrics();
