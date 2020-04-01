@@ -245,3 +245,23 @@ def metric_ranks(datasets):
     res.sort(key=(lambda a: (a['dataset'] + "_" + a['datafile']).lower() ))
 
     return res
+
+
+if __name__ == "__main__":
+
+    datasets = get_datasets()
+    with open("docs/json/datasets.json", 'w') as outfile:
+        json.dump(datasets, outfile)
+
+    for _ds in datasets:
+        for _df in datasets[_ds]:
+            metric_data = generate_metric_data(_ds, _df)
+            metric_reg = [metric_regression(metric_data, 'approx entropy', 'L1 norm'),
+                          metric_regression(metric_data, 'approx entropy', 'L_inf norm'),
+                          metric_regression(metric_data, 'approx entropy', 'peak wasserstein'),
+                          metric_regression(metric_data, 'approx entropy', 'peak bottleneck')]
+            with open("docs/json/metric/" + _ds + '_' + _df + ".json", 'w') as outfile:
+                json.dump({'metric': metric_data, 'rank': metric_reg}, outfile)
+
+    with open("docs/json/all_ranks.json", 'w') as outfile:
+        json.dump(metric_ranks(datasets), outfile)

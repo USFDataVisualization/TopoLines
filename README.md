@@ -1,9 +1,8 @@
 # TopoLines: Topological Smoothing for Line Charts
-## EuroVis 2020 Short Papers Submission #1026
+## EuroVis 2020 Short Papers
+## Paul Rosen, Ashley Suh, Christopher Salgado, & Mustafa Hajij
 
-This software admittedly could be difficult to get running. We have tested it on Mac and Linux distributions. 
-
-If you are on Windows or would like a live demo without running the software, visit **http://131.247.3.215:5050** or **http://131.247.3.213:5050**
+We have tested this setup on Mac and Linux distributions. 
 
 
 ### [required] Install python3, python3-virtualenv, and git
@@ -34,13 +33,22 @@ If you are on Windows or would like a live demo without running the software, vi
     In during this process you should see information, but hopefully no errors.
     
     
-### [required] Start the webserver
+### [required] Generate the experiemental data
     
     Assuming everything has run correctly thus far, we need to run the code.
     
     > ./run.sh
     
-    If everythin goes as planned, a webserver will be started and a webbrowser will pop open to the correct url. If no browser appears, continue to url http://localhost:5050
+
+### [required] Start a webserver
+
+    Go to docs directory
+    > cd docs
+    
+    Start webserver
+    > python3 -m http.server 5050
+    
+    If everything goes as planned, you can open a webbrowser and open url http://localhost:5050
     
     
 

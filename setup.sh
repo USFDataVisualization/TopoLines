@@ -13,7 +13,7 @@ python3 -m venv venv
 pip install --upgrade pip
 
 # Install Flask and other dependancies within virtual environment
-pip install wheel Flask numpy sklearn python-dotenv watchdog simplejson blinker gunicorn
+pip install numpy sklearn python-dotenv watchdog simplejson
 
 # Install entropy package
 git clone https://github.com/raphaelvallat/entropy.git entropy/
