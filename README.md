@@ -15,24 +15,12 @@ We have tested this setup on Mac and Linux distributions.
     On Mac, you can download from python.org, macports, or homebrew. You will need python3, python3-virtualenv, pip, git, ... maybe others 
 
 
-### [optional] If you want topolgical distances to work: 
-
-    Clone and build Hera (https://bitbucket.org/grey_narn/hera)
-    > git clone https://bitbucket.org/grey_narn/hera.git
-
-    See included build instruction for building both geom_bottleneck and geom_matching
-
-    Update path used in our software:
-        Open setup.sh
-        Update the path to Hera bottleneck_dist and wasserstein_dist to absolute path you compiled to
-
-
 ### [required] Run setup process
 
     This process will setup a virtual environment and install all prerequisites.
     > ./setup.sh
     
-    In during this process you should see information, but hopefully no errors.
+    In during this process you should see information, but hopefully no errors. If there are errors, please contact us for assistance.
     
     
 ### [required] Generate the experiemental data

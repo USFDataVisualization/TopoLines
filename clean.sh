@@ -7,3 +7,4 @@ rm -rf topolines/__pycache__
 rm -rf venv
 rm -rf entropy
 rm tmp_*.pd
+rm -rf hera
