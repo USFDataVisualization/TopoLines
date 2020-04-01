@@ -1,6 +1,8 @@
 # TopoLines: Topological Smoothing for Line Charts
-## EuroVis 2020 Short Papers
-## Paul Rosen, Ashley Suh, Christopher Salgado, & Mustafa Hajij
+
+__TopoLines: Topological Smoothing for Line Charts__\
+__Paul Rosen, Ashley Suh, Christopher Salgado, & Mustafa Hajij__\
+__EuroVis 2020 Short Papers__
 
 We have tested this setup on Mac and Linux distributions. 
 
