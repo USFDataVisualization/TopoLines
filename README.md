@@ -41,4 +41,6 @@ We have tested this setup on Mac and Linux distributions.
     If everything goes as planned, you can open a webbrowser and open url http://localhost:5050
     
     
+## Acknowledgment
 
+This material is based upon work supported or partially supported by the National Science Foundation under Grant No. 1845204.
